@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>https://coffepowered.github.io/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>This page is for pandas notes</title>
+      <link>https://coffepowered.github.io/blogs/pandas-notes-tips/</link>
+      <pubDate>Wed, 11 Nov 2020 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/pandas-notes-tips/</guid>
+      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
+Title 2 Ciao ciao ciao come stai? Ciao ciao ciao come stai?
+A sample code block 199 200 201 202 203 204 205 206 207 208  # .</description>
+    </item>
+    
+    <item>
+      <title>Add a row to pandas&#39; DataFrame</title>
+      <link>https://coffepowered.github.io/blogs/pandas-append-rows-to-df/</link>
+      <pubDate>Sat, 31 Oct 2020 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/pandas-append-rows-to-df/</guid>
+      <description>Quite often, it is needed to fill or modify dataframes with data that gets computed at runtime. This post draws heavily from the stackoverlow question &amp;ldquo;Add one row to pandas DataFrame&amp;rdquo;. Here I show the 4 methods that were proposed to append the data and discuss them. A 5th &amp;ldquo;improper&amp;rdquo; method operating on columns is added just for sake of comparison with respect to the most efficient option.
+If you want just the takeaways:</description>
+    </item>
+    
+    <item>
+      <title>1 - Movie sentiment review</title>
+      <link>https://coffepowered.github.io/blogs/sentiment-movie-review.en-copy/</link>
+      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/sentiment-movie-review.en-copy/</guid>
+      <description>Intro (feel free to skip this) I feel like we are living in the golden age of Natural Language Processing (NLP). The last 20 years have seen the rise of Neural Language models, the creation and subsequent vast application of Word Embeddings and innovative Network architectures for Sequence Modeling and, last but not least, transformers.
+If you did not get the detail of the previous paragraph, please bear with me. The motivation of this post is showing how a non-specialist (like me) can today build effective software that is able to &amp;quot;use&amp;quot; or interpret text written by humans.</description>
+    </item>
+    
+    <item>
+      <title>1 - Movie sentiment review</title>
+      <link>https://coffepowered.github.io/blogs/sentiment-movie-review/</link>
+      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/sentiment-movie-review/</guid>
+      <description>Intro Here, I just scratch the surface of NLP, by commenting my colab notebook which builds the backend of a sentiment movie review app from the ground up exploiting Keras&#39; TextVectorization.
+You are expected to be familiar with the following concepts and tools:
+ Basics of Machine learning and data manipulation: did you try the Titanic dataset? Basics of Keras API: you got at least on neural network with Keras tutorial  I will try to provide crash-course on word vectors and text vectorization.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://coffepowered.github.io/su-questo-sito/</link>
+      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/su-questo-sito/</guid>
+      <description>Mi chiamo Andrea Ruggerini e sono un &amp;ldquo;Data Scientist&amp;rdquo; (o Machine Learnig Practictioner).
+Ho scoperto questa professione incredibile, partecipando qualche anno fa alla LDS academy. Da allora ho assistito a una evoluzione incessante della tecnologia ML che permette di creare applicazioni impensabili fino a poco tempo fa.
+Mi tengo al passo riportando qualche breve idea nei Blogs e tenendo traccia su questo sito dei &amp;ldquo;Micro-Progetti&amp;quot;: esperimenti che conduco riguardo a tecnologie ed argomenti collaterali al lavoro.</description>
+    </item>
+    
+    <item>
+      <title>Ipsum my custm blog</title>
+      <link>https://coffepowered.github.io/blogs/blog1/</link>
+      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/blog1/</guid>
+      <description>Ciao ciao ciao come stai?
+Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
+Ciao ciao ciao come stai? Ciao ciao ciao come stai?</description>
+    </item>
+    
+    <item>
+      <title>This page is for pandas notes</title>
+      <link>https://coffepowered.github.io/blogs/000-sample-page-code-block/</link>
+      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/000-sample-page-code-block/</guid>
+      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
+Title 2 Ciao ciao ciao come stai? Ciao ciao ciao come stai?
+A sample code block 199 200 201 202 203 204 205 206 207 208  # .</description>
+    </item>
+    
+  </channel>
+</rss>
