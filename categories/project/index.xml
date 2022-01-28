@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 31 Oct 2017 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/project/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 - Movie sentiment review</title>
-      <link>https://coffepowered.github.io/blogs/sentiment-movie-review.en-copy/</link>
+      <link>https://coffepowered.github.io/blogs/math-example/</link>
       <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
       
-      <guid>https://coffepowered.github.io/blogs/sentiment-movie-review.en-copy/</guid>
+      <guid>https://coffepowered.github.io/blogs/math-example/</guid>
       <description>Intro (feel free to skip this) I feel like we are living in the golden age of Natural Language Processing (NLP). The last 20 years have seen the rise of Neural Language models, the creation and subsequent vast application of Word Embeddings and innovative Network architectures for Sequence Modeling and, last but not least, transformers.
 If you did not get the detail of the previous paragraph, please bear with me. The motivation of this post is showing how a non-specialist (like me) can today build effective software that is able to &amp;quot;use&amp;quot; or interpret text written by humans.</description>
     </item>

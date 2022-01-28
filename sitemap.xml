@@ -1,105 +1,107 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://coffepowered.github.io/blogs/</loc>
-    <lastmod>2020-11-11T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-01-31T21:28:43-05:00</lastmod>
+  </url><url>
     <loc>https://coffepowered.github.io/categories/</loc>
+    <lastmod>2021-01-31T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/blogs/crescita-economica/</loc>
+    <lastmod>2021-01-31T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/categories/economia/</loc>
+    <lastmod>2021-01-31T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/</loc>
+    <lastmod>2021-01-31T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/bricks/</loc>
+    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/coursera/</loc>
+    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/categories/courses/</loc>
+    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/data/</loc>
+    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/financial-engineering/</loc>
+    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/blogs/financial-engineering-coursera-review/</loc>
+    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/categories/python/</loc>
+    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/categories/review/</loc>
+    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/blogs/python-data-typer-for-data/</loc>
+    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/</loc>
+    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/type/</loc>
+    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/daily/</loc>
     <lastmod>2020-11-11T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://coffepowered.github.io/categories/daily/</loc>
     <lastmod>2020-11-11T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://coffepowered.github.io/</loc>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/git/</loc>
     <lastmod>2020-11-11T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://coffepowered.github.io/categories/python/</loc>
+  </url><url>
+    <loc>https://coffepowered.github.io/blogs/git-notes/</loc>
     <lastmod>2020-11-11T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/ops/</loc>
+    <lastmod>2020-11-11T21:28:43-05:00</lastmod>
+  </url><url>
     <loc>https://coffepowered.github.io/tags/sono/</loc>
     <lastmod>2020-11-11T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://coffepowered.github.io/tags/</loc>
-    <lastmod>2020-11-11T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://coffepowered.github.io/tags/test/</loc>
     <lastmod>2020-11-11T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://coffepowered.github.io/blogs/pandas-notes-tips/</loc>
+  </url><url>
+    <loc>https://coffepowered.github.io/blogs/pandas-notes-tips.en-copyme/</loc>
     <lastmod>2020-11-11T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://coffepowered.github.io/blogs/pandas-append-rows-to-df/</loc>
     <lastmod>2020-10-31T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://coffepowered.github.io/tags/benchmark/</loc>
     <lastmod>2020-10-31T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://coffepowered.github.io/tags/daily/</loc>
-    <lastmod>2020-10-31T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://coffepowered.github.io/categories/pandas/</loc>
     <lastmod>2020-10-31T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://coffepowered.github.io/blogs/sentiment-movie-review.en-copy/</loc>
+  </url><url>
+    <loc>https://coffepowered.github.io/blogs/math-example/</loc>
     <lastmod>2017-10-31T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://coffepowered.github.io/blogs/sentiment-movie-review/</loc>
     <lastmod>2017-10-31T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://coffepowered.github.io/su-questo-sito/</loc>
     <lastmod>2017-10-31T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://coffepowered.github.io/blogs/blog1/</loc>
     <lastmod>2017-10-31T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://coffepowered.github.io/categories/nlp-movie-review/</loc>
     <lastmod>2017-10-31T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://coffepowered.github.io/categories/project/</loc>
     <lastmod>2017-10-31T21:28:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://coffepowered.github.io/blogs/000-sample-page-code-block/</loc>
     <lastmod>2017-10-31T21:28:43-05:00</lastmod>
   </url>
-  
 </urlset>

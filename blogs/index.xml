@@ -6,13 +6,55 @@
     <description>Recent content in Blogs on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Nov 2020 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jan 2021 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/blogs/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>This page is for pandas notes</title>
-      <link>https://coffepowered.github.io/blogs/pandas-notes-tips/</link>
+      <title>Crescita Economica</title>
+      <link>https://coffepowered.github.io/blogs/crescita-economica/</link>
+      <pubDate>Sun, 31 Jan 2021 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/crescita-economica/</guid>
+      <description>Questa pagina traduce liberamente e parzialmente, l&amp;rsquo;articolo di Max Roser (secondo licenza) (2013) - &amp;ldquo;Economic Growth&amp;rdquo;. Published online at OurWorldInData.org. Retrieved from: &amp;lsquo;https://ourworldindata.org/economic-growth&#39; [Online Resource].
+ Con crescita economica descriviamo un aumento nella qualità a quantità dei beni e servizi economici che una società produce o consuma.
+Mentre la definizione di crescita economica è chiara, misurare la crescita in sè risulta estremamente difficile. La crescita è spesso misurata tramite un aumento nel reddito delle famiglie o del PIL (aggiustato per l&amp;rsquo;inflazione), ma è importante ricordare che queste misure non sono la definizione di crescita - proprio come l&amp;rsquo;aspettativa di vita è una misura della &amp;ldquo;salute di una popolazione&amp;rdquo; ma certamente non coincide con la definizione stessa.</description>
+    </item>
+    
+    <item>
+      <title>Financial engineering and Risk management (Coursera)</title>
+      <link>https://coffepowered.github.io/blogs/financial-engineering-coursera-review/</link>
+      <pubDate>Mon, 11 Jan 2021 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/financial-engineering-coursera-review/</guid>
+      <description>A somewhat detailed review mixed with notes (spoiler alert) I am writing this review since in my google bubble a find a mostly unsatisfying results and when I started the course I&#39;d have loved having more first-hand experience knowing what to expect for the course1.
+Online courses are targeted at wide and eterogeneous audiences, so consider this a totally subjective review as your background and sensibility may vary. A very short intro about me, so that you can try putting yourself into my shoes and weight my words: I am not a finance, economics or math graduate.</description>
+    </item>
+    
+    <item>
+      <title>Short notes on namedtuples, NamedTuples and Data classes</title>
+      <link>https://coffepowered.github.io/blogs/python-data-typer-for-data/</link>
+      <pubDate>Mon, 11 Jan 2021 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/python-data-typer-for-data/</guid>
+      <description>Both dataclasses and tuples are based on the attrs project, the one Python Library everybody needs and are fast object types (factory methods) designed to simplify and reduce code.
+namedtuple and NamedTuple  Both immutable Tuple-based (hence fast) but far better than tuples NamedTuple is the typed version of namedtuple immutable, iterable, hashable, unpackable backward-compatible with tuple (e.g you can access a namedtuple by index) default arguments supported from Python 3.</description>
+    </item>
+    
+    <item>
+      <title>Git notes</title>
+      <link>https://coffepowered.github.io/blogs/git-notes/</link>
       <pubDate>Wed, 11 Nov 2020 21:28:43 -0500</pubDate>
       
-      <guid>https://coffepowered.github.io/blogs/pandas-notes-tips/</guid>
+      <guid>https://coffepowered.github.io/blogs/git-notes/</guid>
+      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
+Quick commands Get the remote URL of your repository:
+git config --get remote.origin.urlA sample code block 199 200 201 202 203 204 205 206 207 208  # .</description>
+    </item>
+    
+    <item>
+      <title>This page is for pandas notes</title>
+      <link>https://coffepowered.github.io/blogs/pandas-notes-tips.en-copyme/</link>
+      <pubDate>Wed, 11 Nov 2020 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/pandas-notes-tips.en-copyme/</guid>
       <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
 Title 2 Ciao ciao ciao come stai? Ciao ciao ciao come stai?
 A sample code block 199 200 201 202 203 204 205 206 207 208  # .</description>
@@ -30,10 +72,10 @@ If you want just the takeaways:</description>
     
     <item>
       <title>1 - Movie sentiment review</title>
-      <link>https://coffepowered.github.io/blogs/sentiment-movie-review.en-copy/</link>
+      <link>https://coffepowered.github.io/blogs/math-example/</link>
       <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
       
-      <guid>https://coffepowered.github.io/blogs/sentiment-movie-review.en-copy/</guid>
+      <guid>https://coffepowered.github.io/blogs/math-example/</guid>
       <description>Intro (feel free to skip this) I feel like we are living in the golden age of Natural Language Processing (NLP). The last 20 years have seen the rise of Neural Language models, the creation and subsequent vast application of Word Embeddings and innovative Network architectures for Sequence Modeling and, last but not least, transformers.
 If you did not get the detail of the previous paragraph, please bear with me. The motivation of this post is showing how a non-specialist (like me) can today build effective software that is able to &amp;quot;use&amp;quot; or interpret text written by humans.</description>
     </item>

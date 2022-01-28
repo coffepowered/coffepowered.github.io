@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bricks on My New Hugo Site</title>
+    <link>https://coffepowered.github.io/tags/bricks/</link>
+    <description>Recent content in bricks on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Jan 2021 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/tags/bricks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Short notes on namedtuples, NamedTuples and Data classes</title>
+      <link>https://coffepowered.github.io/blogs/python-data-typer-for-data/</link>
+      <pubDate>Mon, 11 Jan 2021 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/python-data-typer-for-data/</guid>
+      <description>Both dataclasses and tuples are based on the attrs project, the one Python Library everybody needs and are fast object types (factory methods) designed to simplify and reduce code.
+namedtuple and NamedTuple  Both immutable Tuple-based (hence fast) but far better than tuples NamedTuple is the typed version of namedtuple immutable, iterable, hashable, unpackable backward-compatible with tuple (e.g you can access a namedtuple by index) default arguments supported from Python 3.</description>
+    </item>
+    
+  </channel>
+</rss>

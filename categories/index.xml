@@ -6,22 +6,49 @@
     <description>Recent content in Categories on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Nov 2020 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jan 2021 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>daily</title>
-      <link>https://coffepowered.github.io/categories/daily/</link>
-      <pubDate>Wed, 11 Nov 2020 21:28:43 -0500</pubDate>
+      <title>economia</title>
+      <link>https://coffepowered.github.io/categories/economia/</link>
+      <pubDate>Sun, 31 Jan 2021 21:28:43 -0500</pubDate>
       
-      <guid>https://coffepowered.github.io/categories/daily/</guid>
+      <guid>https://coffepowered.github.io/categories/economia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>courses</title>
+      <link>https://coffepowered.github.io/categories/courses/</link>
+      <pubDate>Mon, 11 Jan 2021 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/categories/courses/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
       <link>https://coffepowered.github.io/categories/python/</link>
-      <pubDate>Wed, 11 Nov 2020 21:28:43 -0500</pubDate>
+      <pubDate>Mon, 11 Jan 2021 21:28:43 -0500</pubDate>
       
       <guid>https://coffepowered.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>review</title>
+      <link>https://coffepowered.github.io/categories/review/</link>
+      <pubDate>Mon, 11 Jan 2021 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/categories/review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>daily</title>
+      <link>https://coffepowered.github.io/categories/daily/</link>
+      <pubDate>Wed, 11 Nov 2020 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/categories/daily/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Your description">
+	<meta name="author" content="Your name">
+	<meta name="generator" content="Hugo 0.88.1" />
+	<title>Short notes on namedtuples, NamedTuples and Data classes &middot; My New Hugo Site</title>
+	<!-- Stylesheets -->
+	
+	<link rel="stylesheet" href="https://coffepowered.github.io/css/main.css"/>
+	
+	
+
+	
+
+	<!-- Custom Fonts -->
+	<link href="https://coffepowered.github.io/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="https://coffepowered.github.io/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://coffepowered.github.io/favicon.ico">
+	
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="js/ie/html5shiv.js"></script>
+	<script src="js/ie/html5shiv.jsrespond.min.js"></script>
+	<![endif]-->
+</head>
+
+    <body>
+
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+    <header id="header" class="alt">
+        <a href="https://coffepowered.github.io/" class="logo"><strong>AW</strong> <span>Code and other things</span></a>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
+
+<!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            
+                <li><a href="https://coffepowered.github.io/">Home</a></li>
+            
+                <li><a href="https://coffepowered.github.io/blogs">Blogs</a></li>
+            
+                <li><a href="https://coffepowered.github.io/blogs/ipsum">Generic Blog</a></li>
+            
+                <li><a href="https://coffepowered.github.io/elements.html">Elements</a></li>
+            
+
+        </ul>
+        <ul class="actions vertical">
+            
+                <li><a href="https://coffepowered.github.io/blogs" class="button special fit">Get Started</a></li>
+            
+            
+                <li><a href="https://coffepowered.github.io/" class="button fit">Log In</a></li>
+            
+        </ul>
+    </nav>
+
+        <!-- Main -->
+            <div id="main" class="alt">
+
+                
+                    <section id="one">
+                        <div class="inner">
+                            <header class="major">
+                                <h1>Short notes on namedtuples, NamedTuples and Data classes</h1>
+                            </header>
+                            
+                                <span class="image main"><img src="/img/blogs/pic07.jpg" alt="" /></span>
+                            
+                            <p>Both dataclasses and tuples are based on the <a href="https://www.attrs.org/en/stable/">attrs</a> project, the one Python Library <a href="https://glyph.twistedmatrix.com/2016/08/attrs.html">everybody needs</a> and are fast object types (<a href="https://refactoring.guru/design-patterns/factory-method">factory methods</a>) designed to simplify and reduce code.</p>
+<h2 id="namedtuple-and-namedtuple">namedtuple and NamedTuple</h2>
+<ul>
+<li>Both <code>immutable</code></li>
+<li>Tuple-based (hence fast) but far <a href="https://www.attrs.org/en/stable/why.html">better</a> than tuples</li>
+<li><strong>NamedTuple</strong> is the typed version of <strong>namedtuple</strong></li>
+<li>immutable, iterable, hashable, unpackable</li>
+<li>backward-compatible with <strong>tuple</strong> (e.g you can access a namedtuple by index)</li>
+<li>default arguments supported from Python 3.7+</li>
+<li>fast! C-based</li>
+<li>example <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">Point <span style="color:#f92672">=</span> namedtuple(<span style="color:#e6db74">&#39;Point&#39;</span>, <span style="color:#e6db74">&#39;x y&#39;</span>)
+pt1 <span style="color:#f92672">=</span> Point(<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">5.0</span>)
+pt2 <span style="color:#f92672">=</span> Point(<span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">1.5</span>)
+
+<span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> sqrt
+<span style="color:#75715e"># use index referencing</span>
+line_length <span style="color:#f92672">=</span> sqrt((pt1[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span>pt2[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> (pt1[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span>pt2[<span style="color:#ae81ff">1</span>])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+ <span style="color:#75715e"># use tuple unpacking</span>
+x1, y1 <span style="color:#f92672">=</span> pt1
+</code></pre></div><h2 id="dataclasses">Dataclasses</h2>
+<ul>
+<li>Are <code>mutable</code></li>
+<li><a href="https://docs.python.org/3/library/dataclasses.html">post-init processing</a> can be used to create fields depending on other fields or even to perform input validation<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
+<li>all implementation is written in Python, so <a href="https://stackoverflow.com/questions/51671699/data-classes-vs-typing-namedtuple-primary-use-cases">slower</a> wrt tuple-based data types</li>
+<li>Validation of types at runtime not supported natively (or <a href="https://stackoverflow.com/questions/50563546/validating-detailed-types-in-python-dataclasses">cumbersome</a>) but easy with decorator <a href="https://pypi.org/project/enforce-typing/">@enforce_typing</a></li>
+<li>from Python 3.7</li>
+<li>are just regular Classes (e.g. inheritance) withot writing boilerplate code</li>
+<li><a href="https://www.python.org/dev/peps/pep-0557/#why-not-just-use-namedtuple">inappropriate</a> when API compatibility with tuples or dicts is requested</li>
+<li><a href="https://www.youtube.com/watch?v=T-TwcmT6Rcw&amp;t=1390">bonus</a> PyCon talk, if you have time</li>
+<li>example<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+
+<span style="color:#a6e22e">@dataclass</span>(unsafe_hash<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InventoryItem</span>:
+    <span style="color:#e6db74">&#39;&#39;&#39;Class for keeping track of an item in inventory.&#39;&#39;&#39;</span>
+    name: str
+    unit_price: float
+    quantity_on_hand: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">total_cost</span>(self) <span style="color:#f92672">-&gt;</span> float:
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>unit_price <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>quantity_on_hand
+</code></pre></div><h2 id="other-fancy-data-types-not-from-the-stdlib">Other fancy data types (not from the stdlib)</h2>
+<ul>
+<li><a href="https://pydantic-docs.helpmanual.io/">pydantic</a>: enforces type hints at runtime providing user-readable errors when data is invalid. Seems relatively popular.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># sample input val via Regexp</span>
+<span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+<span style="color:#f92672">import</span> re
+<span style="color:#a6e22e">@dataclass</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span>:
+    id: int
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__post_init__</span>(self):
+        id_condition <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[0-9]</span><span style="color:#e6db74">{4}</span><span style="color:#e6db74">&#34;</span>, str(self<span style="color:#f92672">.</span>id))
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> id_condition:
+            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74"> doesn&#39;t follow pattern [0-9]</span><span style="color:#ae81ff">{{</span><span style="color:#e6db74">4</span><span style="color:#ae81ff">}}</span><span style="color:#e6db74">&#34;</span>)
+            <span style="color:#66d9ef">raise</span> CustomException
+</code></pre></div><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://stackoverflow.com/questions/2970608/what-are-named-tuples-in-python">brief</a> explanation on stackoverlow&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>(<a href="https://www.reddit.com/r/learnpython/comments/bopmu8/use_input_validation_with_dataclasses/">source</a>)&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://stackoverflow.com/questions/47955263/what-are-data-classes-and-how-are-they-different-from-common-classes">source</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+                        </div>
+                    </section>
+            <!-- Disqus Inject -->
+                
+            </div>
+            
+        <!-- Footer -->
+            
+                <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                
+                    <li><a href="https://twitter.com/__AndreaW__" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                
+                    <li><a href="https://www.linkedin.com/in/andreawalteruggerini/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Updated Jan 2022. Top image by @iamengjell</li>
+                
+                <li>Design:  <a href="https://www.html5up.net">HTML5 UP</a></li>
+                
+            </ul>
+        </div>
+    </footer>
+
+            
+        </div>
+
+    <!-- Scripts -->
+        <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://coffepowered.github.io/js/jquery.min.js"></script>
+    <script src="https://coffepowered.github.io/js/jquery.scrolly.min.js"></script>
+    <script src="https://coffepowered.github.io/js/jquery.scrollex.min.js"></script>
+    <script src="https://coffepowered.github.io/js/skel.min.js"></script>
+    <script src="https://coffepowered.github.io/js/util.js"></script>
+
+    
+
+    <!-- Main JS -->
+    <script src="https://coffepowered.github.io/js/main.js"></script>
+
+    
+
+    
+
+    </body>
+</html>
