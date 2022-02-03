@@ -14,8 +14,8 @@
       
       <guid>https://coffepowered.github.io/blogs/crescita-economica/</guid>
       <description>Questa pagina traduce liberamente e parzialmente, l&amp;rsquo;articolo di Max Roser (secondo licenza) (2013) - &amp;ldquo;Economic Growth&amp;rdquo;. Published online at OurWorldInData.org. Retrieved from: &amp;lsquo;https://ourworldindata.org/economic-growth&#39; [Online Resource].
- Con crescita economica descriviamo un aumento nella qualità a quantità dei beni e servizi economici che una società produce o consuma.
-Mentre la definizione di crescita economica è chiara, misurare la crescita in sè risulta estremamente difficile. La crescita è spesso misurata tramite un aumento nel reddito delle famiglie o del PIL (aggiustato per l&amp;rsquo;inflazione), ma è importante ricordare che queste misure non sono la definizione di crescita - proprio come l&amp;rsquo;aspettativa di vita è una misura della &amp;ldquo;salute di una popolazione&amp;rdquo; ma certamente non coincide con la definizione stessa.</description>
+  Riferitevi alla versione originale per le citazioni e per il testo completo, io mi sono permesso di aggiungere qualche nota interessante per noi italiani.
+ Con crescita economica descriviamo un aumento nella qualità a quantità dei beni e servizi economici che una società produce o consuma.</description>
     </item>
     
     <item>
@@ -36,6 +36,18 @@ Online courses are targeted at wide and eterogeneous audiences, so consider this
       <guid>https://coffepowered.github.io/blogs/python-data-typer-for-data/</guid>
       <description>Both dataclasses and tuples are based on the attrs project, the one Python Library everybody needs and are fast object types (factory methods) designed to simplify and reduce code.
 namedtuple and NamedTuple  Both immutable Tuple-based (hence fast) but far better than tuples NamedTuple is the typed version of namedtuple immutable, iterable, hashable, unpackable backward-compatible with tuple (e.g you can access a namedtuple by index) default arguments supported from Python 3.</description>
+    </item>
+    
+    <item>
+      <title>The economics of the agri-food value chain</title>
+      <link>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</link>
+      <pubDate>Mon, 11 Jan 2021 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</guid>
+      <description>Week 3 Trust and signaling  Premiums for high-quality products as returns to reputation (Shapiro, C. 1983)
+  a.k.a. How much would you spend for the salesman/firm reputation?
+ A market characterized by:
+ asymmetric information: firms know more about the quality of their products wrt customers moral hazard: firms can reduce the quality of their products without the consumers noticing. Consumers can still learn the quality of the products after purchase (&amp;ldquo;experience&amp;rdquo; products) competitiveness: all agents are price-takers 1 and there is free entry into the industry  Firms can build a reputation based on trust when:</description>
     </item>
     
     <item>

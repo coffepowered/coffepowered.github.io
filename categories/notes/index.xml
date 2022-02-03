@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>notes on My New Hugo Site</title>
+    <link>https://coffepowered.github.io/categories/notes/</link>
+    <description>Recent content in notes on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Jan 2021 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The economics of the agri-food value chain</title>
+      <link>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</link>
+      <pubDate>Mon, 11 Jan 2021 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</guid>
+      <description>Week 3 Trust and signaling  Premiums for high-quality products as returns to reputation (Shapiro, C. 1983)
+  a.k.a. How much would you spend for the salesman/firm reputation?
+ A market characterized by:
+ asymmetric information: firms know more about the quality of their products wrt customers moral hazard: firms can reduce the quality of their products without the consumers noticing. Consumers can still learn the quality of the products after purchase (&amp;ldquo;experience&amp;rdquo; products) competitiveness: all agents are price-takers 1 and there is free entry into the industry  Firms can build a reputation based on trust when:</description>
+    </item>
+    
+  </channel>
+</rss>
