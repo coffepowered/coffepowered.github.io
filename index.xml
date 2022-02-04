@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>AW - notes &amp; thoughts</title>
     <link>https://coffepowered.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Jan 2021 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Feb 2022 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google 20 for 1 stock split</title>
+      <link>https://coffepowered.github.io/blogs/google-stock-split/</link>
+      <pubDate>Wed, 02 Feb 2022 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/google-stock-split/</guid>
+      <description>Google announced this Tuesday its results for Q4 2021 and that they plans to split shares at 20 for 1 this Tuesday. Basically, -if you were a shareholder- for each 1 share of Google at (about) 3000$ dollars you&amp;rsquo;d have now 20 at 150$. Nothing should really change, but there might be some financial effects, for instance due to the inclusion in indices (such as the DOW) or increased market liquidity.</description>
+    </item>
+    
     <item>
       <title>Crescita Economica</title>
       <link>https://coffepowered.github.io/blogs/crescita-economica/</link>
@@ -16,16 +25,6 @@
       <description>Questa pagina traduce liberamente e parzialmente, l&amp;rsquo;articolo di Max Roser (secondo licenza) (2013) - &amp;ldquo;Economic Growth&amp;rdquo;. Published online at OurWorldInData.org. Retrieved from: &amp;lsquo;https://ourworldindata.org/economic-growth&#39; [Online Resource].
   Riferitevi alla versione originale per le citazioni e per il testo completo, io mi sono permesso di aggiungere qualche nota interessante per noi italiani.
  Con crescita economica descriviamo un aumento nella qualità a quantità dei beni e servizi economici che una società produce o consuma.</description>
-    </item>
-    
-    <item>
-      <title>Financial engineering and Risk management (Coursera)</title>
-      <link>https://coffepowered.github.io/blogs/financial-engineering-coursera-review/</link>
-      <pubDate>Mon, 11 Jan 2021 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/blogs/financial-engineering-coursera-review/</guid>
-      <description>A somewhat detailed review mixed with notes (spoiler alert) I am writing this review since in my google bubble a find a mostly unsatisfying results and when I started the course I&#39;d have loved having more first-hand experience knowing what to expect for the course1.
-Online courses are targeted at wide and eterogeneous audiences, so consider this a totally subjective review as your background and sensibility may vary. A very short intro about me, so that you can try putting yourself into my shoes and weight my words: I am not a finance, economics or math graduate.</description>
     </item>
     
     <item>
@@ -48,28 +47,6 @@ namedtuple and NamedTuple  Both immutable Tuple-based (hence fast) but far bette
   a.k.a. How much would you spend for the salesman/firm reputation?
  A market characterized by:
  asymmetric information: firms know more about the quality of their products wrt customers moral hazard: firms can reduce the quality of their products without the consumers noticing. Consumers can still learn the quality of the products after purchase (&amp;ldquo;experience&amp;rdquo; products) competitiveness: all agents are price-takers 1 and there is free entry into the industry  Firms can build a reputation based on trust when:</description>
-    </item>
-    
-    <item>
-      <title>Git notes</title>
-      <link>https://coffepowered.github.io/blogs/git-notes/</link>
-      <pubDate>Wed, 11 Nov 2020 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/blogs/git-notes/</guid>
-      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
-Quick commands Get the remote URL of your repository:
-git config --get remote.origin.urlA sample code block 199 200 201 202 203 204 205 206 207 208  # .</description>
-    </item>
-    
-    <item>
-      <title>This page is for pandas notes</title>
-      <link>https://coffepowered.github.io/blogs/pandas-notes-tips.en-copyme/</link>
-      <pubDate>Wed, 11 Nov 2020 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/blogs/pandas-notes-tips.en-copyme/</guid>
-      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
-Title 2 Ciao ciao ciao come stai? Ciao ciao ciao come stai?
-A sample code block 199 200 201 202 203 204 205 206 207 208  # .</description>
     </item>
     
     <item>
@@ -123,17 +100,6 @@ Mi tengo al passo riportando qualche breve idea nei Blogs e tenendo traccia su q
       <description>Ciao ciao ciao come stai?
 Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
 Ciao ciao ciao come stai? Ciao ciao ciao come stai?</description>
-    </item>
-    
-    <item>
-      <title>This page is for pandas notes</title>
-      <link>https://coffepowered.github.io/blogs/000-sample-page-code-block/</link>
-      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/blogs/000-sample-page-code-block/</guid>
-      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
-Title 2 Ciao ciao ciao come stai? Ciao ciao ciao come stai?
-A sample code block 199 200 201 202 203 204 205 206 207 208  # .</description>
     </item>
     
   </channel>

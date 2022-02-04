@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>notes on My New Hugo Site</title>
+    <title>notes on AW - notes &amp; thoughts</title>
     <link>https://coffepowered.github.io/categories/notes/</link>
-    <description>Recent content in notes on My New Hugo Site</description>
+    <description>Recent content in notes on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Jan 2021 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Feb 2022 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google 20 for 1 stock split</title>
+      <link>https://coffepowered.github.io/blogs/google-stock-split/</link>
+      <pubDate>Wed, 02 Feb 2022 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/google-stock-split/</guid>
+      <description>Google announced this Tuesday its results for Q4 2021 and that they plans to split shares at 20 for 1 this Tuesday. Basically, -if you were a shareholder- for each 1 share of Google at (about) 3000$ dollars you&amp;rsquo;d have now 20 at 150$. Nothing should really change, but there might be some financial effects, for instance due to the inclusion in indices (such as the DOW) or increased market liquidity.</description>
+    </item>
+    
     <item>
       <title>The economics of the agri-food value chain</title>
       <link>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</link>

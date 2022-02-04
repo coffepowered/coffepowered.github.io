@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on My New Hugo Site</title>
+    <title>python on AW - notes &amp; thoughts</title>
     <link>https://coffepowered.github.io/categories/python/</link>
-    <description>Recent content in python on My New Hugo Site</description>
+    <description>Recent content in python on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Jan 2021 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Feb 2022 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google 20 for 1 stock split</title>
+      <link>https://coffepowered.github.io/blogs/google-stock-split/</link>
+      <pubDate>Wed, 02 Feb 2022 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/google-stock-split/</guid>
+      <description>Google announced this Tuesday its results for Q4 2021 and that they plans to split shares at 20 for 1 this Tuesday. Basically, -if you were a shareholder- for each 1 share of Google at (about) 3000$ dollars you&amp;rsquo;d have now 20 at 150$. Nothing should really change, but there might be some financial effects, for instance due to the inclusion in indices (such as the DOW) or increased market liquidity.</description>
+    </item>
+    
     <item>
       <title>Short notes on namedtuples, NamedTuples and Data classes</title>
       <link>https://coffepowered.github.io/blogs/python-data-typer-for-data/</link>
@@ -18,28 +27,6 @@ namedtuple and NamedTuple  Both immutable Tuple-based (hence fast) but far bette
     </item>
     
     <item>
-      <title>Git notes</title>
-      <link>https://coffepowered.github.io/blogs/git-notes/</link>
-      <pubDate>Wed, 11 Nov 2020 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/blogs/git-notes/</guid>
-      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
-Quick commands Get the remote URL of your repository:
-git config --get remote.origin.urlA sample code block 199 200 201 202 203 204 205 206 207 208  # .</description>
-    </item>
-    
-    <item>
-      <title>This page is for pandas notes</title>
-      <link>https://coffepowered.github.io/blogs/pandas-notes-tips.en-copyme/</link>
-      <pubDate>Wed, 11 Nov 2020 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/blogs/pandas-notes-tips.en-copyme/</guid>
-      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
-Title 2 Ciao ciao ciao come stai? Ciao ciao ciao come stai?
-A sample code block 199 200 201 202 203 204 205 206 207 208  # .</description>
-    </item>
-    
-    <item>
       <title>Add a row to pandas&#39; DataFrame</title>
       <link>https://coffepowered.github.io/blogs/pandas-append-rows-to-df/</link>
       <pubDate>Sat, 31 Oct 2020 21:28:43 -0500</pubDate>
@@ -47,17 +34,6 @@ A sample code block 199 200 201 202 203 204 205 206 207 208  # .</description>
       <guid>https://coffepowered.github.io/blogs/pandas-append-rows-to-df/</guid>
       <description>Quite often, it is needed to fill or modify dataframes with data that gets computed at runtime. This post draws heavily from the stackoverlow question &amp;ldquo;Add one row to pandas DataFrame&amp;rdquo;. Here I show the 4 methods that were proposed to append the data and discuss them. A 5th &amp;ldquo;improper&amp;rdquo; method operating on columns is added just for sake of comparison with respect to the most efficient option.
 If you want just the takeaways:</description>
-    </item>
-    
-    <item>
-      <title>This page is for pandas notes</title>
-      <link>https://coffepowered.github.io/blogs/000-sample-page-code-block/</link>
-      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/blogs/000-sample-page-code-block/</guid>
-      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
-Title 2 Ciao ciao ciao come stai? Ciao ciao ciao come stai?
-A sample code block 199 200 201 202 203 204 205 206 207 208  # .</description>
     </item>
     
   </channel>
