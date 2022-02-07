@@ -59,7 +59,7 @@
 
             <!-- Header -->
     <header id="header" class="alt">
-        <a href="https://coffepowered.github.io/" class="logo"><strong>AW</strong> <span>notes &amp; thoughts</span></a>
+        <a href="https://coffepowered.github.io/" class="logo"><strong>AW</strong> <span>learning from data</span></a>
         <nav>
             <a href="#menu">Menu</a>
         </nav>
@@ -99,25 +99,36 @@
                                 <h1>Google 20 for 1 stock split</h1>
                             </header>
                             
-                                <span class="image main"><img src="/img/blogs/stock-screen.jpg" alt="" /></span>
+                                <span class="image main"><img src="/img/blogs/stock-screen-cropped.jpg" alt="" /></span>
                             
-                            <p>Google announced this Tuesday its results for Q4 2021 <em>and</em> that they plans to split shares at 20 for 1 this Tuesday. Basically, -if you were a shareholder- for each 1 share of Google at (about) 3000$ dollars you&rsquo;d have now 20 at 150$. Nothing should really change, but there might be some financial effects, for instance due to the <a href="https://www.barrons.com/articles/alphabet-stock-split-51643842562">inclusion in indices</a> (such as the DOW) or increased market liquidity. It&rsquo;s a good story in the end: more small investors can now afford to get a share of Google.</p>
-<p>I was wondering if the impact (if any) of stock split onto the share price<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> is measurable in this  specific care. Moreover, in cases like this, the press may be tempted to report the new juxtaposing the stock split itself with the very good performance of the google stock<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> in the same day, which increased by 7%, more or less.</p>
-<p>So was the 7% daily return due to the split announcement? This is the question we&rsquo;ll try to investigate here by building a naive <strong>counterfactual</strong>. The idea of constructing a counterfactual, i.e. this <strong>way of thinking</strong>, came originally by reading the book &ldquo;the causal mixtape&rdquo; (J. Cunningham) and is being putting into practice just for fun. If you want to take a single takeaway from this post, here it is: get a copy of the book =).</p>
-<p><img src="/img/google-stock/google-stock.png" alt="&ldquo;google stock prices&rdquo;"></p>
+                            <p>Google announced Tuesday its results for Q4 2021 <em>and</em> that they plan to split shares at 20 for 1 this Tuesday. Basically, if you are a shareholder, for each 1 share of Google at (about) 3000$ dollars you will have (at the ex-date) 20 shares at 150$.</p>
+<p>Nothing should really change, but there might be some financial effects, for instance, due to the <a href="https://www.barrons.com/articles/alphabet-stock-split-51643842562">inclusion of the stock in new indices</a> or increased market liquidity.</p>
+<p>It&rsquo;s a good story in the end: more small investors can now afford to get a share of Google, so the stock is more valuable.</p>
+<p>Is there any impact on the stock price<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> and can it be measured in this  specific case?</p>
+<p>The question was inspired by a few headlines juxtaposing the stock split itself with the very good performance that the stock achieved<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> in the same day, which increased by about 7%.</p>
+<p>So was the 7% daily return due to the split announcement? This is the question we&rsquo;ll try to investigate here by building a naive <strong>counterfactual</strong>.</p>
+<p>The idea of constructing a counterfactual, i.e. this <strong>way of thinking</strong>, came originally by reading the book &ldquo;the causal mixtape&rdquo; (J. Cunningham) and is being put into practice just for fun. If you want to take a single takeaway from this post, here it is: get a copy of the book =).</p>
+<p>
+
+
+  <figure>
+    <img src="/img/google-stock/google-stock.png" alt="&amp;ldquo;google stock price&amp;rdquo;">
+    <figcaption>The increase of the stock price on the announcement</figcaption>
+  </figure>
+</p>
 <h2 id="a-naive-counterfactual-model">A naive counterfactual model</h2>
 <p>A counterfactual model will help us in reframing the question in the following terms: what would have happened if Google did not release this announcement?
-I am taking here the announcement as a whole: the idea is to get a sense of how &ldquo;special&rdquo; has last Tuesday been, when compared to what happens normally.</p>
-<p>Here&rsquo;s the idea: the return of the google stock at any given (end-of) day is determined by the return of other - similar - stocks plus some factors that are idiosyncratic to Google, which making the company special. Let&rsquo;s try to build a model that quantifies the return of GOOG as function of other ones, assuming that the error of this model are due to the idiosyincrasies of the Google stock.</p>
-<p>I am saying a priori that Google returns can be explained by the returns of other tech companies: Microsoft, Facebook, Amazon, Apple are clear candidates, but I&rsquo;ll add also Nvidia, Twitter, Tesla, Adobe, Etsy, Garmin and Oracle. Notice that none of these companies is <a href="https://www.lgimblog.com/categories/esg-and-long-term-themes/fang-correlations-theyre-not-what-you-think/">exactly like Google</a> with its unique mix of revenue sources (search) and experiments (minor exposure to cloud, hardware,autonomous car, robots).</p>
-<p>At the end of the day, we are just interested in determining how much do the returns of these companies tells about Google&rsquo;s return. If we are able to explain Google returns in this fashion, we can then compare the hypothetical &ldquo;no announcement&rdquo; estimated return to the actual one that the stock achieved on Tuesday.</p>
+I am taking here the announcement as a whole, this is important and we&rsquo;ll soon go back to this: the idea is to get a sense of how &ldquo;special&rdquo; has last Tuesday been when compared to what happens &ldquo;normally&rdquo;.</p>
+<p>It is assumed that the return of the google stock at any given (end-of) day is determined by the return of other - similar - stocks plus some factors that are idiosyncratic to Google, those factors making the company unique. Let us try to build a model that quantifies the return of GOOG as a function of other ones, assuming that the errors of this model are due to the idiosyncrasies of the Google stock.</p>
+<p>So we are assuming a priori that Google returns can be explained by the returns of other selected tech companies, namely: Microsoft, Facebook, Amazon, Apple are clear candidates, but I&rsquo;ll add also Nvidia, Twitter, Tesla, Adobe, Etsy, Garmin and Oracle. None of these companies is <a href="https://www.lgimblog.com/categories/esg-and-long-term-themes/fang-correlations-theyre-not-what-you-think/">exactly like Google</a> with its unique mix of revenue sources (search) and experiments (minor exposure to cloud, hardware, autonomous car, robots).</p>
+<p>However, at the end of the day, we are just interested in determining how much do the returns of these companies tell about Google&rsquo;s return. If we are able to explain Google returns in this fashion, we can then compare the <strong>hypothetical &ldquo;no announcement&rdquo;</strong> estimated return <strong>to the actual one</strong> that the stock achieved on Tuesday.</p>
 <h3 id="data-sourcing">Data sourcing</h3>
 <blockquote>
-<p>skip over this section if you&rsquo;re not a python nerd
-This is the easy part: daily stock data can be obtained by several sources, I choose alphavantage, getting a free key.
-If you want to replicate the experiment, I suggest getting the python library <code>alpha_vantage</code> with <code>pandas</code>: <code>pip install alpha_vantage pandas</code>.</p>
+<p>skip over this section if you&rsquo;re not interested in replicating the analysis.</p>
 </blockquote>
-<p>Notice that the free version gives you a limited amount of requests, this is a possible way to work around it:</p>
+<p>This is the easy part: daily stock data can be obtained from several sources. I choose alphavantage, getting a free key.
+If you want to replicate the experiment, I suggest using the python library <code>alpha_vantage</code> with <code>pandas</code>: <code>pip install alpha_vantage pandas</code>.</p>
+<p>Notice that the free version gives you a limited amount of requests, so we must wait a little time between requests:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># Set ALPHAVANTAGE_TOKEN, install requirements</span>
 <span style="color:#f92672">from</span> alpha_vantage.timeseries <span style="color:#f92672">import</span> TimeSeries
 <span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
@@ -143,7 +154,7 @@ tickers <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;G
 data <span style="color:#f92672">=</span> get_pd_data(tickers<span style="color:#f92672">=</span>tickers, outputsize<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;full&#34;</span>)
 d <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>reset_index()<span style="color:#f92672">.</span>query(<span style="color:#e6db74">&#34;date&gt;&#39;2016-01-01&#39;&#34;</span>)[[<span style="color:#e6db74">&#34;ticker&#34;</span>,<span style="color:#e6db74">&#34;date&#34;</span>,<span style="color:#e6db74">&#34;price&#34;</span>]]
 
-</code></pre></div><p>So, we are basically taking the data for all the mentioned stocks from 2016 onward. How does this look?</p>
+</code></pre></div><p>We are basically taking the data for all the mentioned stocks from 2016 onward. How does this look?</p>
 
 
 
@@ -153,10 +164,11 @@ Plotly.d3.json("/img/google-stock/stock-prices.json", function(err, fig) {
     Plotly.plot('\/img\/google-stock\/stock-prices.json', fig.data, fig.layout, {responsive: true});
 });
 </script>
-<p>From the plot above, you may notice that Google is not the only company that has been recently interested by stock splits: <strong>so did NVDA, AAPL, TSLA</strong>. For this reason we&rsquo;ll remove from the dataset those days were computing returns from the face value would be wrong<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, namely: 2021-07-20 (because of NVDA), 2020-08-31 (TSLA and AAPL).</p>
+<p>Looking at the plot, you may notice that Google is not the only company that has been recently interested by stock splits: <strong>so did NVDA, AAPL, TSLA</strong>.</p>
+<p>For this reason, we&rsquo;ll remove from the dataset those days where computing returns from the face value would be wrong<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>: 2021-07-20 (because of NVDA), 2020-08-31 (TSLA and AAPL).</p>
 <h3 id="so-how-does-companies-explain-goog-returns">So, how does companies explain GOOG returns?</h3>
 <p>Let&rsquo;s run a simple <strong>linear regression</strong> on data from Jan 1st, 2016 to December 31, 2021.
-The following weighs are obtained, linking google returns to the returns of other stocks:</p>
+The following weights are obtained, linking google returns to the returns of other stocks:</p>
 <pre tabindex="0"><code>R^2: 0.677. Fitted with data till 2021-12-31. Weights:
 MSFT-&gt;  0.375
 FB  -&gt;  0.195
@@ -169,7 +181,8 @@ NVDA-&gt;  0.016
 ORCL-&gt;  0.014
 TSLA-&gt; -0.005
 ETSY-&gt; -0.010
-</code></pre><p>The results are pretty interesting: in the considered time frame MSFT,FB and AMZN gets the most of the weight. Comparing the goodness-of-fit of a model on data it&rsquo;s been trained on is questionable. Fortunately, the 2022 has not been used yet: let&rsquo;s plot the predictions of our model (y-axis) vs the actual GOOG returns (y-axis). Notice that the colors are used to discriminate wether the given datapoint has been used for calibrating the model paramters (blue) or not (red), while the different market highlights last Tuesday.</p>
+</code></pre><p>The results are pretty interesting: in the considered time frame MSFT,FB and AMZN get the most of the weight. Comparing the goodness-of-fit of a model on data it&rsquo;s been trained on is questionable. Data in 2022 has not been used yet: let&rsquo;s plot the predictions of our model (y-axis) vs the actual GOOG returns (y-axis).</p>
+<p>Notice that the colors are used to discriminate whether the given datapoint has been used for calibrating the model parameters (blue) or not (red), while the different <strong>marker highlights last Tuesday</strong>.</p>
 
 
 
@@ -179,11 +192,14 @@ Plotly.d3.json("/img/google-stock/model-result.json", function(err, fig) {
     Plotly.plot('\/img\/google-stock\/model-result.json', fig.data, fig.layout, {responsive: true});
 });
 </script>
-<p>The size of the point is the model error, hover to see the date. The overall R squared for the red points is 0.486. Points on the right-hand side of the xy bisector indicate a positive excess return for GOOG, when compared to the estimated one.</p>
+<p> </p>
+<p>The <strong>size of the point is the model error</strong>: hover to see the date when a given return was achieved. The overall R squared for the red points is <strong>0.486</strong>. Points on the right-hand side of the xy bisector indicate a positive excess return for GOOG, when compared to the estimated one.</p>
 <h2 id="considerations">Considerations</h2>
-<p>A very simple model was built to assess if after the last Tuesday announcement an unusual amount of GOOG returns were unexplainable. It can be seen for the plot that there indeed is about 6% of unexplained or &ldquo;excess&rdquo; return with respect to other companies, but we are still left with the original question: is it due to the earnings or is there another effect?</p>
-<p>Properly disentangling the two components requires a more sophisticated analysis, but even after this naive modeling, we can observe the suggestive similarity between this year (big red datapoint) and past year Google&rsquo;s Q4 announcements in the same period (the big blue one), both having about 6% error with respect to the model.</p>
-<p>If I had to bet, you&rsquo;d bet against such effect, especially for highly liquid stocks and capitalized companies like Google is.</p>
+<p>A very simple model was built to assess if after the last Tuesday announcement an unusual amount of GOOG returns were unexplainable.</p>
+<p>It can be seen from the plot that there indeed is about 6% of unexplained or &ldquo;excess&rdquo; return from last Tuesday with respect to other companies, but we are still left with the original question: <strong>is it due to the earnings or is there another effect</strong>?</p>
+<p>Fact is: the announcement released on Tuesday did not carry only the stock split, but also the <strong>earnings report</strong>. Is this excess return due to the earnings or to the stock split and in which proportion?</p>
+<p>Properly disentangling the two components requires a more sophisticated analysis, but even after this naive modelling, we can observe the suggestive similarity between this year (big red datapoint) and past year Google&rsquo;s Q4 announcements in the same period (the big blue one), both having about 6% error with respect to the model.</p>
+<p>If I had to bet, you&rsquo;d bet against such an effect, especially for highly liquid stocks and capitalized companies like Google is, but that&rsquo;s just an opinion.</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

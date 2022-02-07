@@ -46,7 +46,7 @@
 
             <!-- Header -->
     <header id="header" class="alt">
-        <a href="https://coffepowered.github.io/" class="logo"><strong>AW</strong> <span>notes &amp; thoughts</span></a>
+        <a href="https://coffepowered.github.io/" class="logo"><strong>AW</strong> <span>learning from data</span></a>
         <nav>
             <a href="#menu">Menu</a>
         </nav>
@@ -137,11 +137,19 @@ df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Da
 </code></pre></div><p>Notice also that one could just generate all the lists beforehand and then initialize the df from scratch.</p>
 <h2 id="results">Results</h2>
 <p>The approaches are tested for 1k, 5k and 10k rows. Results are really clear. Adding a few rows via <code>loc</code> or <code>append</code> is a legitimate use case. Do not abuse it.</p>
-<p><img src="/img/benchmark-add-data-df-1.png" alt="&ldquo;Images of the benchmark 1: for 5k rows append and loc take about 7.5 seconds, preallocated loc about 1s, dict and lists method fraction of seconds. Results scale about linearly with 1k and 10k rows.""></p>
+<p>
+
+
+  <img src="/img/benchmark-add-data-df-1.png" alt="&amp;ldquo;Images of the benchmark 1: for 5k rows append and loc take about 7.5 seconds, preallocated loc about 1s, dict and lists method fraction of seconds. Results scale about linearly with 1k and 10k rows.&amp;quot;">
+</p>
 <h2 id="results-scale-up-to-100k-rows">Results, scale up to 100k rows</h2>
 <p>Now that we know the results on small scale data, it is worth comparing what happens when scaling the 3 most efficient methods from 10k to 100k rows, but take this with a grain of salt, as memory impact is completely disregarded.</p>
 <p>The same conclusions apply, preallocated <code>loc</code> is not good enough and <code>dict</code> is the way to good when adding rows to a DataFrame, being comparable with the <code>list</code> approach in terms of times</p>
-<p><img src="/img/benchmark-add-data-df-2.png" alt="&ldquo;Images of the benchmark 2: with 100k rows loc with preallocation take 5 times more than better approaches.""></p>
+<p>
+
+
+  <img src="/img/benchmark-add-data-df-2.png" alt="&amp;ldquo;Images of the benchmark 2: with 100k rows loc with preallocation take 5 times more than better approaches.&amp;quot;">
+</p>
 <h2 id="digressions">Digressions</h2>
 <ul>
 <li>Vectorizing the part data generation in this experiment would be interesting. Basically, <a href="https://www.blog.duomly.com/loops-in-python-comparison-and-performance/">list comprehnsions are faster than for and both should be slower w.r.t. numpy</a>.</li>
