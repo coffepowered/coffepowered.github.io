@@ -166,7 +166,7 @@ Plotly.d3.json("/img/google-stock/stock-prices.json", function(err, fig) {
 </script>
 <p>Looking at the plot, you may notice that Google is not the only company that has been recently interested by stock splits: <strong>so did NVDA, AAPL, TSLA</strong>.</p>
 <p>For this reason, we&rsquo;ll remove from the dataset those days where computing returns from the face value would be wrong<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>: 2021-07-20 (because of NVDA), 2020-08-31 (TSLA and AAPL).</p>
-<h3 id="so-how-does-companies-explain-goog-returns">So, how does companies explain GOOG returns?</h3>
+<h3 id="so-how-do-return-from-other-companies-explain-goog-returns">So, how do return from other companies explain GOOG returns?</h3>
 <p>Let&rsquo;s run a simple <strong>linear regression</strong> on data from Jan 1st, 2016 to December 31, 2021.
 The following weights are obtained, linking google returns to the returns of other stocks:</p>
 <pre tabindex="0"><code>R^2: 0.677. Fitted with data till 2021-12-31. Weights:
@@ -200,6 +200,45 @@ Plotly.d3.json("/img/google-stock/model-result.json", function(err, fig) {
 <p>Fact is: the announcement released on Tuesday did not carry only the stock split, but also the <strong>earnings report</strong>. Is this excess return due to the earnings or to the stock split and in which proportion?</p>
 <p>Properly disentangling the two components requires a more sophisticated analysis, but even after this naive modelling, we can observe the suggestive similarity between this year (big red datapoint) and past year Google&rsquo;s Q4 announcements in the same period (the big blue one), both having about 6% error with respect to the model.</p>
 <p>If I had to bet, I&rsquo;d bet against such an effect, especially for highly liquid stocks and capitalized companies like Google is, but that&rsquo;s just an opinion.</p>
+<h2 id="one-week-later-update-on-data-distribution-shift">One week later: update on Data distribution shift</h2>
+<p>So, this week I have added to my read list Chip&rsquo;s Huyen post &ldquo;<a href="https://huyenchip.com/2022/02/07/data-distribution-shifts-and-monitoring.html">Data Distribution Shifts and Monitoring</a>&rdquo;.</p>
+<p>At first, I did not think of running any cross validation on this experiment for two reasons. Such a simple model is expected to capture basic relationships that are supposed to be stable in time.</p>
+<p>Is this true tough? I started asking if I would have drawn the same conclusions if the model was built 6 months in advance, i.e. when trained till June, 2021. Since we have a very simple linear model let&rsquo;s compare the model coefficient first. You know, one of the benefits of using simple linear models.</p>
+<pre tabindex="0"><code>R^2: 0.681. Fitted with data to **2021-06-30**. Weights:
+
+MSFT-&gt; 0.343 (0.375, when fitting till 2021-12-31)
+FB  -&gt;  0.203 (0.195)
+AMZN-&gt;  0.114 (0.121)
+GRMN-&gt; 0.066 (0.056)
+AAPL-&gt; 0.053 (0.054)
+ADBE-&gt; 0.058 (0.042)
+TWTR-&gt; 0.023 (0.020)
+NVDA-&gt; 0.014 (0.016)
+ORCL-&gt; 0.021 (0.014)
+TSLA-&gt; -0.004 (-0.005)
+ETSY-&gt; -0.009 (-0.010)
+</code></pre><p>Good! Also changing the training period, we preseved the relationships! Let&rsquo;s walk forward with this second model and see the <strong>test R^2</strong> for each month (yellow), which turns to be comparable with the one we already got on the last month:
+ </p>
+<p>
+
+
+<div id="/img/google-stock/r2-alt-model.json" class="plotly" style="height:540px"></div>
+<script>
+Plotly.d3.json("/img/google-stock/r2-alt-model.json", function(err, fig) {
+    Plotly.plot('\/img\/google-stock\/r2-alt-model.json', fig.data, fig.layout, {responsive: true});
+});
+</script>
+ </p>
+<p>Also the predictions look similar, as expected:
+
+
+
+<div id="/img/google-stock/model-result-other.json" class="plotly" style="height:540px"></div>
+<script>
+Plotly.d3.json("/img/google-stock/model-result-other.json", function(err, fig) {
+    Plotly.plot('\/img\/google-stock\/model-result-other.json', fig.data, fig.layout, {responsive: true});
+});
+</script></p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -210,7 +249,7 @@ Plotly.d3.json("/img/google-stock/model-result.json", function(err, fig) {
 <p>both class A and C.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>oh, almost forgot: a downside of operating on market prices directly is that we miss all dividends and corporate actions in the returns which are actually gained by an investor. Taking those into account usually requires paid data.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>oh, almost forgot: a downside of operating on market prices directly is that we miss all dividends and corporate actions in the returns which are actually gained by an investor. Taking those into account usually requires paid &ldquo;return index&rdquo; data.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
