@@ -2,28 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://coffepowered.github.io/blogs/complex-radar-python/</loc>
+    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
+  </url><url>
     <loc>https://coffepowered.github.io/</loc>
-    <lastmod>2022-02-02T21:28:43-05:00</lastmod>
+    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/blogs/</loc>
-    <lastmod>2022-02-02T21:28:43-05:00</lastmod>
+    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/categories/</loc>
-    <lastmod>2022-02-02T21:28:43-05:00</lastmod>
+    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/daily/</loc>
+    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/categories/gist/</loc>
+    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/git/</loc>
+    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/ops/</loc>
+    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/categories/python/</loc>
+    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/</loc>
+    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/coursera/</loc>
+    <lastmod>2022-03-01T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/categories/courses/</loc>
+    <lastmod>2022-03-01T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/categories/notes/</loc>
+    <lastmod>2022-03-01T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/categories/reviews/</loc>
+    <lastmod>2022-03-01T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</loc>
+    <lastmod>2022-03-01T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/blogs/google-stock-split/</loc>
     <lastmod>2022-02-02T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/tags/notebook/</loc>
-    <lastmod>2022-02-02T21:28:43-05:00</lastmod>
-  </url><url>
-    <loc>https://coffepowered.github.io/categories/notes/</loc>
-    <lastmod>2022-02-02T21:28:43-05:00</lastmod>
-  </url><url>
-    <loc>https://coffepowered.github.io/categories/python/</loc>
-    <lastmod>2022-02-02T21:28:43-05:00</lastmod>
-  </url><url>
-    <loc>https://coffepowered.github.io/tags/</loc>
     <lastmod>2022-02-02T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/blogs/crescita-economica/</loc>
@@ -35,19 +62,10 @@
     <loc>https://coffepowered.github.io/tags/bricks/</loc>
     <lastmod>2021-01-11T21:28:43-05:00</lastmod>
   </url><url>
-    <loc>https://coffepowered.github.io/tags/coursera/</loc>
-    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
-  </url><url>
-    <loc>https://coffepowered.github.io/categories/courses/</loc>
-    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
-  </url><url>
     <loc>https://coffepowered.github.io/tags/data/</loc>
     <lastmod>2021-01-11T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/blogs/python-data-typer-for-data/</loc>
-    <lastmod>2021-01-11T21:28:43-05:00</lastmod>
-  </url><url>
-    <loc>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</loc>
     <lastmod>2021-01-11T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/tags/type/</loc>
@@ -57,9 +75,6 @@
     <lastmod>2020-10-31T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/tags/benchmark/</loc>
-    <lastmod>2020-10-31T21:28:43-05:00</lastmod>
-  </url><url>
-    <loc>https://coffepowered.github.io/tags/daily/</loc>
     <lastmod>2020-10-31T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/categories/pandas/</loc>

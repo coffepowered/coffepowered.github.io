@@ -6,7 +6,18 @@
     <description>Recent content in daily on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Oct 2020 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/tags/daily/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Mar 2022 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/tags/daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A (reasonably) complex radar chart</title>
+      <link>https://coffepowered.github.io/blogs/complex-radar-python/</link>
+      <pubDate>Fri, 11 Mar 2022 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/complex-radar-python/</guid>
+      <description>A radar (or spider) chart is a convenient method of displaying multivariate data in a form of 2-dimensional chart.
+When I say convenient, I mean it is particularly well-accepted by people and gives a good intuition when comparing different items/subjects.
+Think about comparing 2 (or more) football players in terms of dribbling, running speed, shots and pressure. Even with only four variables bar plot would become cumbersome to deal with and not immediate to perceive.</description>
+    </item>
+    
     <item>
       <title>Add a row to pandas&#39; DataFrame</title>
       <link>https://coffepowered.github.io/blogs/pandas-append-rows-to-df/</link>

@@ -6,7 +6,29 @@
     <description>Recent content on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Feb 2022 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Mar 2022 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A (reasonably) complex radar chart</title>
+      <link>https://coffepowered.github.io/blogs/complex-radar-python/</link>
+      <pubDate>Fri, 11 Mar 2022 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/complex-radar-python/</guid>
+      <description>A radar (or spider) chart is a convenient method of displaying multivariate data in a form of 2-dimensional chart.
+When I say convenient, I mean it is particularly well-accepted by people and gives a good intuition when comparing different items/subjects.
+Think about comparing 2 (or more) football players in terms of dribbling, running speed, shots and pressure. Even with only four variables bar plot would become cumbersome to deal with and not immediate to perceive.</description>
+    </item>
+    
+    <item>
+      <title>The economics of the agri-food value chain</title>
+      <link>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</link>
+      <pubDate>Tue, 01 Mar 2022 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</guid>
+      <description>Course review Let me paraphrase what Tukey once said: I truly believe that getting in contact with different fields and expertise is one of the perks of being a data scientist. Pictorially:
+ The best thing about being a statistician data scientist, Mr Tukey once told a colleague, is that you get to play in everyone&amp;rsquo;s backyard.
+ So, even if you can legitimately play in everyone&amp;rsquo;s backyard - which oftentimes means cleaning it as a first step, it also means that you will be speaking to people with different backgrounds ad expertise.</description>
+    </item>
+    
     <item>
       <title>Google 20 for 1 stock split</title>
       <link>https://coffepowered.github.io/blogs/google-stock-split/</link>
@@ -39,18 +61,6 @@ namedtuple and NamedTuple  Both immutable Tuple-based (hence fast) but far bette
     </item>
     
     <item>
-      <title>The economics of the agri-food value chain</title>
-      <link>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</link>
-      <pubDate>Mon, 11 Jan 2021 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</guid>
-      <description>Week 3 Trust and signaling  Premiums for high-quality products as returns to reputation (Shapiro, C. 1983)
-  a.k.a. How much would you spend for the salesman/firm reputation?
- A market characterized by:
- asymmetric information: firms know more about the quality of their products wrt customers moral hazard: firms can reduce the quality of their products without the consumers noticing. Consumers can still learn the quality of the products after purchase (&amp;ldquo;experience&amp;rdquo; products) competitiveness: all agents are price-takers 1 and there is free entry into the industry  Firms can build a reputation based on trust when:</description>
-    </item>
-    
-    <item>
       <title>Add a row to pandas&#39; DataFrame</title>
       <link>https://coffepowered.github.io/blogs/pandas-append-rows-to-df/</link>
       <pubDate>Sat, 31 Oct 2020 21:28:43 -0500</pubDate>
@@ -67,7 +77,7 @@ If you want just the takeaways:</description>
       
       <guid>https://coffepowered.github.io/blogs/math-example/</guid>
       <description>Intro (feel free to skip this) I feel like we are living in the golden age of Natural Language Processing (NLP). The last 20 years have seen the rise of Neural Language models, the creation and subsequent vast application of Word Embeddings and innovative Network architectures for Sequence Modeling and, last but not least, transformers.
-If you did not get the detail of the previous paragraph, please bear with me. The motivation of this post is showing how a non-specialist (like me) can today build effective software that is able to &amp;quot;use&amp;quot; or interpret text written by humans.</description>
+If you did not get the detail of the previous paragraph, please bear with me. The motivation of this post is showing how a non-specialist (like me) can today build effective software that is able to &amp;ldquo;use&amp;rdquo; or interpret text written by humans.</description>
     </item>
     
     <item>
@@ -89,7 +99,7 @@ You are expected to be familiar with the following concepts and tools:
       <guid>https://coffepowered.github.io/su-questo-sito/</guid>
       <description>Mi chiamo Andrea Ruggerini e sono un &amp;ldquo;Data Scientist&amp;rdquo; (o Machine Learnig Practictioner).
 Ho scoperto questa professione incredibile, partecipando qualche anno fa alla Lisbon Data Science academy. Da allora ho assistito e partecipato all&amp;rsquo;evoluzione incessante del machine learning (ML).
-Mi tengo al passo riportando qualche breve idea nei Blogs e tenendo traccia su questo sito dei &amp;ldquo;Micro-Progetti&amp;quot;: esperimenti che conduco riguardo a tecnologie ed argomenti collaterali al lavoro. Riguardano principalmente visualizzazione dati, model deployment e semplici applicazioni.</description>
+Uso questo sito per tenere traccia di Blogs e &amp;ldquo;Micro-Progetti&amp;rdquo; collaterali al lavoro. Riguardano principalmente visualizzazione dati, model deployment e semplici applicazioni. A volte (stra)parlo pure di economia ed altre cose, per interesse personale.</description>
     </item>
     
     <item>

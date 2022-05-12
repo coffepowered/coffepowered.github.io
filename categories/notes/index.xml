@@ -6,7 +6,18 @@
     <description>Recent content in notes on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Feb 2022 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Mar 2022 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The economics of the agri-food value chain</title>
+      <link>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</link>
+      <pubDate>Tue, 01 Mar 2022 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</guid>
+      <description>Course review Let me paraphrase what Tukey once said: I truly believe that getting in contact with different fields and expertise is one of the perks of being a data scientist. Pictorially:
+ The best thing about being a statistician data scientist, Mr Tukey once told a colleague, is that you get to play in everyone&amp;rsquo;s backyard.
+ So, even if you can legitimately play in everyone&amp;rsquo;s backyard - which oftentimes means cleaning it as a first step, it also means that you will be speaking to people with different backgrounds ad expertise.</description>
+    </item>
+    
     <item>
       <title>Google 20 for 1 stock split</title>
       <link>https://coffepowered.github.io/blogs/google-stock-split/</link>
@@ -15,18 +26,6 @@
       <guid>https://coffepowered.github.io/blogs/google-stock-split/</guid>
       <description>Google announced Tuesday its results for Q4 2021 and that they plan to split shares at 20 for 1 this Tuesday. Basically, if you are a shareholder, for each 1 share of Google at (about) 3000$ dollars you will have (at the ex-date) 20 shares at 150$.
 Nothing should really change, but there might be some financial effects, for instance, due to the inclusion of the stock in new indices or increased market liquidity.</description>
-    </item>
-    
-    <item>
-      <title>The economics of the agri-food value chain</title>
-      <link>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</link>
-      <pubDate>Mon, 11 Jan 2021 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</guid>
-      <description>Week 3 Trust and signaling  Premiums for high-quality products as returns to reputation (Shapiro, C. 1983)
-  a.k.a. How much would you spend for the salesman/firm reputation?
- A market characterized by:
- asymmetric information: firms know more about the quality of their products wrt customers moral hazard: firms can reduce the quality of their products without the consumers noticing. Consumers can still learn the quality of the products after purchase (&amp;ldquo;experience&amp;rdquo; products) competitiveness: all agents are price-takers 1 and there is free entry into the industry  Firms can build a reputation based on trust when:</description>
     </item>
     
   </channel>
