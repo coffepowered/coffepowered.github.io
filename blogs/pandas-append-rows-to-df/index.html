@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="description" content="Your description">
 	<meta name="author" content="Your name">
-	<meta name="generator" content="Hugo 0.91.2" />
+	<meta name="generator" content="Hugo 0.109.0">
 	<title>Add a row to pandas&#39; DataFrame &middot; AW - notes &amp; thoughts</title>
 	<!-- Stylesheets -->
 	
@@ -54,6 +54,8 @@
     
 
     
+    
+
     
 
     <!-- Wrapper -->
@@ -118,10 +120,10 @@
 <p>Let&rsquo;s benchmark 4 approaches:</p>
 <h3 id="dfappend">df.append()</h3>
 <p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.append.html"><code>.append()</code></a>, is certainly the first thing one maybe tempted to use, most probably because of its formal similarity to python&rsquo;s append over lists. In practice we will benchmark the iteration of this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># data can be a df, a dict with keys corresponding to df columns and other things. </span>
-<span style="color:#75715e"># Ignore index allow to progressively number row index.</span>
-df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>append(data, ignore_index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</code></pre></div><p>Replicating this for a large number of rows is attractive, but the official documentation warns us that this can be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># data can be a df, a dict with keys corresponding to df columns and other things. </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ignore index allow to progressively number row index.</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>append(data, ignore_index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p>Replicating this for a large number of rows is attractive, but the official documentation warns us that this can be:</p>
 <blockquote>
 <p>more computationally intensive than a single concatenate. A better solution is to append those rows to a list and then concatenate the list with the original DataFrame all at once.</p>
 </blockquote>
@@ -129,33 +131,33 @@ df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>ap
 <h3 id="dfloc-with-and-without-preallocation">df.loc() (with and without preallocation)</h3>
 <p>In modern version of pandas <code>.loc</code> it the de facto standard for <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html">accessing data</a>, both label based and with boolean arrays.</p>
 <p>Assigning new rows is elegant with <code>.loc</code> and such rows can also be preallocated for a faster access, in fact, if data exists for a given index it is overwritten.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">if</span> do_preallocate:
-    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(index<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">0</span>, num_rows), columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#e6db74">&#34;B&#34;</span>])
-<span style="color:#66d9ef">else</span>:
-    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#e6db74">&#34;B&#34;</span>])
-
-df<span style="color:#f92672">.</span>loc[index] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>append(data, ignore_index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</code></pre></div><p>Of course preallocation requires to know in advance the size of the data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> do_preallocate:
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(index<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">0</span>, num_rows), columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#e6db74">&#34;B&#34;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#e6db74">&#34;B&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>loc[index] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>append(data, ignore_index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p>Of course preallocation requires to know in advance the size of the data.</p>
 <h3 id="dict-create-all-data-with-a-dict-and-init-new-dataframe"><code>dict</code>: create all data with a dict and init new dataframe</h3>
 <p>This is the limiting case of what pandas documentation suggests in case of append except that the whole data is created as a dict and then a new DataFrame is created as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">data <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#34;A&#34;</span>:<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;B&#34;</span>:<span style="color:#ae81ff">2</span>}, {<span style="color:#e6db74">&#34;A&#34;</span>:<span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;B&#34;</span>:<span style="color:#ae81ff">4</span>}]
-df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data, columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#e6db74">&#34;B&#34;</span>])
-</code></pre></div><p>This is IMO not really elegant (requiring 3 data structures) but extremely efficient.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>data <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#34;A&#34;</span>:<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;B&#34;</span>:<span style="color:#ae81ff">2</span>}, {<span style="color:#e6db74">&#34;A&#34;</span>:<span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;B&#34;</span>:<span style="color:#ae81ff">4</span>}]
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data, columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#e6db74">&#34;B&#34;</span>])
+</span></span></code></pre></div><p>This is IMO not really elegant (requiring 3 data structures) but extremely efficient.</p>
 <h3 id="list-create-columns-by-lists-and-append-to-the-df"><code>list</code>: create columns by lists and append to the df</h3>
 <p>As the previous approach, this relies to basic python data structures but involves only the use of lists.</p>
 <p>This is way clearer to me <strong>but</strong> is considered the &ldquo;+1&rdquo; bonus method since (i) it requires being able to generate data in advance and (ii) does not stricly cover the original use case.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># lol is a list of list</span>
-cols <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;B&#34;</span>]
-df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(columns<span style="color:#f92672">=</span>cols)
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,len(cols)):
-    df[cols[i]] <span style="color:#f92672">=</span> generate_list(i)
-</code></pre></div><p>Notice also that one could just generate all the lists beforehand and then initialize the df from scratch.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># lol is a list of list</span>
+</span></span><span style="display:flex;"><span>cols <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;B&#34;</span>]
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(columns<span style="color:#f92672">=</span>cols)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,len(cols)):
+</span></span><span style="display:flex;"><span>    df[cols[i]] <span style="color:#f92672">=</span> generate_list(i)
+</span></span></code></pre></div><p>Notice also that one could just generate all the lists beforehand and then initialize the df from scratch.</p>
 <h2 id="results">Results</h2>
 <p>The approaches are tested for 1k, 5k and 10k rows. Results are really clear. Adding a few rows via <code>loc</code> or <code>append</code> is a legitimate use case. Do not abuse it.</p>
 <p>
 
 
-  <img src="/img/benchmark-add-data-df-1.png" alt="&amp;ldquo;Images of the benchmark 1: for 5k rows append and loc take about 7.5 seconds, preallocated loc about 1s, dict and lists method fraction of seconds. Results scale about linearly with 1k and 10k rows.&amp;quot;">
+  <img src="/img/benchmark-add-data-df-1.png" alt="&amp;ldquo;Images of the benchmark 1: for 5k rows append and loc take about 7.5 seconds, preallocated loc about 1s, dict and lists method fraction of seconds. Results scale about linearly with 1k and 10k rows.&amp;rdquo;">
 </p>
 <h2 id="results-scale-up-to-100k-rows">Results, scale up to 100k rows</h2>
 <p>Now that we know the results on small scale data, it is worth comparing what happens when scaling the 3 most efficient methods from 10k to 100k rows, but take this with a grain of salt, as memory impact is completely disregarded.</p>
@@ -163,7 +165,7 @@ df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Da
 <p>
 
 
-  <img src="/img/benchmark-add-data-df-2.png" alt="&amp;ldquo;Images of the benchmark 2: with 100k rows loc with preallocation take 5 times more than better approaches.&amp;quot;">
+  <img src="/img/benchmark-add-data-df-2.png" alt="&amp;ldquo;Images of the benchmark 2: with 100k rows loc with preallocation take 5 times more than better approaches.&amp;rdquo;">
 </p>
 <h2 id="digressions">Digressions</h2>
 <ul>

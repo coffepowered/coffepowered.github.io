@@ -1,0 +1,16 @@
+// notice that all js embedded in a file share the very same namespace
+let svgRegion = d3.select("#andreaDiv2")
+                  .append("svg")
+                  .attr("width", "350")
+                  .attr("height", "100")
+                  .style("background-color", "lightblue")
+                  .attr("id", "demo1")
+ 
+svgRegion.append("rect")
+                .attr("x", "10")
+                .attr("y", "20")
+                .attr("width", "100")
+                .attr("height", "70")
+                .attr("fill", "red")
+                .attr("stroke", "black")
+                .attr("stroke-width", "5px")

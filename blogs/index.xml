@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on AW - notes &amp; thoughts</title>
+    <title>All posts on AW - notes &amp; thoughts</title>
     <link>https://coffepowered.github.io/blogs/</link>
-    <description>Recent content in Blogs on AW - notes &amp; thoughts</description>
+    <description>Recent content in All posts on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Mar 2022 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://coffepowered.github.io/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What&#39;s all that for? Thinking of the BTC energy consumptions</title>
+      <link>https://coffepowered.github.io/blogs/on-the-btc-energy-toll/</link>
+      <pubDate>Tue, 10 Jan 2023 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/on-the-btc-energy-toll/</guid>
+      <description>I can remember the snow Born on the cusp of the 90s, I was privileged to witness a period of great optimism and progress. The winds of freedom and democracy seemed to be blowing strong, and economies were thriving. One particularly noteworthy achievement from this time was the establishment of the Montreal Protocol, a treaty designed to phase out ozone-depleting substances, a move that has proven highly successful.
+I have fond memories of being a child during this time, including TV commercials1 that highlighted the importance of protecting polar bears.</description>
+    </item>
+    
     <item>
       <title>A (reasonably) complex radar chart</title>
       <link>https://coffepowered.github.io/blogs/complex-radar-python/</link>
@@ -25,8 +35,8 @@ Think about comparing 2 (or more) football players in terms of dribbling, runnin
       
       <guid>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</guid>
       <description>Course review Let me paraphrase what Tukey once said: I truly believe that getting in contact with different fields and expertise is one of the perks of being a data scientist. Pictorially:
- The best thing about being a statistician data scientist, Mr Tukey once told a colleague, is that you get to play in everyone&amp;rsquo;s backyard.
- So, even if you can legitimately play in everyone&amp;rsquo;s backyard - which oftentimes means cleaning it as a first step, it also means that you will be speaking to people with different backgrounds ad expertise.</description>
+The best thing about being a statistician data scientist, Mr Tukey once told a colleague, is that you get to play in everyone&amp;rsquo;s backyard.
+So, even if you can legitimately play in everyone&amp;rsquo;s backyard - which oftentimes means cleaning it as a first step, it also means that you will be speaking to people with different backgrounds ad expertise.</description>
     </item>
     
     <item>
@@ -45,9 +55,10 @@ Nothing should really change, but there might be some financial effects, for ins
       <pubDate>Sun, 31 Jan 2021 21:28:43 -0500</pubDate>
       
       <guid>https://coffepowered.github.io/blogs/crescita-economica/</guid>
-      <description>Questa pagina traduce liberamente e parzialmente, l&amp;rsquo;articolo di Max Roser (secondo licenza) (2013) - &amp;ldquo;Economic Growth&amp;rdquo;. Published online at OurWorldInData.org. Retrieved from: &amp;lsquo;https://ourworldindata.org/economic-growth&#39; [Online Resource].
-  Riferitevi alla versione originale per le citazioni e per il testo completo, io mi sono permesso di aggiungere qualche nota interessante per noi italiani.
- Con crescita economica descriviamo un aumento nella qualità a quantità dei beni e servizi economici che una società produce o consuma.</description>
+      <description>Questa pagina traduce liberamente e parzialmente, l&amp;rsquo;articolo di Max Roser (secondo licenza) (2013) - &amp;ldquo;Economic Growth&amp;rdquo;. Published online at OurWorldInData
+Riferitevi alla versione originale per le citazioni e per il testo completo, io mi sono permesso di aggiungere qualche nota interessante per noi italiani.
+Con crescita economica descriviamo un aumento nella qualità a quantità dei beni e servizi economici che una società produce o consuma.
+Mentre la definizione di crescita economica è chiara, misurare la crescita in sè risulta estremamente difficile.</description>
     </item>
     
     <item>
@@ -57,7 +68,7 @@ Nothing should really change, but there might be some financial effects, for ins
       
       <guid>https://coffepowered.github.io/blogs/python-data-typer-for-data/</guid>
       <description>Both dataclasses and tuples are based on the attrs project, the one Python Library everybody needs and are fast object types (factory methods) designed to simplify and reduce code.
-namedtuple and NamedTuple  Both immutable Tuple-based (hence fast) but far better than tuples NamedTuple is the typed version of namedtuple immutable, iterable, hashable, unpackable backward-compatible with tuple (e.g you can access a namedtuple by index) default arguments supported from Python 3.</description>
+namedtuple and NamedTuple Both immutable Tuple-based (hence fast) but far better than tuples NamedTuple is the typed version of namedtuple immutable, iterable, hashable, unpackable backward-compatible with tuple (e.g you can access a namedtuple by index) default arguments supported from Python 3.7+ fast!</description>
     </item>
     
     <item>
@@ -71,35 +82,14 @@ If you want just the takeaways:</description>
     </item>
     
     <item>
-      <title>1 - Movie sentiment review</title>
-      <link>https://coffepowered.github.io/blogs/math-example/</link>
+      <title>CODE EXAMPLES</title>
+      <link>https://coffepowered.github.io/blogs/000-sample-page-code-block/</link>
       <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
       
-      <guid>https://coffepowered.github.io/blogs/math-example/</guid>
-      <description>Intro (feel free to skip this) I feel like we are living in the golden age of Natural Language Processing (NLP). The last 20 years have seen the rise of Neural Language models, the creation and subsequent vast application of Word Embeddings and innovative Network architectures for Sequence Modeling and, last but not least, transformers.
-If you did not get the detail of the previous paragraph, please bear with me. The motivation of this post is showing how a non-specialist (like me) can today build effective software that is able to &amp;ldquo;use&amp;rdquo; or interpret text written by humans.</description>
-    </item>
-    
-    <item>
-      <title>1 - Movie sentiment review</title>
-      <link>https://coffepowered.github.io/blogs/sentiment-movie-review/</link>
-      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/blogs/sentiment-movie-review/</guid>
-      <description>Intro Here, I just scratch the surface of NLP, by commenting my colab notebook which builds the backend of a sentiment movie review app from the ground up exploiting Keras&#39; TextVectorization.
-You are expected to be familiar with the following concepts and tools:
- Basics of Machine learning and data manipulation: did you try the Titanic dataset? Basics of Keras API: you got at least on neural network with Keras tutorial  I will try to provide crash-course on word vectors and text vectorization.</description>
-    </item>
-    
-    <item>
-      <title>Ipsum my custm blog</title>
-      <link>https://coffepowered.github.io/blogs/blog1/</link>
-      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/blogs/blog1/</guid>
-      <description>Ciao ciao ciao come stai?
-Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
-Ciao ciao ciao come stai? Ciao ciao ciao come stai?</description>
+      <guid>https://coffepowered.github.io/blogs/000-sample-page-code-block/</guid>
+      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
+Title 2 Ciao ciao ciao come stai? Ciao ciao ciao come stai?
+A sample code block 199 200 201 202 203 204 205 206 207 # ... code for i in range(1,5): print(i) logger.</description>
     </item>
     
   </channel>

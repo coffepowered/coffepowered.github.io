@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="description" content="Your description">
 	<meta name="author" content="Your name">
-	<meta name="generator" content="Hugo 0.91.2" />
+	<meta name="generator" content="Hugo 0.109.0">
 	<title>Google 20 for 1 stock split &middot; AW - notes &amp; thoughts</title>
 	<!-- Stylesheets -->
 	
@@ -67,6 +67,8 @@
     
     
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+
     
 
     <!-- Wrapper -->
@@ -144,32 +146,31 @@ I am taking here the announcement as a whole, this is important and we&rsquo;ll 
 <p>This is the easy part: daily stock data can be obtained from several sources. I choose alphavantage, getting a free key.
 If you want to replicate the experiment, I suggest using the python library <code>alpha_vantage</code> with <code>pandas</code>: <code>pip install alpha_vantage pandas</code>.</p>
 <p>Notice that the free version gives you a limited amount of requests, so we must wait a little time between requests:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># Set ALPHAVANTAGE_TOKEN, install requirements</span>
-<span style="color:#f92672">from</span> alpha_vantage.timeseries <span style="color:#f92672">import</span> TimeSeries
-<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-<span style="color:#f92672">import</span> time
-ts <span style="color:#f92672">=</span> TimeSeries(key<span style="color:#f92672">=</span>ALPHAVANTAGE_TOKEN,output_format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pandas&#39;</span>, indexing_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;date&#39;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_pd_data</span>(tickers<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GOOGL&#34;</span>], outputsize<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;compact&#34;</span>):
-  dfs <span style="color:#f92672">=</span> []
-  <span style="color:#66d9ef">for</span> i,t <span style="color:#f92672">in</span> enumerate(tickers):
-    <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">%</span><span style="color:#ae81ff">4</span>)<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> i<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>:
-      print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74"> Pausing for 65 s&#34;</span>)
-      time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">65</span>)
-      
-    data, meta_data <span style="color:#f92672">=</span> ts<span style="color:#f92672">.</span>get_daily(t, outputsize<span style="color:#f92672">=</span>outputsize)
-    data[<span style="color:#e6db74">&#34;price&#34;</span>] <span style="color:#f92672">=</span> data[<span style="color:#e6db74">&#39;4. close&#39;</span>]
-    data[<span style="color:#e6db74">&#34;ticker&#34;</span>] <span style="color:#f92672">=</span> t
-    dfs<span style="color:#f92672">.</span>append(data<span style="color:#f92672">.</span>reset_index()<span style="color:#f92672">.</span>set_index([<span style="color:#e6db74">&#34;ticker&#34;</span>,<span style="color:#e6db74">&#34;date&#34;</span>]))
-  
-  print(<span style="color:#e6db74">&#34;Done&#34;</span>)
-  <span style="color:#66d9ef">return</span> pd<span style="color:#f92672">.</span>concat(dfs, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
-
-<span style="color:#75715e"># GOOG are C shares, while GOOGL are A shares (w voting rights)</span>
-tickers <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;GOOG&#34;</span>,<span style="color:#e6db74">&#34;MSFT&#34;</span>,<span style="color:#e6db74">&#34;FB&#34;</span>,<span style="color:#e6db74">&#34;AMZN&#34;</span>,<span style="color:#e6db74">&#34;ETSY&#34;</span>,<span style="color:#e6db74">&#34;GRMN&#34;</span>,<span style="color:#e6db74">&#34;ADBE&#34;</span>,<span style="color:#e6db74">&#34;AAPL&#34;</span>,<span style="color:#e6db74">&#34;NVDA&#34;</span>,<span style="color:#e6db74">&#34;TWTR&#34;</span>,<span style="color:#e6db74">&#34;TSLA&#34;</span>,<span style="color:#e6db74">&#34;ORCL&#34;</span>]
-data <span style="color:#f92672">=</span> get_pd_data(tickers<span style="color:#f92672">=</span>tickers, outputsize<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;full&#34;</span>)
-d <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>reset_index()<span style="color:#f92672">.</span>query(<span style="color:#e6db74">&#34;date&gt;&#39;2016-01-01&#39;&#34;</span>)[[<span style="color:#e6db74">&#34;ticker&#34;</span>,<span style="color:#e6db74">&#34;date&#34;</span>,<span style="color:#e6db74">&#34;price&#34;</span>]]
-
-</code></pre></div><p>We are basically taking the data for all the mentioned stocks from 2016 onward. How does this look?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># Set ALPHAVANTAGE_TOKEN, install requirements</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> alpha_vantage.timeseries <span style="color:#f92672">import</span> TimeSeries
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>ts <span style="color:#f92672">=</span> TimeSeries(key<span style="color:#f92672">=</span>ALPHAVANTAGE_TOKEN,output_format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pandas&#39;</span>, indexing_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;date&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_pd_data</span>(tickers<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GOOGL&#34;</span>], outputsize<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;compact&#34;</span>):
+</span></span><span style="display:flex;"><span>  dfs <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> i,t <span style="color:#f92672">in</span> enumerate(tickers):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">%</span><span style="color:#ae81ff">4</span>)<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> i<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>      print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74"> Pausing for 65 s&#34;</span>)
+</span></span><span style="display:flex;"><span>      time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">65</span>)
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>    data, meta_data <span style="color:#f92672">=</span> ts<span style="color:#f92672">.</span>get_daily(t, outputsize<span style="color:#f92672">=</span>outputsize)
+</span></span><span style="display:flex;"><span>    data[<span style="color:#e6db74">&#34;price&#34;</span>] <span style="color:#f92672">=</span> data[<span style="color:#e6db74">&#39;4. close&#39;</span>]
+</span></span><span style="display:flex;"><span>    data[<span style="color:#e6db74">&#34;ticker&#34;</span>] <span style="color:#f92672">=</span> t
+</span></span><span style="display:flex;"><span>    dfs<span style="color:#f92672">.</span>append(data<span style="color:#f92672">.</span>reset_index()<span style="color:#f92672">.</span>set_index([<span style="color:#e6db74">&#34;ticker&#34;</span>,<span style="color:#e6db74">&#34;date&#34;</span>]))
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;Done&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> pd<span style="color:#f92672">.</span>concat(dfs, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># GOOG are C shares, while GOOGL are A shares (w voting rights)</span>
+</span></span><span style="display:flex;"><span>tickers <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;GOOG&#34;</span>,<span style="color:#e6db74">&#34;MSFT&#34;</span>,<span style="color:#e6db74">&#34;FB&#34;</span>,<span style="color:#e6db74">&#34;AMZN&#34;</span>,<span style="color:#e6db74">&#34;ETSY&#34;</span>,<span style="color:#e6db74">&#34;GRMN&#34;</span>,<span style="color:#e6db74">&#34;ADBE&#34;</span>,<span style="color:#e6db74">&#34;AAPL&#34;</span>,<span style="color:#e6db74">&#34;NVDA&#34;</span>,<span style="color:#e6db74">&#34;TWTR&#34;</span>,<span style="color:#e6db74">&#34;TSLA&#34;</span>,<span style="color:#e6db74">&#34;ORCL&#34;</span>]
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> get_pd_data(tickers<span style="color:#f92672">=</span>tickers, outputsize<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;full&#34;</span>)
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>reset_index()<span style="color:#f92672">.</span>query(<span style="color:#e6db74">&#34;date&gt;&#39;2016-01-01&#39;&#34;</span>)[[<span style="color:#e6db74">&#34;ticker&#34;</span>,<span style="color:#e6db74">&#34;date&#34;</span>,<span style="color:#e6db74">&#34;price&#34;</span>]]
+</span></span></code></pre></div><p>We are basically taking the data for all the mentioned stocks from 2016 onward. How does this look?</p>
 
 
 
@@ -254,20 +255,20 @@ Plotly.d3.json("/img/google-stock/model-result-other.json", function(err, fig) {
     Plotly.plot('\/img\/google-stock\/model-result-other.json', fig.data, fig.layout, {responsive: true});
 });
 </script></p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>the majority of which should take place at the announcement&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>both class A and C.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>oh, almost forgot: a downside of operating on market prices directly is that we miss all dividends and corporate actions in the returns which are actually gained by an investor. Taking those into account usually requires paid &ldquo;return index&rdquo; data.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
                         </div>
                     </section>

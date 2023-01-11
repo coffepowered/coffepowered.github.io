@@ -2,16 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://coffepowered.github.io/blogs/complex-radar-python/</loc>
-    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
-  </url><url>
     <loc>https://coffepowered.github.io/</loc>
-    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
-  </url><url>
-    <loc>https://coffepowered.github.io/blogs/</loc>
-    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
+    <lastmod>2023-01-10T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/categories/</loc>
+    <lastmod>2023-01-10T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/d3js/</loc>
+    <lastmod>2023-01-10T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/global-warming/</loc>
+    <lastmod>2023-01-10T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/categories/opinions/</loc>
+    <lastmod>2023-01-10T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/</loc>
+    <lastmod>2023-01-10T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/viz/</loc>
+    <lastmod>2023-01-10T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/blogs/on-the-btc-energy-toll/</loc>
+    <lastmod>2023-01-10T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/blogs/complex-radar-python/</loc>
     <lastmod>2022-03-11T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/tags/daily/</loc>
@@ -27,9 +42,6 @@
     <lastmod>2022-03-11T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/categories/python/</loc>
-    <lastmod>2022-03-11T21:28:43-05:00</lastmod>
-  </url><url>
-    <loc>https://coffepowered.github.io/tags/</loc>
     <lastmod>2022-03-11T21:28:43-05:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/tags/coursera/</loc>
@@ -80,22 +92,22 @@
     <loc>https://coffepowered.github.io/categories/pandas/</loc>
     <lastmod>2020-10-31T21:28:43-05:00</lastmod>
   </url><url>
-    <loc>https://coffepowered.github.io/blogs/math-example/</loc>
-    <lastmod>2017-10-31T21:28:43-05:00</lastmod>
-  </url><url>
-    <loc>https://coffepowered.github.io/blogs/sentiment-movie-review/</loc>
-    <lastmod>2017-10-31T21:28:43-05:00</lastmod>
+    <loc>https://coffepowered.github.io/blogs/</loc>
+    <lastmod>2020-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://coffepowered.github.io/su-questo-sito/</loc>
     <lastmod>2017-10-31T21:28:43-05:00</lastmod>
   </url><url>
-    <loc>https://coffepowered.github.io/blogs/blog1/</loc>
+    <loc>https://coffepowered.github.io/blogs/000-sample-page-code-block/</loc>
     <lastmod>2017-10-31T21:28:43-05:00</lastmod>
   </url><url>
-    <loc>https://coffepowered.github.io/categories/nlp-movie-review/</loc>
+    <loc>https://coffepowered.github.io/categories/daily/</loc>
     <lastmod>2017-10-31T21:28:43-05:00</lastmod>
   </url><url>
-    <loc>https://coffepowered.github.io/categories/project/</loc>
+    <loc>https://coffepowered.github.io/tags/sono/</loc>
+    <lastmod>2017-10-31T21:28:43-05:00</lastmod>
+  </url><url>
+    <loc>https://coffepowered.github.io/tags/test/</loc>
     <lastmod>2017-10-31T21:28:43-05:00</lastmod>
   </url>
 </urlset>

@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="description" content="Your description">
 	<meta name="author" content="Your name">
-	<meta name="generator" content="Hugo 0.91.2" />
+	<meta name="generator" content="Hugo 0.109.0">
 	<title>Short notes on namedtuples, NamedTuples and Data classes &middot; AW - notes &amp; thoughts</title>
 	<!-- Stylesheets -->
 	
@@ -54,6 +54,8 @@
     
 
     
+    
+
     
 
     <!-- Wrapper -->
@@ -115,16 +117,16 @@
 <li>fast! C-based</li>
 <li>example <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">Point <span style="color:#f92672">=</span> namedtuple(<span style="color:#e6db74">&#39;Point&#39;</span>, <span style="color:#e6db74">&#39;x y&#39;</span>)
-pt1 <span style="color:#f92672">=</span> Point(<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">5.0</span>)
-pt2 <span style="color:#f92672">=</span> Point(<span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">1.5</span>)
-
-<span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> sqrt
-<span style="color:#75715e"># use index referencing</span>
-line_length <span style="color:#f92672">=</span> sqrt((pt1[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span>pt2[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> (pt1[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span>pt2[<span style="color:#ae81ff">1</span>])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
- <span style="color:#75715e"># use tuple unpacking</span>
-x1, y1 <span style="color:#f92672">=</span> pt1
-</code></pre></div><h2 id="dataclasses">Dataclasses</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>Point <span style="color:#f92672">=</span> namedtuple(<span style="color:#e6db74">&#39;Point&#39;</span>, <span style="color:#e6db74">&#39;x y&#39;</span>)
+</span></span><span style="display:flex;"><span>pt1 <span style="color:#f92672">=</span> Point(<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">5.0</span>)
+</span></span><span style="display:flex;"><span>pt2 <span style="color:#f92672">=</span> Point(<span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">1.5</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> sqrt
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># use index referencing</span>
+</span></span><span style="display:flex;"><span>line_length <span style="color:#f92672">=</span> sqrt((pt1[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span>pt2[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> (pt1[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span>pt2[<span style="color:#ae81ff">1</span>])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># use tuple unpacking</span>
+</span></span><span style="display:flex;"><span>x1, y1 <span style="color:#f92672">=</span> pt1
+</span></span></code></pre></div><h2 id="dataclasses">Dataclasses</h2>
 <ul>
 <li>Are <code>mutable</code></li>
 <li><a href="https://docs.python.org/3/library/dataclasses.html">post-init processing</a> can be used to create fields depending on other fields or even to perform input validation<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
@@ -136,46 +138,46 @@ x1, y1 <span style="color:#f92672">=</span> pt1
 <li><a href="https://www.youtube.com/watch?v=T-TwcmT6Rcw&amp;t=1390">bonus</a> PyCon talk, if you have time</li>
 <li>example<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
-
-<span style="color:#a6e22e">@dataclass</span>(unsafe_hash<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InventoryItem</span>:
-    <span style="color:#e6db74">&#39;&#39;&#39;Class for keeping track of an item in inventory.&#39;&#39;&#39;</span>
-    name: str
-    unit_price: float
-    quantity_on_hand: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">total_cost</span>(self) <span style="color:#f92672">-&gt;</span> float:
-        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>unit_price <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>quantity_on_hand
-</code></pre></div><h2 id="other-fancy-data-types-not-from-the-stdlib">Other fancy data types (not from the stdlib)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@dataclass</span>(unsafe_hash<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InventoryItem</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;Class for keeping track of an item in inventory.&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    name: str
+</span></span><span style="display:flex;"><span>    unit_price: float
+</span></span><span style="display:flex;"><span>    quantity_on_hand: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">total_cost</span>(self) <span style="color:#f92672">-&gt;</span> float:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>unit_price <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>quantity_on_hand
+</span></span></code></pre></div><h2 id="other-fancy-data-types-not-from-the-stdlib">Other fancy data types (not from the stdlib)</h2>
 <ul>
 <li><a href="https://pydantic-docs.helpmanual.io/">pydantic</a>: enforces type hints at runtime providing user-readable errors when data is invalid. Seems relatively popular.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># sample input val via Regexp</span>
-<span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
-<span style="color:#f92672">import</span> re
-<span style="color:#a6e22e">@dataclass</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span>:
-    id: int
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__post_init__</span>(self):
-        id_condition <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[0-9]</span><span style="color:#e6db74">{4}</span><span style="color:#e6db74">&#34;</span>, str(self<span style="color:#f92672">.</span>id))
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> id_condition:
-            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74"> doesn&#39;t follow pattern [0-9]</span><span style="color:#ae81ff">{{</span><span style="color:#e6db74">4</span><span style="color:#ae81ff">}}</span><span style="color:#e6db74">&#34;</span>)
-            <span style="color:#66d9ef">raise</span> CustomException
-</code></pre></div><section class="footnotes" role="doc-endnotes">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># sample input val via Regexp</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@dataclass</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span>:
+</span></span><span style="display:flex;"><span>    id: int
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__post_init__</span>(self):
+</span></span><span style="display:flex;"><span>        id_condition <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[0-9]</span><span style="color:#e6db74">{4}</span><span style="color:#e6db74">&#34;</span>, str(self<span style="color:#f92672">.</span>id))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> id_condition:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74"> doesn&#39;t follow pattern [0-9]</span><span style="color:#ae81ff">{{</span><span style="color:#e6db74">4</span><span style="color:#ae81ff">}}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> CustomException
+</span></span></code></pre></div><div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p><a href="https://stackoverflow.com/questions/2970608/what-are-named-tuples-in-python">brief</a> explanation on stackoverlow&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>(<a href="https://www.reddit.com/r/learnpython/comments/bopmu8/use_input_validation_with_dataclasses/">source</a>)&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p><a href="https://stackoverflow.com/questions/47955263/what-are-data-classes-and-how-are-they-different-from-common-classes">source</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
                         </div>
                     </section>

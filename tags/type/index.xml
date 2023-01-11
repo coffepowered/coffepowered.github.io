@@ -14,7 +14,7 @@
       
       <guid>https://coffepowered.github.io/blogs/python-data-typer-for-data/</guid>
       <description>Both dataclasses and tuples are based on the attrs project, the one Python Library everybody needs and are fast object types (factory methods) designed to simplify and reduce code.
-namedtuple and NamedTuple  Both immutable Tuple-based (hence fast) but far better than tuples NamedTuple is the typed version of namedtuple immutable, iterable, hashable, unpackable backward-compatible with tuple (e.g you can access a namedtuple by index) default arguments supported from Python 3.</description>
+namedtuple and NamedTuple Both immutable Tuple-based (hence fast) but far better than tuples NamedTuple is the typed version of namedtuple immutable, iterable, hashable, unpackable backward-compatible with tuple (e.g you can access a namedtuple by index) default arguments supported from Python 3.7+ fast!</description>
     </item>
     
   </channel>

@@ -1,0 +1,15 @@
+﻿item,year,TWh,proportion_to_BTC,category,other unit src,source,comment
+BTC,2021,104.89,1,btc,,https://ccaf.io/cbeci/index,
+Ireland,2021,30.78,0.293450281,country,,https://ourworldindata.org/energy-production-consumption#total-electricity-generation-how-much-electricity-does-each-country-generate,electricity generation
+Portugal,2021,48.78,0.465058633,country,,https://ourworldindata.org/energy-production-consumption#total-electricity-generation-how-much-electricity-does-each-country-generate,electricity generation
+Denmark,2021,33.34,0.317856802,country,,https://ourworldindata.org/energy-production-consumption#total-electricity-generation-how-much-electricity-does-each-country-generate,electricity generation
+Greece,2021,54.9,0.523405472,country,,https://ourworldindata.org/energy-production-consumption#total-electricity-generation-how-much-electricity-does-each-country-generate,electricity generation
+Algeria,2021,76,0.724568596,country,,https://ourworldindata.org/energy-production-consumption#total-electricity-generation-how-much-electricity-does-each-country-generate,electricity generation
+Colombia,2021,69.73,0.664791687,country,,https://ourworldindata.org/energy-production-consumption#total-electricity-generation-how-much-electricity-does-each-country-generate,electricity generation
+Norway,2021,151,1.439603394,country,,https://ourworldindata.org/energy-production-consumption#total-electricity-generation-how-much-electricity-does-each-country-generate,
+1 week of world maritime transport,2020,44.73052098,0.426451721,other,200000000,https://www.statista.com/statistics/1105953/shipping-break-down-by-fuel-forecast/,
+1 year US air conditioning,2021,249.42,2.377919725,other,4157,https://www.energy.gov/energysaver/air-conditioning,
+World Geothermal energy production,2019,91.019,0.867756697,energy-productio,91019,https://www.iea.org/fuels-and-technologies/renewables,
+World Solar PV energy production,2019,680.952,6.492058347,energy-productio,680952,https://www.iea.org/fuels-and-technologies/renewables,
+10 kg of meat for 1.3B people,estimate,187.777928,1.790236705,food,,own elaboration,
+10kg of wheat for 1.3B people,estimate,56.08513031,0.534704265,food,,own elaboration,
