@@ -6,13 +6,40 @@
     <description>Recent content in Categories on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Jan 2023 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Feb 2023 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>courses</title>
+      <link>https://coffepowered.github.io/categories/courses/</link>
+      <pubDate>Wed, 01 Feb 2023 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/categories/courses/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>notes</title>
+      <link>https://coffepowered.github.io/categories/notes/</link>
+      <pubDate>Wed, 01 Feb 2023 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/categories/notes/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>opinions</title>
       <link>https://coffepowered.github.io/categories/opinions/</link>
-      <pubDate>Tue, 10 Jan 2023 21:28:43 -0500</pubDate>
+      <pubDate>Wed, 01 Feb 2023 21:28:43 -0500</pubDate>
       
       <guid>https://coffepowered.github.io/categories/opinions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reviews</title>
+      <link>https://coffepowered.github.io/categories/reviews/</link>
+      <pubDate>Wed, 01 Feb 2023 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/categories/reviews/</guid>
       <description></description>
     </item>
     
@@ -31,33 +58,6 @@
       <pubDate>Fri, 11 Mar 2022 21:28:43 -0500</pubDate>
       
       <guid>https://coffepowered.github.io/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>courses</title>
-      <link>https://coffepowered.github.io/categories/courses/</link>
-      <pubDate>Tue, 01 Mar 2022 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/categories/courses/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>notes</title>
-      <link>https://coffepowered.github.io/categories/notes/</link>
-      <pubDate>Tue, 01 Mar 2022 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/categories/notes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reviews</title>
-      <link>https://coffepowered.github.io/categories/reviews/</link>
-      <pubDate>Tue, 01 Mar 2022 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/categories/reviews/</guid>
       <description></description>
     </item>
     

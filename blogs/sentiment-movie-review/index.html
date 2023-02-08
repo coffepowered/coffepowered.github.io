@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Your description">
+	<meta name="author" content="Your name">
+	<meta name="generator" content="Hugo 0.109.0">
+	<title>1 - Movie sentiment review &middot; AW - notes &amp; thoughts</title>
+	<!-- Stylesheets -->
+	
+	<link rel="stylesheet" href="https://coffepowered.github.io/css/main.css"/>
+	
+	
+
+	
+
+	<!-- Custom Fonts -->
+	<link href="https://coffepowered.github.io/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="https://coffepowered.github.io/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://coffepowered.github.io/favicon.ico">
+	
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="js/ie/html5shiv.js"></script>
+	<script src="js/ie/html5shiv.jsrespond.min.js"></script>
+	<![endif]-->
+	<head>
+		
+		
+		
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1209H4LX3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1209H4LX3C');
+</script>
+		
+	</head>
+</head>
+
+    <body>
+    
+    
+    
+
+    
+    
+
+    
+
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+    <header id="header" class="alt">
+        <a href="https://coffepowered.github.io/" class="logo"><strong>AW</strong> <span>learning from data</span></a>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
+
+<!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            
+                <li><a href="https://coffepowered.github.io/">Home</a></li>
+            
+                <li><a href="https://coffepowered.github.io/blogs">Blogs</a></li>
+            
+                <li><a href="https://coffepowered.github.io/blogs/ipsum">Generic Blog</a></li>
+            
+                <li><a href="https://coffepowered.github.io/elements.html">Elements</a></li>
+            
+
+        </ul>
+        <ul class="actions vertical">
+            
+                <li><a href="https://coffepowered.github.io/blogs" class="button special fit">Get Started</a></li>
+            
+            
+                <li><a href="https://coffepowered.github.io/" class="button fit">Log In</a></li>
+            
+        </ul>
+    </nav>
+
+        <!-- Main -->
+            <div id="main" class="alt">
+
+                
+                    <section id="one">
+                        <div class="inner">
+                            <header class="major">
+                                <h1>1 - Movie sentiment review</h1>
+                            </header>
+                            
+                                <span class="image main"><img src="/img/blogs/pic10.jpg" alt="" /></span>
+                            
+                            <h2 id="intro">Intro</h2>
+<p>Here, I just scratch the surface of NLP, by commenting <a href="https://colab.research.google.com/drive/19r9OS9SoBJMXM9GqAXgu6UEZSLwAqoM1?usp=sharing">my colab notebook which builds the backend</a> of a sentiment movie review app from the ground up exploiting Keras&rsquo; TextVectorization.</p>
+<p>You are expected to be familiar with the following concepts and tools:</p>
+<ul>
+<li>Basics of Machine learning and data manipulation: did you try the Titanic dataset?</li>
+<li>Basics of Keras API: you got at least on neural network with Keras tutorial</li>
+</ul>
+<p>I will try to provide crash-course on word vectors and text vectorization.</p>
+<h2 id="turning-words-into-numbers-text-vectorization">Turning Words into numbers: Text vectorization</h2>
+<p>A computer can naturally manipulate and operate on numeric representations of entities but not on text or strings. Understanding and managing effectively at least one way of translating text into numbers-useful-for Machine Learning, should be in the tool belt of any ML practitioner.</p>
+<h3 id="data-representation-the-need-for-good-word-vectors">Data representation: the need for good word vectors</h3>
+<p>Think of performing a regression: you want to associate a numeric output (y) to numeric inputs (X). The definition of (X) is easy when you have <strong>tabular</strong> data, i.e. the kind of data which is stored in an Excel spreadsheet or in a database. An example could be predicting the value of a used car (y) depending on its age (x1), kilometers (x2) and horsepower (x3) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>To improve your predictions, you may also want to include a non-numeric attribute, as the car market segment (Compact, Suv, Wagon)? In this case, the information is available as a string but numeric representations are well-established and easy to create, as <em>one-hot-encoding</em>, which associates to each car (c) a 3D vector (i,j,k) whose entries are 1 if (c) posses the attribute and 0 otherwise. So, if (c) is a compact one, its &ldquo;market segment&rdquo; attribure will be (1,0,0) while if it is a station wagon it&rsquo;ll be (0,0,1).</p>
+<p>Now think of having also <strong>image data</strong>. A lot of information there and the technology to <em>represent</em> an image using numbers has long been there. A quite intuitive representation for a grayscale image is a 2D matrix of pixel with values ranging from 0 (white) to (255) black.
+The problem with image data is that for <a href="https://hackernoon.com/a-brief-history-of-computer-vision-and-convolutional-neural-networks-8fe8aacc79f3">long time it has been difficult</a> to build a model able to make sense of X to create a good (X)-&gt;(y) relationship.  Back to our value of used car example, a simple statistical model is not able to extract useful information (color, size, design) from a car image.</p>
+<p>You may well be seeing where we are going. What happens when want to exploit unstructured <strong>textual</strong> data?</p>
+<p>If we had to start from scratch, we may try to approach the problem by constructing one-hot-encoded word vectors.</p>
+<p>Again, in our example, we may have a series of reviews associated with the car model, let&rsquo;s for instance take the pro &amp; cons of Fiat 500 Convertible for a concrete example of <a href="https://www.edmunds.com/fiat/500/2019/convertible/">real-world data</a>:</p>
+<blockquote>
+<p>Nimble size for easy parking, Fairly comfortable ride quality for a car of this size, Lots of personality for the price, Disappointing fuel economy given the slow acceleration, Poor rear visibility with the convertible&rsquo;s top lowered.</p>
+</blockquote>
+<p>Notice how descriptive (and difficult to preprocess) textual data may be. We have <em>30 different vocabulary words</em> here just for a single piece of text from the data. Even if we could build those one-hot vectors there are at least 2 very clear drawbacks:</p>
+<ol>
+<li>the number of &ldquo;numeric&rdquo; values would be very high. In other words this representation has a very high cardinality: this is a size and computation problem<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</li>
+<li>this representation is very sparse and your model can have a really hard time in finding good</li>
+</ol>
+<p>A possible solution to this is using Bag of Words model, another one -which I usually prefer- is via <strong>words embedding</strong><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<h2 id="words-embedding-training-from-scratch">Words embedding: training from scratch</h2>
+<p>Writing&hellip; (this is connected with the original notebook, we just use movie-reviews toy problem).</p>
+<h2 id="words-embedding-re-use">Words embedding: re-use</h2>
+<p>Writing&hellip;</p>
+<p>Remember that word embedding may shift with time!</p>
+<ul>
+<li><a href="https://studios.disneyresearch.com/2017/08/06/dynamic-word-embeddings/">Dynamic Word Embeddings</a></li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>You have probably been explosed to Linear Regression (LR). In the particular case of LR you can also solve the relation in <a href="https://www.cs.toronto.edu/~rgrosse/courses/csc311_f20/readings/notes_on_linear_regression.pdf">closed form</a>. Anyway, what&rsquo;s really important here is that the inputs are already numbers.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Moreover, such a representation is bad since it is not able to relate word co-occurrence: maybe having poor rear visibility is OK for convertibles but not for standard cars.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>an attentive reader may wonder why just <strong>words</strong>? In fact, one could create text embedding by using n-grams.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+                        </div>
+                    </section>
+            <!-- Disqus Inject -->
+                
+                  <section>
+    <div class="inner" id="disqus_thread"></div>
+    <script type="text/javascript">
+
+    (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+                return;
+
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'aw-notes';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div class="inner"><a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+</section> 
+                
+            </div>
+            
+        <!-- Footer -->
+            
+                <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                
+                    <li><a href="https://twitter.com/bernardo_xdata" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                
+                    <li><a href="https://www.linkedin.com/in/andreawalteruggerini/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Updated Feb 2022. Top image by @iamengjell</li>
+                
+                <li>Design:  <a href="https://www.html5up.net">HTML5 UP</a></li>
+                
+            </ul>
+        </div>
+    </footer>
+
+            
+        </div>
+
+    <!-- Scripts -->
+        <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://coffepowered.github.io/js/jquery.min.js"></script>
+    <script src="https://coffepowered.github.io/js/jquery.scrolly.min.js"></script>
+    <script src="https://coffepowered.github.io/js/jquery.scrollex.min.js"></script>
+    <script src="https://coffepowered.github.io/js/skel.min.js"></script>
+    <script src="https://coffepowered.github.io/js/util.js"></script>
+
+    
+
+    <!-- Main JS -->
+    <script src="https://coffepowered.github.io/js/main.js"></script>
+
+    
+
+    
+
+    </body>
+</html>

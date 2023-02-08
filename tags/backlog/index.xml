@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>backlog on AW - notes &amp; thoughts</title>
+    <link>https://coffepowered.github.io/tags/backlog/</link>
+    <description>Recent content in backlog on AW - notes &amp; thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Jan 2100 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/tags/backlog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The backlog of blogging ideas</title>
+      <link>https://coffepowered.github.io/blogs/backlog/</link>
+      <pubDate>Mon, 11 Jan 2100 21:28:43 -0500</pubDate>
+      
+      <guid>https://coffepowered.github.io/blogs/backlog/</guid>
+      <description>Backlog of ideas https://rpubs.com/MLivingstone/CourseraInferentialStatsP1#:~:text=The%20exponential%20distribution%20is%20the,standard%20deviation%20of%201%2F%CE%BB.
+https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Book%3A_Introductory_Statistics_(Shafer_and_Zhang)/06%3A_Sampling_Distributions/6.03%3A_The_Sample_Proportion
+Pytest: https://semaphoreci.com/community/tutorials/testing-python-applications-with-pytest
+Confidence intervals for hackers. Similar to this, but for hackers
+Having your cake and eating it, or better: building confidence
+Managed ML platforms, compared
+Qualita dell aria, altra api - https://www.eea.europa.eu/themes/air/explore-air-pollution-data
+Energia in generale 1 by sector, italy, use per person, primary and final in EU
+Other sources, wikipedia, world energy consumption by sector
+A simple at-home experiment: the Energetic signature
+GHG emissions by sector</description>
+    </item>
+    
+  </channel>
+</rss>

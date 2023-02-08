@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Your description">
+	<meta name="author" content="Your name">
+	<meta name="generator" content="Hugo 0.109.0">
+	<title>Financial engineering and Risk management (Coursera) &middot; AW - notes &amp; thoughts</title>
+	<!-- Stylesheets -->
+	
+	<link rel="stylesheet" href="https://coffepowered.github.io/css/main.css"/>
+	
+	
+
+	
+
+	<!-- Custom Fonts -->
+	<link href="https://coffepowered.github.io/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="https://coffepowered.github.io/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://coffepowered.github.io/favicon.ico">
+	
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="js/ie/html5shiv.js"></script>
+	<script src="js/ie/html5shiv.jsrespond.min.js"></script>
+	<![endif]-->
+	<head>
+		
+		
+		
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1209H4LX3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1209H4LX3C');
+</script>
+		
+	</head>
+</head>
+
+    <body>
+    
+    
+    
+
+    
+    
+
+    
+
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+    <header id="header" class="alt">
+        <a href="https://coffepowered.github.io/" class="logo"><strong>AW</strong> <span>learning from data</span></a>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
+
+<!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            
+                <li><a href="https://coffepowered.github.io/">Home</a></li>
+            
+                <li><a href="https://coffepowered.github.io/blogs">Blogs</a></li>
+            
+                <li><a href="https://coffepowered.github.io/blogs/ipsum">Generic Blog</a></li>
+            
+                <li><a href="https://coffepowered.github.io/elements.html">Elements</a></li>
+            
+
+        </ul>
+        <ul class="actions vertical">
+            
+                <li><a href="https://coffepowered.github.io/blogs" class="button special fit">Get Started</a></li>
+            
+            
+                <li><a href="https://coffepowered.github.io/" class="button fit">Log In</a></li>
+            
+        </ul>
+    </nav>
+
+        <!-- Main -->
+            <div id="main" class="alt">
+
+                
+                    <section id="one">
+                        <div class="inner">
+                            <header class="major">
+                                <h1>Financial engineering and Risk management (Coursera)</h1>
+                            </header>
+                            
+                                <span class="image main"><img src="/img/blogs/pic07.jpg" alt="" /></span>
+                            
+                            <h2 id="a-somewhat-detailed-review-mixed-with-notes-spoiler-alert">A somewhat detailed review mixed with notes (spoiler alert)</h2>
+<p>I am writing this review since in my <a href="https://www.google.com/search?client=firefox-b-d&amp;q=financial+engineering+coursera+review">google bubble</a> a find a mostly unsatisfying results and when I started the course I&rsquo;d have loved having more first-hand experience knowing what to expect for the course<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>Online courses are targeted at wide and eterogeneous audiences, so consider this a totally subjective review as your background and sensibility may vary. A very short intro about me, so that you can try putting yourself into my shoes and weight my words: I am not a finance, economics or math graduate. I am an engineer and attended the course both for fun and professional development (my employer supports us with Coursera Plus suscription).</p>
+<p>Moreover, I do Machine Learning for living, and was searching for a foundational course on Financial Enginering topics to widen my horizons.</p>
+<p>The review is divided into sections grouping one or more weeks together and has been written progressively while attending at the course.</p>
+<h2 id="weeks-2-3">Weeks 2-3</h2>
+<p>Week 1 is there just to warm-up, so nothing..</p>
+<h2 id="week-4">Week 4</h2>
+<p>The thing gets juicy here. The <strong>multi-period binomial model</strong> is
+a satisfying (from my learner perspective) extension of the single-period one: the theory is surprising, results are of practical interest and the instructor does a really good job at explaining it and at showing numerical examples.</p>
+<p>As a non-finance guy you may still be surprised by the fact that option price does not depend on the probability on an upmove but only on $R, d$ (interest rates, ****). There is an excel(-ent) sheet provided that is very helpful in understanding the mechanics of the model.</p>
+<p>Lectures on dividends, expected price for forward and futures are fast and finally give a sense of accomplishement since the theoretical framework studied so far accomodates them easily.</p>
+<p>Once again, on a lerner perspective, reinforcing the learning with quizzes inside the lectures would have been provided a superior learning experience. I have to say however that this module is better than the previous ones in this regards, as the exercises by Scott are really focused on the topic and relevant for the final quiz.</p>
+<p>I was expecting for a <strong>large</strong> lecture on the Black Scholes model, but the author decided to skip on most of the theory and give info about the calibration method. I guess the choice is questionable in general, but I found it particularly appropriate for an online course whose objective is getting the framework to understand and expand things. If you really have to do with options, you should plan to devote additional time to theoretical details and the concept of implied volatility.</p>
+<p>Rivedere questo:</p>
+<blockquote>
+<p>Given the Underlying price at initial time $$S_0$$, interest rate $$r$$, underlying dividend $$c$$, option expiration $$T$$ and strike $$K$$, a model for the option price $$C_0$$ can be written as $$C_0 = C_0(S_0,r,c,T,K,\sigma)$$, where the last argument is the <em>implied volatility</em>. If the option is liquid, and $C_0$ is known, such model is used to determined the <em>implied volatility</em>, otherwise can be used to hedge options or price illiquid ones.</p>
+</blockquote>
+<p>All in all, no important thing is left unmentioned (Dynamic Portfolio Replication, Law of Iterated expectations etc.): some things are covered, some are left on the appendix, some are to be covered on your own, if you really want to.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>e.g. <a href="http://theartofchanging.blogspot.com/2013/05/coursera-review-financial-engineering.html">this</a> is as far as I could get&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+                        </div>
+                    </section>
+            <!-- Disqus Inject -->
+                
+                  <section>
+    <div class="inner" id="disqus_thread"></div>
+    <script type="text/javascript">
+
+    (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+                return;
+
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'aw-notes';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div class="inner"><a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+</section> 
+                
+            </div>
+            
+        <!-- Footer -->
+            
+                <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                
+                    <li><a href="https://twitter.com/bernardo_xdata" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                
+                    <li><a href="https://www.linkedin.com/in/andreawalteruggerini/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Updated Feb 2022. Top image by @iamengjell</li>
+                
+                <li>Design:  <a href="https://www.html5up.net">HTML5 UP</a></li>
+                
+            </ul>
+        </div>
+    </footer>
+
+            
+        </div>
+
+    <!-- Scripts -->
+        <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://coffepowered.github.io/js/jquery.min.js"></script>
+    <script src="https://coffepowered.github.io/js/jquery.scrolly.min.js"></script>
+    <script src="https://coffepowered.github.io/js/jquery.scrollex.min.js"></script>
+    <script src="https://coffepowered.github.io/js/skel.min.js"></script>
+    <script src="https://coffepowered.github.io/js/util.js"></script>
+
+    
+
+    <!-- Main JS -->
+    <script src="https://coffepowered.github.io/js/main.js"></script>
+
+    
+
+    
+
+    </body>
+</html>

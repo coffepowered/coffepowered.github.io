@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Your description">
+	<meta name="author" content="Your name">
+	<meta name="generator" content="Hugo 0.109.0">
+	<title>Bootstrapping essentials in python &middot; AW - notes &amp; thoughts</title>
+	<!-- Stylesheets -->
+	
+	<link rel="stylesheet" href="https://coffepowered.github.io/css/main.css"/>
+	
+	
+
+	
+
+	<!-- Custom Fonts -->
+	<link href="https://coffepowered.github.io/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="https://coffepowered.github.io/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://coffepowered.github.io/favicon.ico">
+	
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="js/ie/html5shiv.js"></script>
+	<script src="js/ie/html5shiv.jsrespond.min.js"></script>
+	<![endif]-->
+	<head>
+		
+		
+		
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1209H4LX3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1209H4LX3C');
+</script>
+		
+	</head>
+</head>
+
+    <body>
+    
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+      
+
+    
+    
+
+    
+
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+    <header id="header" class="alt">
+        <a href="https://coffepowered.github.io/" class="logo"><strong>AW</strong> <span>learning from data</span></a>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
+
+<!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            
+                <li><a href="https://coffepowered.github.io/">Home</a></li>
+            
+                <li><a href="https://coffepowered.github.io/blogs">Blogs</a></li>
+            
+                <li><a href="https://coffepowered.github.io/blogs/ipsum">Generic Blog</a></li>
+            
+                <li><a href="https://coffepowered.github.io/elements.html">Elements</a></li>
+            
+
+        </ul>
+        <ul class="actions vertical">
+            
+                <li><a href="https://coffepowered.github.io/blogs" class="button special fit">Get Started</a></li>
+            
+            
+                <li><a href="https://coffepowered.github.io/" class="button fit">Log In</a></li>
+            
+        </ul>
+    </nav>
+
+        <!-- Main -->
+            <div id="main" class="alt">
+
+                
+                    <section id="one">
+                        <div class="inner">
+                            <header class="major">
+                                <h1>Bootstrapping essentials in python</h1>
+                            </header>
+                            
+                                <span class="image main"><img src="/img/blogs/pic10.jpg" alt="" /></span>
+                            
+                            <ul>
+<li><a href="https://en.wikipedia.org/wiki/Sampling_distribution">https://en.wikipedia.org/wiki/Sampling_distribution</a>
+Bootstrapping helps estimating confidence intervals for any static of interest directly from the data sample. In this post we will show how to do your first bootstrap and -more importantly- how to get a feeling of the whole process.</li>
+</ul>
+<h2 id="well-known-things-first-confidence-intervals-for-the-mean">Well-known things first: confidence intervals for the mean</h2>
+<p>Let&rsquo;s say you are presented with some data about people heights and want to know the mean height for male and females at 95% confidence level.</p>
+<p>The central limit theorem tells us that the mean $^{x}$ of a random variable &ldquo;height&rdquo; is normally distributed even if the random variable itself is not normally distributed and allows us to express the confidence interval (CI) as:</p>
+<p>$$[^{x}-1.96 \frac{s}{\sqrt(n)}, ^{x}+1.96 \frac{s}{\sqrt(n)}]$$.</p>
+<p>Where $s$ is the population standard deviation and $n$ the size of your sample<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Where does the &lsquo;1.96&rsquo; come from? That number is a function of the desired <a href="https://openstax.org/books/introductory-business-statistics/pages/8-1-a-confidence-interval-for-a-population-standard-deviation-known-or-large-sample-size">confidence level</a> (95% in this case), which should be chosen before the analysis.</p>
+<p>Basically we are recalling here that -if you were to sample multiple times from the population-, you would estimate a mean that falls within <em>that</em> CI 95% of the time. The width of such interval is determined by the desired confidence level, by the number $n$ of samples drawn and by the standard deviation of your data $s$.</p>
+<p>This also helps you in estimating the size of $n$ necessary to achieve a given level of confidence: collecting 100 times more samples gives you a CI 10 times narrower.</p>
+<h2 id="confidence-interval-for-child-heights">Confidence interval for child heights</h2>
+<p>&hellip;</p>
+<h2 id="naively-bootstrapping-cis-percentile-method">Naively bootstrapping CIs (percentile method)</h2>
+<p>&hellip;</p>
+<h2 id="bootstrapping-a-better-way-empirical-method">Bootstrapping: a better way (empirical method)</h2>
+<p>..</p>
+<h2 id="when-the-clt-does-not-help">When the CLT does not help</h2>
+<p>..</p>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>It the difference in the child&rsquo;s means statistically significant?</li>
+</ul>
+<ol>
+<li><a href="https://speakerdeck.com/jakevdp/statistics-for-hackers?slide=138">https://speakerdeck.com/jakevdp/statistics-for-hackers?slide=138</a></li>
+<li><a href="https://yanirseroussi.com/2019/01/08/hackers-beware-bootstrap-sampling-may-be-harmful/">https://yanirseroussi.com/2019/01/08/hackers-beware-bootstrap-sampling-may-be-harmful/</a></li>
+<li><a href="https://yanirseroussi.com/2020/08/24/many-is-not-enough-counting-simulations-to-bootstrap-the-right-way/">https://yanirseroussi.com/2020/08/24/many-is-not-enough-counting-simulations-to-bootstrap-the-right-way/</a></li>
+<li><a href="https://erikbern.com/2018/10/08/the-hackers-guide-to-uncertainty-estimates.html">https://erikbern.com/2018/10/08/the-hackers-guide-to-uncertainty-estimates.html</a></li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>let&rsquo;s say $n&gt;30$, more <a href="https://openstax.org/books/introductory-business-statistics/pages/8-2-a-confidence-interval-for-a-population-standard-deviation-unknown-small-sample-case">here</a>
+to know more.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+                        </div>
+                    </section>
+            <!-- Disqus Inject -->
+                
+                  <section>
+    <div class="inner" id="disqus_thread"></div>
+    <script type="text/javascript">
+
+    (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+                return;
+
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'aw-notes';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div class="inner"><a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+</section> 
+                
+            </div>
+            
+        <!-- Footer -->
+            
+                <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                
+                    <li><a href="https://twitter.com/bernardo_xdata" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                
+                    <li><a href="https://www.linkedin.com/in/andreawalteruggerini/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Updated Feb 2022. Top image by @iamengjell</li>
+                
+                <li>Design:  <a href="https://www.html5up.net">HTML5 UP</a></li>
+                
+            </ul>
+        </div>
+    </footer>
+
+            
+        </div>
+
+    <!-- Scripts -->
+        <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://coffepowered.github.io/js/jquery.min.js"></script>
+    <script src="https://coffepowered.github.io/js/jquery.scrolly.min.js"></script>
+    <script src="https://coffepowered.github.io/js/jquery.scrollex.min.js"></script>
+    <script src="https://coffepowered.github.io/js/skel.min.js"></script>
+    <script src="https://coffepowered.github.io/js/util.js"></script>
+
+    
+
+    <!-- Main JS -->
+    <script src="https://coffepowered.github.io/js/main.js"></script>
+
+    
+
+    
+
+    </body>
+</html>
