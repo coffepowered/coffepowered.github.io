@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Your description">
+	<meta name="author" content="Your name">
+	<meta name="generator" content="Hugo 0.122.0">
+	<title>1 - Movie sentiment review &middot; AW - notes &amp; thoughts</title>
+	<!-- Stylesheets -->
+	
+	<link rel="stylesheet" href="https://coffepowered.github.io/css/main.css"/>
+	
+	
+
+	
+
+	<!-- Custom Fonts -->
+	<link href="https://coffepowered.github.io/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="https://coffepowered.github.io/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://coffepowered.github.io/favicon.ico">
+	
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="js/ie/html5shiv.js"></script>
+	<script src="js/ie/html5shiv.jsrespond.min.js"></script>
+	<![endif]-->
+	<head>
+		
+		
+		
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1209H4LX3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1209H4LX3C');
+</script>
+		
+	</head>
+</head>
+
+    <body>
+    
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+      
+
+    
+    
+
+    
+
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+    <header id="header" class="alt">
+        <a href="https://coffepowered.github.io/" class="logo"><strong>AW</strong> <span>learning from data</span></a>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
+
+<!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            
+                <li><a href="https://coffepowered.github.io/">Home</a></li>
+            
+                <li><a href="https://coffepowered.github.io/blogs">Blogs</a></li>
+            
+                <li><a href="https://coffepowered.github.io/blogs/ipsum">Generic Blog</a></li>
+            
+                <li><a href="https://coffepowered.github.io/elements.html">Elements</a></li>
+            
+
+        </ul>
+        <ul class="actions vertical">
+            
+                <li><a href="https://coffepowered.github.io/blogs" class="button special fit">Get Started</a></li>
+            
+            
+                <li><a href="https://coffepowered.github.io/" class="button fit">Log In</a></li>
+            
+        </ul>
+    </nav>
+
+        <!-- Main -->
+            <div id="main" class="alt">
+
+                
+                    <section id="one">
+                        <div class="inner">
+                            <header class="major">
+                                <h1>1 - Movie sentiment review</h1>
+                            </header>
+                            
+                                <span class="image main"><img src="/img/blogs/pic10.jpg" alt="" /></span>
+                            
+                            <h2 id="intro-feel-free-to-skip-this">Intro (feel free to skip this)</h2>
+<p>I feel like we are living in the golden age of Natural Language Processing (NLP). The <a href="https://ruder.io/a-review-of-the-recent-history-of-nlp/index.html#20018multitasklearning">last 20 years</a> have seen the rise of Neural Language models, the creation and subsequent vast application of Word Embeddings and innovative Network architectures for Sequence Modeling and, last but not least, transformers.</p>
+<p>If you did not get the detail of the previous paragraph, please bear with me. The motivation of this post is showing how a non-specialist (like me) can <em>today</em> build effective software that is able to &ldquo;use&rdquo; or interpret text written by humans. To our grandparents, <a href="https://en.wikipedia.org/wiki/Georgetown%E2%80%93IBM_experiment">google would look like magic</a>.</p>
+<p>Here, I just scratch the surface of NLP models, by commenting <a href="https://colab.research.google.com/drive/19r9OS9SoBJMXM9GqAXgu6UEZSLwAqoM1?usp=sharing">my colab notebook which demostrates</a> how to build a sentiment movie review app from the ground up exploiting Keras&rsquo; TextVectorization.</p>
+<h2 id="code">Code</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>    print(i)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;hello&#34;</span>)
+</span></span></code></pre></div><h3 id="code-below">Code below</h3>
+
+<details>
+    <summary>CLICK ME &hellip; code below</summary>
+    <p>This text will be hidden</p>
+<h2 id="yes-even-hidden-code-blocks-seems-like-bold-title-dont-work-here-too">yes, even hidden code blocks! (seems like bold title dont work here too)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;hello world!&#34;</span>)
+</span></span></code></pre></div>
+  </details>
+<h2 id="footnotes-how-to">Footnotes how to</h2>
+<p>$$\int_{a}^{b} x^2 dx$$</p>
+<p>Here&rsquo;s a simple footnote,<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> and here&rsquo;s a longer one.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.
+Here another one with a mismatched numbering <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<h3 id="inline-eqn">Inline eqn</h3>
+<p>The following is an inline equation $$\int x^3 dx$$</p>
+<h3 id="other-publications">Other publications</h3>
+<ul>
+<li><a href="https://studios.disneyresearch.com/2017/08/06/dynamic-word-embeddings/">Dynamic Word Embeddings</a></li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>This is the first footnote.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Here&rsquo;s one with multiple paragraphs and code.</p>
+<p>Indent paragraphs to include them in the footnote.</p>
+<p><code>{ my code }</code></p>
+<p>Add as many paragraphs as you like.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>This is a randome one&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+                        </div>
+                    </section>
+            <!-- Disqus Inject -->
+                
+                  <section>
+    <div class="inner" id="disqus_thread"></div>
+    <script type="text/javascript">
+
+    (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+                return;
+
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'aw-notes';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div class="inner"><a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+</section> 
+                
+            </div>
+            
+        <!-- Footer -->
+            
+                <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                
+                    <li><a href="https://twitter.com/bernardo_xdata" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                
+                    <li><a href="https://www.linkedin.com/in/andreawalteruggerini/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Updated Feb 2022. Top image by @iamengjell</li>
+                
+                <li>Design:  <a href="https://www.html5up.net">HTML5 UP</a></li>
+                
+            </ul>
+        </div>
+    </footer>
+
+            
+        </div>
+
+    <!-- Scripts -->
+        <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://coffepowered.github.io/js/jquery.min.js"></script>
+    <script src="https://coffepowered.github.io/js/jquery.scrolly.min.js"></script>
+    <script src="https://coffepowered.github.io/js/jquery.scrollex.min.js"></script>
+    <script src="https://coffepowered.github.io/js/skel.min.js"></script>
+    <script src="https://coffepowered.github.io/js/util.js"></script>
+
+    
+
+    <!-- Main JS -->
+    <script src="https://coffepowered.github.io/js/main.js"></script>
+
+    
+
+    
+
+    </body>
+</html>

@@ -1,0 +1,137 @@
+<div id="caffeineChart"></div>
+
+<script>
+  // Data for caffeine content
+  const caffeineData = [
+    { name: "Un tazza di caffè americano (200 ml)", value: 95, icon: "☕" },
+    { name: "Una normale lattina di \"bevanda energetica\" (250ml)", value: 80, icon: "🥫" },
+    { name: "Un espresso (60ml)", value: 80, icon: "☕" },
+    { name: "Un tazza di tè (220ml)", value: 47, icon: "🍵" },
+    { name: "Una normale lattina di cocacola (355ml)", value: 40, icon: "🥤" },
+    { name: "Una barretta di cioccolato fondente (50g)", value: 23, icon: "🍫" },
+    { name: "Una barretta di cioccolato al latte (50g)", value: 10, icon: "🍫" }
+  ];
+
+  // Chart dimensions
+  const width = 400;
+  const height = 400;
+  const margin = { top: 20, right: 20, bottom: 30, left: 220 };
+  const chartWidth = width - margin.left - margin.right;
+  const chartHeight = height - margin.top - margin.bottom;
+  const textColor = "lightgray";
+  // Create SVG
+  const svg = d3.select("#caffeineChart")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("viewBox", `0 0 ${width} ${height}`);
+    
+  // Add title to the plot
+  svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", margin.top / 2)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "16px")
+    .attr("fill", "white")
+    .text("Caffeine Content in Common Items");
+
+  // Create chart group
+  const chart = svg.append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+  
+  // X scale
+  const xScale = d3.scaleLinear()
+    .domain([0, 100])
+    .range([0, chartWidth]);
+  
+  // Y scale
+  const yScale = d3.scaleBand()
+    .domain(caffeineData.map(d => d.name))
+    .range([0, chartHeight])
+    .padding(0.3);
+  
+  // Create gradient for bars
+  const defs = svg.append("defs");
+  const gradient = defs.append("linearGradient")
+    .attr("id", "caffeine-gradient")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "100%")
+    .attr("y2", "0%");
+    
+  gradient.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#ffffff");
+    
+  gradient.append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#ff0000");
+  
+  // Add the bars
+  chart.selectAll(".bar")
+    .data(caffeineData)
+    .enter()
+    .append("rect")
+    .attr("class", "bar")
+    .attr("x", 0)
+    .attr("y", d => yScale(d.name))
+    .attr("width", d => xScale(d.value))
+    .attr("height", yScale.bandwidth())
+    .attr("fill", "url(#caffeine-gradient)");
+  
+  // Add x-axis
+  chart.append("g")
+    .attr("transform", `translate(0, ${chartHeight})`)
+    .call(d3.axisBottom(xScale)
+      .tickValues([0, 20, 40, 60, 80, 100])
+      .tickSize(-chartHeight)
+    )
+    .call(g => g.select(".domain").remove())
+    .call(g => g.selectAll(".tick line")
+      .attr("stroke", "#ddd")
+      .attr("stroke-dasharray", "2,2"))
+    .call(g => g.selectAll(".tick text")
+      .attr("font-size", "10px")
+      .attr("fill", textColor)); // Updated color to textColor
+      
+  // Add "mg" labels
+  chart.append("text")
+    .attr("x", 0)
+    .attr("y", chartHeight + 25)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "10px")
+    .text("0 mg");
+    
+  chart.append("text")
+    .attr("x", chartWidth)
+    .attr("y", chartHeight + 25)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "10px")
+    .text("100 mg");
+  
+  // Add item labels and icons
+  const labels = svg.append("g")
+    .attr("transform", `translate(0, ${margin.top})`);
+    
+  caffeineData.forEach((d, i) => {
+    const y = yScale(d.name) + yScale.bandwidth() / 2;
+    
+    // Add text
+    labels.append("text")
+      .attr("x", margin.left - 10)
+      .attr("y", y)
+      .attr("text-anchor", "end")
+      .attr("dominant-baseline", "middle")
+      .attr("font-size", "10px")
+      .text(d.name)
+      .attr("fill", textColor);
+      
+    // Add icon images
+    labels.append("text")
+      .attr("x", margin.left - 5)
+      .attr("y", y)
+      .attr("dominant-baseline", "middle")
+      .attr("font-size", "18px")
+      .text(d.icon);
+  });
+</script>

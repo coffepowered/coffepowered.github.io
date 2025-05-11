@@ -6,27 +6,21 @@
     <description>Recent content in project on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Oct 2027 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/project/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Oct 2017 21:28:43 -0500</lastBuildDate>
+    <atom:link href="https://coffepowered.github.io/categories/project/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 - Movie sentiment review</title>
-      <link>https://coffepowered.github.io/blogs/000-math-example/</link>
-      <pubDate>Sun, 31 Oct 2027 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/blogs/000-math-example/</guid>
-      <description>Intro (feel free to skip this) I feel like we are living in the golden age of Natural Language Processing (NLP). The last 20 years have seen the rise of Neural Language models, the creation and subsequent vast application of Word Embeddings and innovative Network architectures for Sequence Modeling and, last but not least, transformers.
-If you did not get the detail of the previous paragraph, please bear with me. The motivation of this post is showing how a non-specialist (like me) can today build effective software that is able to &amp;ldquo;use&amp;rdquo; or interpret text written by humans.</description>
+      <link>https://coffepowered.github.io/blogs/math-example/</link>
+      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
+      <guid>https://coffepowered.github.io/blogs/math-example/</guid>
+      <description>Intro (feel free to skip this) I feel like we are living in the golden age of Natural Language Processing (NLP). The last 20 years have seen the rise of Neural Language models, the creation and subsequent vast application of Word Embeddings and innovative Network architectures for Sequence Modeling and, last but not least, transformers.&#xA;If you did not get the detail of the previous paragraph, please bear with me. The motivation of this post is showing how a non-specialist (like me) can today build effective software that is able to &amp;ldquo;use&amp;rdquo; or interpret text written by humans.</description>
     </item>
-    
     <item>
       <title>1 - Movie sentiment review</title>
       <link>https://coffepowered.github.io/blogs/sentiment-movie-review/</link>
-      <pubDate>Sun, 31 Oct 2027 21:28:43 -0500</pubDate>
-      
+      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
       <guid>https://coffepowered.github.io/blogs/sentiment-movie-review/</guid>
-      <description>Intro Here, I just scratch the surface of NLP, by commenting my colab notebook which builds the backend of a sentiment movie review app from the ground up exploiting Keras&amp;rsquo; TextVectorization.
-You are expected to be familiar with the following concepts and tools:
-Basics of Machine learning and data manipulation: did you try the Titanic dataset? Basics of Keras API: you got at least on neural network with Keras tutorial I will try to provide crash-course on word vectors and text vectorization.</description>
+      <description>Intro Here, I just scratch the surface of NLP, by commenting my colab notebook which builds the backend of a sentiment movie review app from the ground up exploiting Keras&amp;rsquo; TextVectorization.&#xA;You are expected to be familiar with the following concepts and tools:&#xA;Basics of Machine learning and data manipulation: did you try the Titanic dataset? Basics of Keras API: you got at least on neural network with Keras tutorial I will try to provide crash-course on word vectors and text vectorization.</description>
     </item>
-    
   </channel>
 </rss>

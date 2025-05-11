@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Your description">
+	<meta name="author" content="Your name">
+	<meta name="generator" content="Hugo 0.122.0">
+	<title>Drawing a coffee plot, with LLMs ep0 &middot; AW - notes &amp; thoughts</title>
+	<!-- Stylesheets -->
+	
+	<link rel="stylesheet" href="https://coffepowered.github.io/css/main.css"/>
+	
+	
+
+	
+
+	<!-- Custom Fonts -->
+	<link href="https://coffepowered.github.io/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="https://coffepowered.github.io/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://coffepowered.github.io/favicon.ico">
+	
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="js/ie/html5shiv.js"></script>
+	<script src="js/ie/html5shiv.jsrespond.min.js"></script>
+	<![endif]-->
+	<head>
+		
+		
+		
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1209H4LX3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1209H4LX3C');
+</script>
+		
+	</head>
+</head>
+
+    <body>
+    
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+      
+
+    
+    
+
+    
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+    <header id="header" class="alt">
+        <a href="https://coffepowered.github.io/" class="logo"><strong>AW</strong> <span>learning from data</span></a>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
+
+<!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            
+                <li><a href="https://coffepowered.github.io/">Home</a></li>
+            
+                <li><a href="https://coffepowered.github.io/blogs">Blogs</a></li>
+            
+                <li><a href="https://coffepowered.github.io/blogs/ipsum">Generic Blog</a></li>
+            
+                <li><a href="https://coffepowered.github.io/elements.html">Elements</a></li>
+            
+
+        </ul>
+        <ul class="actions vertical">
+            
+                <li><a href="https://coffepowered.github.io/blogs" class="button special fit">Get Started</a></li>
+            
+            
+                <li><a href="https://coffepowered.github.io/" class="button fit">Log In</a></li>
+            
+        </ul>
+    </nav>
+
+        <!-- Main -->
+            <div id="main" class="alt">
+
+                
+                    <section id="one">
+                        <div class="inner">
+                            <header class="major">
+                                <h1>Drawing a coffee plot, with LLMs ep0</h1>
+                            </header>
+                            
+                                <span class="image main"><img src="/img/blogs/llm-assisted-draw.png" alt="" /></span>
+                            
+                            <h1 id="llm-assisted-work">LLM-assisted work?</h1>
+<p>Will the LLM take over us? Yes, no. Maybe.</p>
+<p>The only thing I&rsquo;m sure about is that those cool stuff are not able to assess the certainty of text (&ldquo;opinions?&rdquo;) they generate.</p>
+<p>Moreover, In my humanly-limited experience, I have yet to see LLMs to meaningful contribute to any asset, i.e. to add valuable and extensive contribution to non-throaway code. All of this may seem strong, but hey, this does not mean productivity cannot be positively impacted.</p>
+<p>Today, I&rsquo;ll be impersonating a journalist or blogger, dealing with a niche site generator as a contraint [^1].
+I need to re-elaborate some data from EFSA about coffee in 5 minutes.</p>
+<h2 id="rules-of-the-game-for-today">Rules of the game, for today</h2>
+<p>Here are the rules of the game I&rsquo;ll start with:</p>
+<ul>
+<li>On the D3.js part, I&rsquo;ll be as &ldquo;clean hands&rdquo; as possible, avoiding any major code contribution</li>
+<li>As anticipated, the site generator works as a &ldquo;constraint&rdquo;, i.e. the plot has to be integrated with an existing system (this blog)</li>
+<li>The initial idea of the design is provided very clearly (a pre-made plot, from EFSA),</li>
+<li>I am evaluating only the &ldquo;graphic&rdquo; capabilities, for the time being.</li>
+</ul>
+<p>You can see below how it went, with actual reference, actually it took more than 5 minutes (about 15).</p>
+<h2 id="day-0-result">Day 0: result</h2>
+
+
+<div id="caffeineChart"></div>
+
+<script>
+  // Data for caffeine content
+  const caffeineData = [
+    { name: "Un tazza di caffè americano (200 ml)", value: 95, icon: "☕" },
+    { name: "Una normale lattina di \"bevanda energetica\" (250ml)", value: 80, icon: "🥫" },
+    { name: "Un espresso (60ml)", value: 80, icon: "☕" },
+    { name: "Un tazza di tè (220ml)", value: 47, icon: "🍵" },
+    { name: "Una normale lattina di cocacola (355ml)", value: 40, icon: "🥤" },
+    { name: "Una barretta di cioccolato fondente (50g)", value: 23, icon: "🍫" },
+    { name: "Una barretta di cioccolato al latte (50g)", value: 10, icon: "🍫" }
+  ];
+
+  // Chart dimensions
+  const width = 400;
+  const height = 400;
+  const margin = { top: 20, right: 20, bottom: 30, left: 220 };
+  const chartWidth = width - margin.left - margin.right;
+  const chartHeight = height - margin.top - margin.bottom;
+  const textColor = "lightgray";
+  // Create SVG
+  const svg = d3.select("#caffeineChart")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("viewBox", `0 0 ${width} ${height}`);
+    
+  // Add title to the plot
+  svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", margin.top / 2)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "16px")
+    .attr("fill", "white")
+    .text("Caffeine Content in Common Items");
+
+  // Create chart group
+  const chart = svg.append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+  
+  // X scale
+  const xScale = d3.scaleLinear()
+    .domain([0, 100])
+    .range([0, chartWidth]);
+  
+  // Y scale
+  const yScale = d3.scaleBand()
+    .domain(caffeineData.map(d => d.name))
+    .range([0, chartHeight])
+    .padding(0.3);
+  
+  // Create gradient for bars
+  const defs = svg.append("defs");
+  const gradient = defs.append("linearGradient")
+    .attr("id", "caffeine-gradient")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "100%")
+    .attr("y2", "0%");
+    
+  gradient.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#ffffff");
+    
+  gradient.append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#ff0000");
+  
+  // Add the bars
+  chart.selectAll(".bar")
+    .data(caffeineData)
+    .enter()
+    .append("rect")
+    .attr("class", "bar")
+    .attr("x", 0)
+    .attr("y", d => yScale(d.name))
+    .attr("width", d => xScale(d.value))
+    .attr("height", yScale.bandwidth())
+    .attr("fill", "url(#caffeine-gradient)");
+  
+  // Add x-axis
+  chart.append("g")
+    .attr("transform", `translate(0, ${chartHeight})`)
+    .call(d3.axisBottom(xScale)
+      .tickValues([0, 20, 40, 60, 80, 100])
+      .tickSize(-chartHeight)
+    )
+    .call(g => g.select(".domain").remove())
+    .call(g => g.selectAll(".tick line")
+      .attr("stroke", "#ddd")
+      .attr("stroke-dasharray", "2,2"))
+    .call(g => g.selectAll(".tick text")
+      .attr("font-size", "10px")
+      .attr("fill", textColor)); // Updated color to textColor
+      
+  // Add "mg" labels
+  chart.append("text")
+    .attr("x", 0)
+    .attr("y", chartHeight + 25)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "10px")
+    .text("0 mg");
+    
+  chart.append("text")
+    .attr("x", chartWidth)
+    .attr("y", chartHeight + 25)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "10px")
+    .text("100 mg");
+  
+  // Add item labels and icons
+  const labels = svg.append("g")
+    .attr("transform", `translate(0, ${margin.top})`);
+    
+  caffeineData.forEach((d, i) => {
+    const y = yScale(d.name) + yScale.bandwidth() / 2;
+    
+    // Add text
+    labels.append("text")
+      .attr("x", margin.left - 10)
+      .attr("y", y)
+      .attr("text-anchor", "end")
+      .attr("dominant-baseline", "middle")
+      .attr("font-size", "10px")
+      .text(d.name)
+      .attr("fill", textColor);
+      
+    // Add icon images
+    labels.append("text")
+      .attr("x", margin.left - 5)
+      .attr("y", y)
+      .attr("dominant-baseline", "middle")
+      .attr("font-size", "18px")
+      .text(d.icon);
+  });
+</script>
+<p>Done with</p>
+<ul>
+<li><a href="https://claude.ai/public/artifacts/35b4af1f-4016-4604-a885-2865937864d1">Claude chat</a></li>
+<li>github copilot edit</li>
+</ul>
+<p>Honestly, it is good, but it took about 3x what I wanted to. Let&rsquo;s see what can be achieved with anoter round.
+After all, estimation is a long-standing issue in software development.</p>
+<p>[^1] it&rsquo;s called Hugo. I like it actually, but for the sake of the exercise it a &ldquo;contraint&rdquo; applied on top of the LLM</p>
+
+                        </div>
+                    </section>
+            <!-- Disqus Inject -->
+                
+                  <section>
+    <div class="inner" id="disqus_thread"></div>
+    <script type="text/javascript">
+
+    (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+                return;
+
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'aw-notes';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div class="inner"><a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+</section> 
+                
+            </div>
+            
+        <!-- Footer -->
+            
+                <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                
+                    <li><a href="https://twitter.com/bernardo_xdata" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                
+                    <li><a href="https://www.linkedin.com/in/andreawalteruggerini/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Updated Feb 2022. Top image by @iamengjell</li>
+                
+                <li>Design:  <a href="https://www.html5up.net">HTML5 UP</a></li>
+                
+            </ul>
+        </div>
+    </footer>
+
+            
+        </div>
+
+    <!-- Scripts -->
+        <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://coffepowered.github.io/js/jquery.min.js"></script>
+    <script src="https://coffepowered.github.io/js/jquery.scrolly.min.js"></script>
+    <script src="https://coffepowered.github.io/js/jquery.scrollex.min.js"></script>
+    <script src="https://coffepowered.github.io/js/skel.min.js"></script>
+    <script src="https://coffepowered.github.io/js/util.js"></script>
+
+    
+
+    <!-- Main JS -->
+    <script src="https://coffepowered.github.io/js/main.js"></script>
+
+    
+
+    
+
+    </body>
+</html>

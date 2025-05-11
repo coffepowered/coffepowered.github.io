@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="description" content="Your description">
 	<meta name="author" content="Your name">
-	<meta name="generator" content="Hugo 0.109.0">
+	<meta name="generator" content="Hugo 0.122.0">
 	<title>Short notes on namedtuples, NamedTuples and Data classes &middot; AW - notes &amp; thoughts</title>
 	<!-- Stylesheets -->
 	
@@ -160,7 +160,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span>:
 </span></span><span style="display:flex;"><span>    id: int
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__post_init__</span>(self):
-</span></span><span style="display:flex;"><span>        id_condition <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[0-9]</span><span style="color:#e6db74">{4}</span><span style="color:#e6db74">&#34;</span>, str(self<span style="color:#f92672">.</span>id))
+</span></span><span style="display:flex;"><span>        id_condition <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span><span style="color:#66d9ef">match</span>(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[0-9]</span><span style="color:#e6db74">{4}</span><span style="color:#e6db74">&#34;</span>, str(self<span style="color:#f92672">.</span>id))
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> id_condition:
 </span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74"> doesn&#39;t follow pattern [0-9]</span><span style="color:#ae81ff">{{</span><span style="color:#e6db74">4</span><span style="color:#ae81ff">}}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> CustomException

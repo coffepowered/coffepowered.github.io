@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>experiment on AW - notes &amp; thoughts</title>
+    <link>https://coffepowered.github.io/tags/experiment/</link>
+    <description>Recent content in experiment on AW - notes &amp; thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 May 2025 21:28:43 -0500</lastBuildDate>
+    <atom:link href="https://coffepowered.github.io/tags/experiment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drawing a coffee plot, with LLMs ep0</title>
+      <link>https://coffepowered.github.io/blogs/coffe/</link>
+      <pubDate>Sat, 10 May 2025 21:28:43 -0500</pubDate>
+      <guid>https://coffepowered.github.io/blogs/coffe/</guid>
+      <description>LLM-assisted work? Will the LLM take over us? Yes, no. Maybe.&#xA;The only thing I&amp;rsquo;m sure about is that those cool stuff are not able to assess the certainty of text (&amp;ldquo;opinions?&amp;rdquo;) they generate.&#xA;Moreover, In my humanly-limited experience, I have yet to see LLMs to meaningful contribute to any asset, i.e. to add valuable and extensive contribution to non-throaway code. All of this may seem strong, but hey, this does not mean productivity cannot be positively impacted.</description>
+    </item>
+  </channel>
+</rss>

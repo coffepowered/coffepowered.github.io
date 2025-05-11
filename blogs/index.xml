@@ -6,103 +6,84 @@
     <description>Recent content in All posts on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://coffepowered.github.io/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 May 2025 21:28:43 -0500</lastBuildDate>
+    <atom:link href="https://coffepowered.github.io/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drawing a coffee plot, with LLMs ep0</title>
+      <link>https://coffepowered.github.io/blogs/coffe/</link>
+      <pubDate>Sat, 10 May 2025 21:28:43 -0500</pubDate>
+      <guid>https://coffepowered.github.io/blogs/coffe/</guid>
+      <description>LLM-assisted work? Will the LLM take over us? Yes, no. Maybe.&#xA;The only thing I&amp;rsquo;m sure about is that those cool stuff are not able to assess the certainty of text (&amp;ldquo;opinions?&amp;rdquo;) they generate.&#xA;Moreover, In my humanly-limited experience, I have yet to see LLMs to meaningful contribute to any asset, i.e. to add valuable and extensive contribution to non-throaway code. All of this may seem strong, but hey, this does not mean productivity cannot be positively impacted.</description>
+    </item>
+    <item>
+      <title>Sparse notes</title>
+      <link>https://coffepowered.github.io/blogs/2022-sparse-notes/</link>
+      <pubDate>Wed, 01 Mar 2023 21:28:43 -0500</pubDate>
+      <guid>https://coffepowered.github.io/blogs/2022-sparse-notes/</guid>
+      <description>Data science march Effect of irrelevant features - a nice experimental test march Matrix factorizaton recap in 6minutes march mean encodings: a comprehesive study, check also category_encoders sklearn library march relationship between SVD and PCA + a comprehensive tutorial on arxiv march Naive-Bayes classification from scratch On Embeddings for Numerical Features in Tabular Deep Learning Euclidean vs cosine distance Data viz Complimentary Temporary Staging area for links that will be forgotten soon:</description>
+    </item>
     <item>
       <title>Q1 2023: Miscellanea (playlist)</title>
       <link>https://coffepowered.github.io/blogs/q1-2023-podcasts-and-readings/</link>
       <pubDate>Wed, 01 Feb 2023 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/blogs/q1-2023-podcasts-and-readings/</guid>
-      <description>Usare i numeri ciecamente: la fallacia di McNamara Due note brevi sulla fallacia di McNamara (segretario della difesa USA durante la guerra in Vietnam), spesso riassunta come &amp;ldquo;fallacia quantitativa&amp;rdquo;
-“the facts which count best count most&amp;quot;. [I fatti che si contano meglio sono quelli che contano di più]
-Spesso è nasce nelle organizzazioni, ma colpisce (duro) individui e decisioni. Come fare a riprodurla? Ecco un tutorial (preso da qui):
-As reported by Smith, Yankelovich describes the fallacy as follows:</description>
+      <description>Usare i numeri ciecamente: la fallacia di McNamara Due note brevi sulla fallacia di McNamara (segretario della difesa USA durante la guerra in Vietnam), spesso riassunta come &amp;ldquo;fallacia quantitativa&amp;rdquo;&#xA;“the facts which count best count most&amp;quot;. [I fatti che si contano meglio sono quelli che contano di più]&#xA;Spesso è figlia delle organizzazioni, ma colpisce (duro) individui e decisioni. Come fare a riprodurla? Ecco un tutorial (preso da qui):&#xA;As reported by Smith, Yankelovich describes the fallacy as follows:</description>
     </item>
-    
     <item>
       <title>What&#39;s all that for? Thinking of the BTC energy consumptions</title>
       <link>https://coffepowered.github.io/blogs/on-the-btc-energy-toll/</link>
       <pubDate>Tue, 10 Jan 2023 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/blogs/on-the-btc-energy-toll/</guid>
-      <description>I can remember the snow Born on the cusp of the 90s, I was privileged to witness a period of great optimism and progress. The winds of freedom and democracy seemed to be blowing strong, and economies were thriving. One particularly noteworthy achievement from this time was the establishment of the Montreal Protocol, a treaty designed to phase out ozone-depleting substances, a move that has proven highly successful.
-I have fond memories of being a child during this time, including TV commercials1 that highlighted the importance of protecting polar bears.</description>
+      <description>I can remember the snow Born on the cusp of the 90s, I was privileged to witness a period of great optimism and progress. The winds of freedom and democracy seemed to be blowing strong, and economies were thriving. One particularly noteworthy achievement from this time was the establishment of the Montreal Protocol, a treaty designed to phase out ozone-depleting substances, a move that has proven highly successful.&#xA;I have fond memories of being a child during this time, including TV commercials1 that highlighted the importance of protecting polar bears.</description>
     </item>
-    
     <item>
       <title>A (reasonably) complex radar chart</title>
       <link>https://coffepowered.github.io/blogs/complex-radar-python/</link>
       <pubDate>Fri, 11 Mar 2022 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/blogs/complex-radar-python/</guid>
-      <description>A radar (or spider) chart is a convenient method of displaying multivariate data in a form of 2-dimensional chart.
-When I say convenient, I mean it is particularly well-accepted by people and gives a good intuition when comparing different items/subjects.
-Think about comparing 2 (or more) football players in terms of dribbling, running speed, shots and pressure. Even with only four variables bar plot would become cumbersome to deal with and not immediate to perceive.</description>
+      <description>A radar (or spider) chart is a convenient method of displaying multivariate data in a form of 2-dimensional chart.&#xA;When I say convenient, I mean it is particularly well-accepted by people and gives a good intuition when comparing different items/subjects.&#xA;Think about comparing 2 (or more) football players in terms of dribbling, running speed, shots and pressure. Even with only four variables bar plot would become cumbersome to deal with and not immediate to perceive.</description>
     </item>
-    
     <item>
       <title>The economics of the agri-food value chain</title>
       <link>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</link>
       <pubDate>Tue, 01 Mar 2022 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</guid>
-      <description>Course review Let me paraphrase what Tukey once said: I truly believe that getting in contact with different fields and expertise is one of the perks of being a data scientist. Pictorially:
-The best thing about being a statistician data scientist, Mr Tukey once told a colleague, is that you get to play in everyone&amp;rsquo;s backyard.
-So, even if you can legitimately play in everyone&amp;rsquo;s backyard - which oftentimes means cleaning it as a first step, it also means that you will be speaking to people with different backgrounds ad expertise.</description>
+      <description>Course review Let me paraphrase what Tukey once said: I truly believe that getting in contact with different fields and expertise is one of the perks of being a data scientist. Pictorially:&#xA;The best thing about being a statistician data scientist, Mr Tukey once told a colleague, is that you get to play in everyone&amp;rsquo;s backyard.&#xA;So, even if you can legitimately play in everyone&amp;rsquo;s backyard - which oftentimes means cleaning it as a first step, it also means that you will be speaking to people with different backgrounds ad expertise.</description>
     </item>
-    
     <item>
       <title>Google 20 for 1 stock split</title>
       <link>https://coffepowered.github.io/blogs/google-stock-split/</link>
       <pubDate>Wed, 02 Feb 2022 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/blogs/google-stock-split/</guid>
-      <description>Google announced Tuesday its results for Q4 2021 and that they plan to split shares at 20 for 1 this Tuesday. Basically, if you are a shareholder, for each 1 share of Google at (about) 3000$ dollars you will have (at the ex-date) 20 shares at 150$.
-Nothing should really change, but there might be some financial effects, for instance, due to the inclusion of the stock in new indices or increased market liquidity.</description>
+      <description>Google announced Tuesday its results for Q4 2021 and that they plan to split shares at 20 for 1 this Tuesday. Basically, if you are a shareholder, for each 1 share of Google at (about) 3000$ dollars you will have (at the ex-date) 20 shares at 150$.&#xA;Nothing should really change, but there might be some financial effects, for instance, due to the inclusion of the stock in new indices or increased market liquidity.</description>
     </item>
-    
     <item>
       <title>Crescita Economica</title>
       <link>https://coffepowered.github.io/blogs/crescita-economica/</link>
       <pubDate>Sun, 31 Jan 2021 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/blogs/crescita-economica/</guid>
-      <description>Questa pagina traduce liberamente e parzialmente, l&amp;rsquo;articolo di Max Roser (secondo licenza) (2013) - &amp;ldquo;Economic Growth&amp;rdquo;. Published online at OurWorldInData
-Riferitevi alla versione originale per le citazioni e per il testo completo, io mi sono permesso di aggiungere qualche nota interessante per noi italiani.
-Con crescita economica descriviamo un aumento nella qualità a quantità dei beni e servizi economici che una società produce o consuma.
-Mentre la definizione di crescita economica è chiara, misurare la crescita in sè risulta estremamente difficile.</description>
+      <description>Questa pagina traduce liberamente e parzialmente, l&amp;rsquo;articolo di Max Roser (secondo licenza) (2013) - &amp;ldquo;Economic Growth&amp;rdquo;. Published online at OurWorldInData&#xA;Riferitevi alla versione originale per le citazioni e per il testo completo, io mi sono permesso di aggiungere qualche nota interessante per noi italiani.&#xA;Con crescita economica descriviamo un aumento nella qualità a quantità dei beni e servizi economici che una società produce o consuma.&#xA;Mentre la definizione di crescita economica è chiara, misurare la crescita in sè risulta estremamente difficile.</description>
     </item>
-    
     <item>
       <title>Short notes on namedtuples, NamedTuples and Data classes</title>
       <link>https://coffepowered.github.io/blogs/python-data-typer-for-data/</link>
       <pubDate>Mon, 11 Jan 2021 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/blogs/python-data-typer-for-data/</guid>
-      <description>Both dataclasses and tuples are based on the attrs project, the one Python Library everybody needs and are fast object types (factory methods) designed to simplify and reduce code.
-namedtuple and NamedTuple Both immutable Tuple-based (hence fast) but far better than tuples NamedTuple is the typed version of namedtuple immutable, iterable, hashable, unpackable backward-compatible with tuple (e.g you can access a namedtuple by index) default arguments supported from Python 3.7+ fast!</description>
+      <description>Both dataclasses and tuples are based on the attrs project, the one Python Library everybody needs and are fast object types (factory methods) designed to simplify and reduce code.&#xA;namedtuple and NamedTuple Both immutable Tuple-based (hence fast) but far better than tuples NamedTuple is the typed version of namedtuple immutable, iterable, hashable, unpackable backward-compatible with tuple (e.g you can access a namedtuple by index) default arguments supported from Python 3.7+ fast!</description>
     </item>
-    
     <item>
       <title>Add a row to pandas&#39; DataFrame</title>
       <link>https://coffepowered.github.io/blogs/pandas-append-rows-to-df/</link>
       <pubDate>Sat, 31 Oct 2020 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/blogs/pandas-append-rows-to-df/</guid>
-      <description>Quite often, it is needed to fill or modify dataframes with data that gets computed at runtime. This post draws heavily from the stackoverlow question &amp;ldquo;Add one row to pandas DataFrame&amp;rdquo;. Here I show the 4 methods that were proposed to append the data and discuss them. A 5th &amp;ldquo;improper&amp;rdquo; method operating on columns is added just for sake of comparison with respect to the most efficient option.
-If you want just the takeaways:</description>
+      <description>Quite often, it is needed to fill or modify dataframes with data that gets computed at runtime. This post draws heavily from the stackoverlow question &amp;ldquo;Add one row to pandas DataFrame&amp;rdquo;. Here I show the 4 methods that were proposed to append the data and discuss them. A 5th &amp;ldquo;improper&amp;rdquo; method operating on columns is added just for sake of comparison with respect to the most efficient option.&#xA;If you want just the takeaways:</description>
     </item>
-    
     <item>
       <title>CODE EXAMPLES</title>
       <link>https://coffepowered.github.io/blogs/000-sample-page-code-block/</link>
       <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/blogs/000-sample-page-code-block/</guid>
-      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
-Title 2 Ciao ciao ciao come stai? Ciao ciao ciao come stai?
-A sample code block 199 200 201 202 203 204 205 206 207 # ... code for i in range(1,5): print(i) logger.</description>
+      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.&#xA;Title 2 Ciao ciao ciao come stai? Ciao ciao ciao come stai?&#xA;A sample code block 199 200 201 202 203 204 205 206 207 # ... code for i in range(1,5): print(i) logger.</description>
     </item>
-    
   </channel>
 </rss>

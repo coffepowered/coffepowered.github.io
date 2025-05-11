@@ -6,87 +6,70 @@
     <description>Recent content in Categories on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Feb 2023 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 May 2025 21:28:43 -0500</lastBuildDate>
+    <atom:link href="https://coffepowered.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>daily</title>
+      <link>https://coffepowered.github.io/categories/daily/</link>
+      <pubDate>Sat, 10 May 2025 21:28:43 -0500</pubDate>
+      <guid>https://coffepowered.github.io/categories/daily/</guid>
+      <description></description>
+    </item>
     <item>
       <title>courses</title>
       <link>https://coffepowered.github.io/categories/courses/</link>
-      <pubDate>Wed, 01 Feb 2023 21:28:43 -0500</pubDate>
-      
+      <pubDate>Wed, 01 Mar 2023 21:28:43 -0500</pubDate>
       <guid>https://coffepowered.github.io/categories/courses/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>notes</title>
       <link>https://coffepowered.github.io/categories/notes/</link>
-      <pubDate>Wed, 01 Feb 2023 21:28:43 -0500</pubDate>
-      
+      <pubDate>Wed, 01 Mar 2023 21:28:43 -0500</pubDate>
       <guid>https://coffepowered.github.io/categories/notes/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>reviews</title>
+      <link>https://coffepowered.github.io/categories/reviews/</link>
+      <pubDate>Wed, 01 Mar 2023 21:28:43 -0500</pubDate>
+      <guid>https://coffepowered.github.io/categories/reviews/</guid>
+      <description></description>
+    </item>
     <item>
       <title>opinions</title>
       <link>https://coffepowered.github.io/categories/opinions/</link>
       <pubDate>Wed, 01 Feb 2023 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/categories/opinions/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>reviews</title>
-      <link>https://coffepowered.github.io/categories/reviews/</link>
-      <pubDate>Wed, 01 Feb 2023 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/categories/reviews/</guid>
-      <description></description>
-    </item>
-    
     <item>
       <title>gist</title>
       <link>https://coffepowered.github.io/categories/gist/</link>
       <pubDate>Fri, 11 Mar 2022 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/categories/gist/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>python</title>
       <link>https://coffepowered.github.io/categories/python/</link>
       <pubDate>Fri, 11 Mar 2022 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/categories/python/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>economia</title>
       <link>https://coffepowered.github.io/categories/economia/</link>
       <pubDate>Sun, 31 Jan 2021 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/categories/economia/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>pandas</title>
       <link>https://coffepowered.github.io/categories/pandas/</link>
       <pubDate>Sat, 31 Oct 2020 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/categories/pandas/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>daily</title>
-      <link>https://coffepowered.github.io/categories/daily/</link>
-      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
-      
-      <guid>https://coffepowered.github.io/categories/daily/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

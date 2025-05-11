@@ -6,17 +6,21 @@
     <description>Recent content in daily on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Oct 2017 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/categories/daily/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 May 2025 21:28:43 -0500</lastBuildDate>
+    <atom:link href="https://coffepowered.github.io/categories/daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drawing a coffee plot, with LLMs ep0</title>
+      <link>https://coffepowered.github.io/blogs/coffe/</link>
+      <pubDate>Sat, 10 May 2025 21:28:43 -0500</pubDate>
+      <guid>https://coffepowered.github.io/blogs/coffe/</guid>
+      <description>LLM-assisted work? Will the LLM take over us? Yes, no. Maybe.&#xA;The only thing I&amp;rsquo;m sure about is that those cool stuff are not able to assess the certainty of text (&amp;ldquo;opinions?&amp;rdquo;) they generate.&#xA;Moreover, In my humanly-limited experience, I have yet to see LLMs to meaningful contribute to any asset, i.e. to add valuable and extensive contribution to non-throaway code. All of this may seem strong, but hey, this does not mean productivity cannot be positively impacted.</description>
+    </item>
     <item>
       <title>CODE EXAMPLES</title>
       <link>https://coffepowered.github.io/blogs/000-sample-page-code-block/</link>
       <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/blogs/000-sample-page-code-block/</guid>
-      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
-Title 2 Ciao ciao ciao come stai? Ciao ciao ciao come stai?
-A sample code block 199 200 201 202 203 204 205 206 207 # ... code for i in range(1,5): print(i) logger.</description>
+      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.&#xA;Title 2 Ciao ciao ciao come stai? Ciao ciao ciao come stai?&#xA;A sample code block 199 200 201 202 203 204 205 206 207 # ... code for i in range(1,5): print(i) logger.</description>
     </item>
-    
   </channel>
 </rss>

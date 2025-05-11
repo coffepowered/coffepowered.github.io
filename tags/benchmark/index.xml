@@ -6,16 +6,14 @@
     <description>Recent content in benchmark on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Oct 2020 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/tags/benchmark/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Oct 2020 21:28:43 -0500</lastBuildDate>
+    <atom:link href="https://coffepowered.github.io/tags/benchmark/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Add a row to pandas&#39; DataFrame</title>
       <link>https://coffepowered.github.io/blogs/pandas-append-rows-to-df/</link>
       <pubDate>Sat, 31 Oct 2020 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/blogs/pandas-append-rows-to-df/</guid>
-      <description>Quite often, it is needed to fill or modify dataframes with data that gets computed at runtime. This post draws heavily from the stackoverlow question &amp;ldquo;Add one row to pandas DataFrame&amp;rdquo;. Here I show the 4 methods that were proposed to append the data and discuss them. A 5th &amp;ldquo;improper&amp;rdquo; method operating on columns is added just for sake of comparison with respect to the most efficient option.
-If you want just the takeaways:</description>
+      <description>Quite often, it is needed to fill or modify dataframes with data that gets computed at runtime. This post draws heavily from the stackoverlow question &amp;ldquo;Add one row to pandas DataFrame&amp;rdquo;. Here I show the 4 methods that were proposed to append the data and discuss them. A 5th &amp;ldquo;improper&amp;rdquo; method operating on columns is added just for sake of comparison with respect to the most efficient option.&#xA;If you want just the takeaways:</description>
     </item>
-    
   </channel>
 </rss>

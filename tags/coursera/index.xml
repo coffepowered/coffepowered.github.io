@@ -6,17 +6,21 @@
     <description>Recent content in coursera on AW - notes &amp; thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Mar 2022 21:28:43 -0500</lastBuildDate><atom:link href="https://coffepowered.github.io/tags/coursera/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 21:28:43 -0500</lastBuildDate>
+    <atom:link href="https://coffepowered.github.io/tags/coursera/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sparse notes</title>
+      <link>https://coffepowered.github.io/blogs/2022-sparse-notes/</link>
+      <pubDate>Wed, 01 Mar 2023 21:28:43 -0500</pubDate>
+      <guid>https://coffepowered.github.io/blogs/2022-sparse-notes/</guid>
+      <description>Data science march Effect of irrelevant features - a nice experimental test march Matrix factorizaton recap in 6minutes march mean encodings: a comprehesive study, check also category_encoders sklearn library march relationship between SVD and PCA + a comprehensive tutorial on arxiv march Naive-Bayes classification from scratch On Embeddings for Numerical Features in Tabular Deep Learning Euclidean vs cosine distance Data viz Complimentary Temporary Staging area for links that will be forgotten soon:</description>
+    </item>
     <item>
       <title>The economics of the agri-food value chain</title>
       <link>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</link>
       <pubDate>Tue, 01 Mar 2022 21:28:43 -0500</pubDate>
-      
       <guid>https://coffepowered.github.io/blogs/economics-agri-food-value-chain/</guid>
-      <description>Course review Let me paraphrase what Tukey once said: I truly believe that getting in contact with different fields and expertise is one of the perks of being a data scientist. Pictorially:
-The best thing about being a statistician data scientist, Mr Tukey once told a colleague, is that you get to play in everyone&amp;rsquo;s backyard.
-So, even if you can legitimately play in everyone&amp;rsquo;s backyard - which oftentimes means cleaning it as a first step, it also means that you will be speaking to people with different backgrounds ad expertise.</description>
+      <description>Course review Let me paraphrase what Tukey once said: I truly believe that getting in contact with different fields and expertise is one of the perks of being a data scientist. Pictorially:&#xA;The best thing about being a statistician data scientist, Mr Tukey once told a colleague, is that you get to play in everyone&amp;rsquo;s backyard.&#xA;So, even if you can legitimately play in everyone&amp;rsquo;s backyard - which oftentimes means cleaning it as a first step, it also means that you will be speaking to people with different backgrounds ad expertise.</description>
     </item>
-    
   </channel>
 </rss>
