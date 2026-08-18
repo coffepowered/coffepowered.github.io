@@ -1,0 +1,77 @@
++++
+title = "Add a row to pandas' DataFrame"
+type = "blog"
+date = 2020-10-31T21:28:43-05:00
+description = "There are many ways of doing the same thing in pandas: let's take a look at their efficiency."
+image = "/img/blogs/append-row-pd.png"
+tags = ["python", "pandas", "benchmark", "performance"]
+categories = ["pandas", "python"]
++++
+
+<p>Quite often, it is needed to <em>fill</em> or modify dataframes with data that gets computed at runtime. This post draws heavily from the stackoverlow question &ldquo;<a href="https://stackoverflow.com/questions/10715965/add-one-row-to-pandas-dataframe/24913075#24913075">Add one row to pandas DataFrame</a>&rdquo;. Here I show the 4 methods that were proposed to append the data and discuss them. A 5th &ldquo;improper&rdquo; method operating on columns is added just for sake of comparison with respect to the most efficient option.</p>
+<p>If you want just the takeaways:</p>
+<ul>
+<li><code>append()</code> function is <strong>not</strong> to be used iteratively (still is quite handy for its <em>proper</em> use case: adding a few rows)</li>
+<li>index preallocation is a quite good practice, still it is far from being fast enough to allow the creation of DataFrames by looping over rows</li>
+</ul>
+<p>Feel free also to jump to the <a href="#results">results</a>.</p>
+<blockquote>
+<p>I will just keeping generating data with sequential <strong>for</strong> loops as in the original source (read more in the digressions).</p>
+</blockquote>
+<h2 id="41-ways-to-add-data-to-a-dataframe">4+1 ways to add data to a DataFrame</h2>
+<p>Pandas is extremely expressive and flexible. So flexible that it is not always straightforward choosing which method(s) to use to perform even the simplest operation, as adding a row to an existing DataFrame.</p>
+<p>Let&rsquo;s benchmark 4 approaches:</p>
+<h3 id="dfappend">df.append()</h3>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.append.html"><code>.append()</code></a>, is certainly the first thing one maybe tempted to use, most probably because of its formal similarity to python&rsquo;s append over lists. In practice we will benchmark the iteration of this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># data can be a df, a dict with keys corresponding to df columns and other things. </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ignore index allow to progressively number row index.</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>append(data, ignore_index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p>Replicating this for a large number of rows is attractive, but the official documentation warns us that this can be:</p>
+<blockquote>
+<p>more computationally intensive than a single concatenate. A better solution is to append those rows to a list and then concatenate the list with the original DataFrame all at once.</p>
+</blockquote>
+<p>We&rsquo;ll see <strong>how true</strong> this is.</p>
+<h3 id="dfloc-with-and-without-preallocation">df.loc() (with and without preallocation)</h3>
+<p>In modern version of pandas <code>.loc</code> it the de facto standard for <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html">accessing data</a>, both label based and with boolean arrays.</p>
+<p>Assigning new rows is elegant with <code>.loc</code> and such rows can also be preallocated for a faster access, in fact, if data exists for a given index it is overwritten.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> do_preallocate:
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(index<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">0</span>, num_rows), columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#e6db74">&#34;B&#34;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#e6db74">&#34;B&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>loc[index] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>append(data, ignore_index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p>Of course preallocation requires to know in advance the size of the data.</p>
+<h3 id="dict-create-all-data-with-a-dict-and-init-new-dataframe"><code>dict</code>: create all data with a dict and init new dataframe</h3>
+<p>This is the limiting case of what pandas documentation suggests in case of append except that the whole data is created as a dict and then a new DataFrame is created as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>data <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#34;A&#34;</span>:<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;B&#34;</span>:<span style="color:#ae81ff">2</span>}, {<span style="color:#e6db74">&#34;A&#34;</span>:<span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;B&#34;</span>:<span style="color:#ae81ff">4</span>}]
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data, columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#e6db74">&#34;B&#34;</span>])
+</span></span></code></pre></div><p>This is IMO not really elegant (requiring 3 data structures) but extremely efficient.</p>
+<h3 id="list-create-columns-by-lists-and-append-to-the-df"><code>list</code>: create columns by lists and append to the df</h3>
+<p>As the previous approach, this relies to basic python data structures but involves only the use of lists.</p>
+<p>This is way clearer to me <strong>but</strong> is considered the &ldquo;+1&rdquo; bonus method since (i) it requires being able to generate data in advance and (ii) does not stricly cover the original use case.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># lol is a list of list</span>
+</span></span><span style="display:flex;"><span>cols <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;B&#34;</span>]
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(columns<span style="color:#f92672">=</span>cols)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,len(cols)):
+</span></span><span style="display:flex;"><span>    df[cols[i]] <span style="color:#f92672">=</span> generate_list(i)
+</span></span></code></pre></div><p>Notice also that one could just generate all the lists beforehand and then initialize the df from scratch.</p>
+<h2 id="results">Results</h2>
+<p>The approaches are tested for 1k, 5k and 10k rows. Results are really clear. Adding a few rows via <code>loc</code> or <code>append</code> is a legitimate use case. Do not abuse it.</p>
+<p>
+
+
+  <img src="/img/benchmark-add-data-df-1.png" alt="&amp;ldquo;Images of the benchmark 1: for 5k rows append and loc take about 7.5 seconds, preallocated loc about 1s, dict and lists method fraction of seconds. Results scale about linearly with 1k and 10k rows.&amp;rdquo;">
+</p>
+<h2 id="results-scale-up-to-100k-rows">Results, scale up to 100k rows</h2>
+<p>Now that we know the results on small scale data, it is worth comparing what happens when scaling the 3 most efficient methods from 10k to 100k rows, but take this with a grain of salt, as memory impact is completely disregarded.</p>
+<p>The same conclusions apply, preallocated <code>loc</code> is not good enough and <code>dict</code> is the way to good when adding rows to a DataFrame, being comparable with the <code>list</code> approach in terms of times</p>
+<p>
+
+
+  <img src="/img/benchmark-add-data-df-2.png" alt="&amp;ldquo;Images of the benchmark 2: with 100k rows loc with preallocation take 5 times more than better approaches.&amp;rdquo;">
+</p>
+<h2 id="digressions">Digressions</h2>
+<ul>
+<li>Vectorizing the part data generation in this experiment would be interesting. Basically, <a href="https://www.blog.duomly.com/loops-in-python-comparison-and-performance/">list comprehnsions are faster than for and both should be slower w.r.t. numpy</a>.</li>
+<li>Plots are made with matplotlit backend in pandas since it seems that plotly got a good support for wide-form data only recently while previously operated only on <em>tidy</em> i.e. <em>long-form</em> data. See <a href="https://plotly.com/python/px-arguments/">docs</a> and <a href="https://community.plotly.com/t/df-plot-kind-box-with-plotly-returns-error-of-wide-form-data/40729">discussion</a>.</li>
+</ul>

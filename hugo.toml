@@ -1,0 +1,102 @@
+baseURL = "https://coffepowered.github.io/"
+title = "AW — notes & thoughts"
+theme = "hugo-bearblog"
+locale = "it-IT"
+defaultContentLanguage = "it"
+timeZone = "Europe/Rome"
+enableRobotsTXT = true
+enableGitInfo = false
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[params]
+  title = "AW — notes & thoughts"
+  description = "Micro-progetti, appunti su dati e altre note sparse."
+  author = "Andrea Ruggerini"
+  favicon = "favicon.ico"
+  dateFormat = "02 Jan 2006"
+  hideMadeWithLine = false
+  enablePostNavigator = true
+  googleAnalytics = "G-1209H4LX3C"
+  disqusShortname = "aw-notes"
+  twitter = "https://twitter.com/bernardo_xdata"
+  linkedin = "https://www.linkedin.com/in/andreawalteruggerini/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
+  [markup.highlight]
+    codeFences = true
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = false
+    style = "github-dark"
+
+[module]
+  [module.hugoVersion]
+    min = "0.165.0"
+    extended = false
+
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "img"
+    target = "static/img"
+  [[module.mounts]]
+    source = "js"
+    target = "static/js"
+  [[module.mounts]]
+    source = "d3visuals"
+    target = "static/d3visuals"
+  [[module.mounts]]
+    source = "favicon.ico"
+    target = "static/favicon.ico"
+  [[module.mounts]]
+    source = "blogs/on-the-btc-energy-toll/data.csv"
+    target = "static/blogs/on-the-btc-energy-toll/data.csv"
+  [[module.mounts]]
+    source = "blogs/on-the-btc-energy-toll/data.xlsx"
+    target = "static/blogs/on-the-btc-energy-toll/data.xlsx"
+
+[caches]
+  [caches.images]
+    dir = ":cacheDir/images"
+
+[[menus.main]]
+  name = "Articoli"
+  url = "/blogs/"
+  weight = 10
+
+[[menus.main]]
+  name = "Tag"
+  url = "/tags/"
+  weight = 20
+
+[[menus.main]]
+  name = "About"
+  url = "/su-questo-sito/"
+  weight = 30
+
+[[menus.main]]
+  name = "RSS"
+  url = "/index.xml"
+  weight = 40

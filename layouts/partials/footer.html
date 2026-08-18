@@ -1,0 +1,7 @@
+<p class="social-links">
+  {{ with .Site.Params.twitter }}<a href="{{ . }}" rel="me">Twitter/X</a>{{ end }}
+  {{ with .Site.Params.linkedin }}<a href="{{ . }}" rel="me">LinkedIn</a>{{ end }}
+</p>
+{{ if not (.Param "hideMadeWithLine") }}
+  <small>Costruito con <a href="https://gohugo.io/">Hugo</a> e <a href="https://github.com/janraasch/hugo-bearblog/">Bear Blog</a>.</small>
+{{ end }}

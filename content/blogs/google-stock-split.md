@@ -1,0 +1,184 @@
++++
+title = "Google 20 for 1 stock split"
+type = "blog"
+date = 2022-02-02T21:28:43-05:00
+description = "is it driving affecting the returns price? A funny experiment"
+image = "/img/blogs/stock-screen-cropped.jpg"
+tags = ["finance", "python", "causal-inference", "data-analysis", "machine-learning"]
+categories = ["notes", "python"]
+math = true
+d3 = true
+plotly = true
++++
+
+<p>Google announced Tuesday its results for Q4 2021 <em>and</em> that they plan to split shares at 20 for 1 this Tuesday. Basically, if you are a shareholder, for each 1 share of Google at (about) 3000$ dollars you will have (at the ex-date) 20 shares at 150$.</p>
+<p>Nothing should really change, but there might be some financial effects, for instance, due to the <a href="https://www.barrons.com/articles/alphabet-stock-split-51643842562">inclusion of the stock in new indices</a> or increased market liquidity.</p>
+<p>It&rsquo;s a good story in the end: more small investors can now afford to get a share of Google, so the stock is more valuable.</p>
+<p>Is there any impact on the stock price<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> and can it be measured in this  specific case?</p>
+<p>The question was inspired by a few headlines juxtaposing the stock split itself with the very good performance that the stock achieved<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> in the same day, which increased by about 7%.</p>
+<p>So was the 7% daily return due to the split announcement? This is the question we&rsquo;ll try to investigate here by building a naive <strong>counterfactual</strong>.</p>
+<p>The idea of constructing a counterfactual, i.e. this <strong>way of thinking</strong>, came originally by reading the book &ldquo;the causal mixtape&rdquo; (J. Cunningham) and is being put into practice just for fun. If you want to take a single takeaway from this post, here it is: get a copy of the book =).</p>
+<p>
+
+
+  <figure>
+    <img src="/img/google-stock/google-stock.png" alt="&amp;ldquo;google stock price&amp;rdquo;">
+    <figcaption>The increase of the stock price on the announcement</figcaption>
+  </figure>
+</p>
+<h2 id="a-naive-counterfactual-model">A naive counterfactual model</h2>
+<p>A counterfactual model will help us in reframing the question in the following terms: what would have happened if Google did not release this announcement?
+I am taking here the announcement as a whole, this is important and we&rsquo;ll soon go back to this: the idea is to get a sense of how &ldquo;special&rdquo; has last Tuesday been when compared to what happens &ldquo;normally&rdquo;.</p>
+<p>It is assumed that the return of the google stock at any given (end-of) day is determined by the return of other - similar - stocks plus some factors that are idiosyncratic to Google, those factors making the company unique. Let us try to build a model that quantifies the return of GOOG as a function of other ones, assuming that the errors of this model are due to the idiosyncrasies of the Google stock.</p>
+<p>So we are assuming a priori that Google returns can be explained by the returns of other selected tech companies, namely: Microsoft, Facebook, Amazon, Apple are clear candidates, but I&rsquo;ll add also Nvidia, Twitter, Tesla, Adobe, Etsy, Garmin and Oracle. None of these companies is <a href="https://www.lgimblog.com/categories/esg-and-long-term-themes/fang-correlations-theyre-not-what-you-think/">exactly like Google</a> with its unique mix of revenue sources (search) and experiments (minor exposure to cloud, hardware, autonomous car, robots).</p>
+<p>However, at the end of the day, we are just interested in determining how much do the returns of these companies tell about Google&rsquo;s return. If we are able to explain Google returns in this fashion, we can then compare the <strong>hypothetical &ldquo;no announcement&rdquo;</strong> estimated return <strong>to the actual one</strong> that the stock achieved on Tuesday.</p>
+<h3 id="data-sourcing">Data sourcing</h3>
+<blockquote>
+<p>skip over this section if you&rsquo;re not interested in replicating the analysis.</p>
+</blockquote>
+<p>This is the easy part: daily stock data can be obtained from several sources. I choose alphavantage, getting a free key.
+If you want to replicate the experiment, I suggest using the python library <code>alpha_vantage</code> with <code>pandas</code>: <code>pip install alpha_vantage pandas</code>.</p>
+<p>Notice that the free version gives you a limited amount of requests, so we must wait a little time between requests:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># Set ALPHAVANTAGE_TOKEN, install requirements</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> alpha_vantage.timeseries <span style="color:#f92672">import</span> TimeSeries
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>ts <span style="color:#f92672">=</span> TimeSeries(key<span style="color:#f92672">=</span>ALPHAVANTAGE_TOKEN,output_format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pandas&#39;</span>, indexing_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;date&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_pd_data</span>(tickers<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GOOGL&#34;</span>], outputsize<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;compact&#34;</span>):
+</span></span><span style="display:flex;"><span>  dfs <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> i,t <span style="color:#f92672">in</span> enumerate(tickers):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">%</span><span style="color:#ae81ff">4</span>)<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> i<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>      print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74"> Pausing for 65 s&#34;</span>)
+</span></span><span style="display:flex;"><span>      time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">65</span>)
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>    data, meta_data <span style="color:#f92672">=</span> ts<span style="color:#f92672">.</span>get_daily(t, outputsize<span style="color:#f92672">=</span>outputsize)
+</span></span><span style="display:flex;"><span>    data[<span style="color:#e6db74">&#34;price&#34;</span>] <span style="color:#f92672">=</span> data[<span style="color:#e6db74">&#39;4. close&#39;</span>]
+</span></span><span style="display:flex;"><span>    data[<span style="color:#e6db74">&#34;ticker&#34;</span>] <span style="color:#f92672">=</span> t
+</span></span><span style="display:flex;"><span>    dfs<span style="color:#f92672">.</span>append(data<span style="color:#f92672">.</span>reset_index()<span style="color:#f92672">.</span>set_index([<span style="color:#e6db74">&#34;ticker&#34;</span>,<span style="color:#e6db74">&#34;date&#34;</span>]))
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;Done&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> pd<span style="color:#f92672">.</span>concat(dfs, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># GOOG are C shares, while GOOGL are A shares (w voting rights)</span>
+</span></span><span style="display:flex;"><span>tickers <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;GOOG&#34;</span>,<span style="color:#e6db74">&#34;MSFT&#34;</span>,<span style="color:#e6db74">&#34;FB&#34;</span>,<span style="color:#e6db74">&#34;AMZN&#34;</span>,<span style="color:#e6db74">&#34;ETSY&#34;</span>,<span style="color:#e6db74">&#34;GRMN&#34;</span>,<span style="color:#e6db74">&#34;ADBE&#34;</span>,<span style="color:#e6db74">&#34;AAPL&#34;</span>,<span style="color:#e6db74">&#34;NVDA&#34;</span>,<span style="color:#e6db74">&#34;TWTR&#34;</span>,<span style="color:#e6db74">&#34;TSLA&#34;</span>,<span style="color:#e6db74">&#34;ORCL&#34;</span>]
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> get_pd_data(tickers<span style="color:#f92672">=</span>tickers, outputsize<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;full&#34;</span>)
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>reset_index()<span style="color:#f92672">.</span>query(<span style="color:#e6db74">&#34;date&gt;&#39;2016-01-01&#39;&#34;</span>)[[<span style="color:#e6db74">&#34;ticker&#34;</span>,<span style="color:#e6db74">&#34;date&#34;</span>,<span style="color:#e6db74">&#34;price&#34;</span>]]
+</span></span></code></pre></div><p>We are basically taking the data for all the mentioned stocks from 2016 onward. How does this look?</p>
+
+
+
+<div id="chart-stock-prices" class="plotly" style="height:540px"></div>
+<script>
+fetch("/img/google-stock/stock-prices.json")
+  .then(function(res) { return res.json(); })
+  .then(function(fig) {
+    if (fig.layout) { fig.layout.autosize = true; delete fig.layout.width; }
+    fig.data = (fig.data || []).filter(function(t) { return t && Array.isArray(t.x) && t.x.length > 0; });
+    Plotly.newPlot("chart-stock-prices", fig.data, fig.layout, {responsive: true});
+  })
+  .catch(function(err) { console.error("Error loading stock-prices:", err); });
+</script>
+<p>Looking at the plot, you may notice that Google is not the only company that has been recently interested by stock splits: <strong>so did NVDA, AAPL, TSLA</strong>.</p>
+<p>For this reason, we&rsquo;ll remove from the dataset those days where computing returns from the face value would be wrong<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>: 2021-07-20 (because of NVDA), 2020-08-31 (TSLA and AAPL).</p>
+<h3 id="so-how-do-return-from-other-companies-explain-goog-returns">So, how do return from other companies explain GOOG returns?</h3>
+<p>Let&rsquo;s run a simple <strong>linear regression</strong> on data from Jan 1st, 2016 to December 31, 2021.
+The following weights are obtained, linking google returns to the returns of other stocks:</p>
+<pre tabindex="0"><code>R^2: 0.677. Fitted with data till 2021-12-31. Weights:
+MSFT-&gt;  0.375
+FB  -&gt;  0.195
+AMZN-&gt;  0.121
+GRMN-&gt;  0.056
+AAPL-&gt;  0.054
+ADBE-&gt;  0.042
+TWTR-&gt;  0.020
+NVDA-&gt;  0.016
+ORCL-&gt;  0.014
+TSLA-&gt; -0.005
+ETSY-&gt; -0.010
+</code></pre><p>The results are pretty interesting: in the considered time frame MSFT,FB and AMZN get the most of the weight. Comparing the goodness-of-fit of a model on data it&rsquo;s been trained on is questionable. Data in 2022 has not been used yet: let&rsquo;s plot the predictions of our model (y-axis) vs the actual GOOG returns (y-axis).</p>
+<p>Notice that the colors are used to discriminate whether the given datapoint has been used for calibrating the model parameters (blue) or not (red), while the different <strong>marker highlights last Tuesday</strong>.</p>
+
+
+
+<div id="chart-model-result" class="plotly" style="height:540px"></div>
+<script>
+fetch("/img/google-stock/model-result.json")
+  .then(function(res) { return res.json(); })
+  .then(function(fig) {
+    if (fig.layout) { fig.layout.autosize = true; delete fig.layout.width; }
+    fig.data = (fig.data || []).filter(function(t) { return t && Array.isArray(t.x) && t.x.length > 0; });
+    Plotly.newPlot("chart-model-result", fig.data, fig.layout, {responsive: true});
+  })
+  .catch(function(err) { console.error("Error loading model-result:", err); });
+</script>
+<p> </p>
+<p>The <strong>size of the point is the model error</strong>: hover to see the date when a given return was achieved. The overall R squared for the red points is <strong>0.486</strong>. Points on the right-hand side of the xy bisector indicate a positive excess return for GOOG, when compared to the estimated one.</p>
+<h2 id="considerations">Considerations</h2>
+<p>A very simple model was built to assess if after the last Tuesday announcement an unusual amount of GOOG returns were unexplainable.</p>
+<p>It can be seen from the plot that there indeed is about 6% of unexplained or &ldquo;excess&rdquo; return from last Tuesday with respect to other companies, but we are still left with the original question: <strong>is it due to the earnings or is there another effect</strong>?</p>
+<p>Fact is: the announcement released on Tuesday did not carry only the stock split, but also the <strong>earnings report</strong>. Is this excess return due to the earnings or to the stock split and in which proportion?</p>
+<p>Properly disentangling the two components requires a more sophisticated analysis, but even after this naive modelling, we can observe the suggestive similarity between this year (big red datapoint) and past year Google&rsquo;s Q4 announcements in the same period (the big blue one), both having about 6% error with respect to the model.</p>
+<p>If I had to bet, I&rsquo;d bet against such an effect, especially for highly liquid stocks and capitalized companies like Google is, but that&rsquo;s just an opinion.</p>
+<h2 id="one-week-later-update-on-data-distribution-shift">One week later: update on Data distribution shift</h2>
+<p>So, this week I have added to my read list Chip&rsquo;s Huyen post &ldquo;<a href="https://huyenchip.com/2022/02/07/data-distribution-shifts-and-monitoring.html">Data Distribution Shifts and Monitoring</a>&rdquo;.</p>
+<p>At first, I did not think of running any cross validation on this experiment for two reasons. Such a simple model is expected to capture basic relationships that are supposed to be stable in time.</p>
+<p>Is this true tough? I started asking if I would have drawn the same conclusions if the model was built 6 months in advance, i.e. when trained till June, 2021. Since we have a very simple linear model let&rsquo;s compare the model coefficient first. You know, one of the benefits of using simple linear models.</p>
+<pre tabindex="0"><code>R^2: 0.681. Fitted with data to **2021-06-30**. Weights:
+
+MSFT-&gt; 0.343 (0.375, when fitting till 2021-12-31)
+FB  -&gt;  0.203 (0.195)
+AMZN-&gt;  0.114 (0.121)
+GRMN-&gt; 0.066 (0.056)
+AAPL-&gt; 0.053 (0.054)
+ADBE-&gt; 0.058 (0.042)
+TWTR-&gt; 0.023 (0.020)
+NVDA-&gt; 0.014 (0.016)
+ORCL-&gt; 0.021 (0.014)
+TSLA-&gt; -0.004 (-0.005)
+ETSY-&gt; -0.009 (-0.010)
+</code></pre><p>Good! Also changing the training period, we preseved the relationships! Let&rsquo;s walk forward with this second model and see the <strong>test R^2</strong> for each month (yellow), which turns to be comparable with the one we already got on the last month:
+ </p>
+<p>
+
+
+<div id="chart-r2-alt-model" class="plotly" style="height:540px"></div>
+<script>
+fetch("/img/google-stock/r2-alt-model.json")
+  .then(function(res) { return res.json(); })
+  .then(function(fig) {
+    if (fig.layout) { fig.layout.autosize = true; delete fig.layout.width; }
+    fig.data = (fig.data || []).filter(function(t) { return t && Array.isArray(t.x) && t.x.length > 0; });
+    Plotly.newPlot("chart-r2-alt-model", fig.data, fig.layout, {responsive: true});
+  })
+  .catch(function(err) { console.error("Error loading r2-alt-model:", err); });
+</script>
+ </p>
+<p>Also the predictions look similar, as expected:
+
+
+
+<div id="chart-model-result-other" class="plotly" style="height:540px"></div>
+<script>
+fetch("/img/google-stock/model-result-other.json")
+  .then(function(res) { return res.json(); })
+  .then(function(fig) {
+    if (fig.layout) { fig.layout.autosize = true; delete fig.layout.width; }
+    fig.data = (fig.data || []).filter(function(t) { return t && Array.isArray(t.x) && t.x.length > 0; });
+    Plotly.newPlot("chart-model-result-other", fig.data, fig.layout, {responsive: true});
+  })
+  .catch(function(err) { console.error("Error loading model-result-other:", err); });
+</script></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>the majority of which should take place at the announcement&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>both class A and C.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>oh, almost forgot: a downside of operating on market prices directly is that we miss all dividends and corporate actions in the returns which are actually gained by an investor. Taking those into account usually requires paid &ldquo;return index&rdquo; data.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>

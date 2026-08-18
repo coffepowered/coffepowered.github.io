@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <section class="home-intro" aria-labelledby="home-title">
+    <h1 id="home-title">Appunti, dati e cose interessanti.</h1>
+    <p>{{ .Site.Params.description }}</p>
+  </section>
+
+  <div class="archive-layout">
+    <section class="post-archive" aria-labelledby="posts-title">
+      <h2 id="posts-title" class="visually-hidden">Articoli</h2>
+      <ul class="blog-posts">
+        {{ $posts := where (where .Site.RegularPages "Section" "blogs") "Params.unlisted" "ne" true }}
+        {{ range $posts.ByDate.Reverse }}
+          <li>
+            <time datetime="{{ .Date.Format `2006-01-02` }}">{{ .Date.Format (default "02 Jan 2006" .Site.Params.dateFormat) }}</time>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+
+    {{ partial "tag_sidebar.html" . }}
+  </div>
+{{ end }}

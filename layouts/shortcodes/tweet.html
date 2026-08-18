@@ -1,0 +1,5 @@
+{{- $id := .Get "id" | default (.Get 0) -}}
+{{- $user := .Get "user" | default "i" -}}
+<blockquote class="twitter-tweet">
+  <a href="https://twitter.com/{{ $user }}/status/{{ $id }}">Visualizza il post su Twitter/X</a>
+</blockquote>
