@@ -2,7 +2,9 @@
 title = "Crescita Economica"
 type = "blog"
 date = 2021-01-31T21:28:43-05:00
+description = "Dalla povertà alla prosperità: la storia del Regno Unito, la trappola maltusiana e i dati Maddison."
 image = "/img/blogs/gdp-italy-uk.png"
+tags = ["economics", "history", "demographics", "data-analysis"]
 categories = ["economia", "opinions"]
 +++
 

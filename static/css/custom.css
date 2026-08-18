@@ -3,23 +3,34 @@
   --font-main: ui-rounded, "SF Pro Rounded", "Segoe UI", system-ui, sans-serif;
   --font-secondary: ui-rounded, "SF Pro Rounded", "Segoe UI", system-ui, sans-serif;
   --font-scale: 1.06em;
-  --background-color: #303030;
-  --heading-color: #f2f2f2;
-  --text-color: #e1e1e1;
-  --link-color: #93d4f5;
-  --visited-color: #c5a7ee;
-  --blockquote-color: #d3d3d3;
-  --panel-color: #282828;
-  --muted-color: #b8b8b8;
-  --tag-color: #5ca6df;
-  --tag-hover-color: #79b8e7;
+  
+  /* Concept: Artemide Eclisse Amber in Jungle Night */
+  --background-color: #091a15;
+  --panel-color: #102620;
+  --surface-border: #1a3c32;
+  --heading-color: #f2faf6;
+  --text-color: #d3e7de;
+  --muted-color: #79a595;
+  --link-color: #ff7222;
+  --link-hover-color: #ff9455;
+  --visited-color: #de5a10;
+  --blockquote-color: #d3e7de;
+  --tag-color: #14322a;
+  --tag-border-color: #1f4a3e;
+  --tag-text-color: #ddf3ea;
+  --tag-hover-color: #ff7222;
+  --tag-hover-text-color: #091a15;
+  --accent-glow: rgba(255, 114, 34, 0.38);
+  
   color-scheme: dark;
 }
 
 body {
   padding: clamp(1.25rem, 4vw, 3.75rem);
   min-height: 100vh;
-  line-height: 1.58;
+  line-height: 1.62;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 body > header,
@@ -39,33 +50,52 @@ body > header {
   margin-bottom: 1.5rem;
 }
 
+.site-heading .title {
+  text-decoration: none;
+}
+
 .site-heading .title h1 {
   display: inline;
   margin: 0;
   font-size: clamp(2rem, 5vw, 3.25rem);
   letter-spacing: -0.04em;
+  color: var(--heading-color);
 }
 
 .site-heading .title h1::before,
 .site-heading .title h1::after {
   content: "☆";
   font-weight: 400;
+  color: var(--link-color);
+  margin: 0 0.18rem;
+  text-shadow: 0 0 12px var(--accent-glow);
 }
 
 .site-heading span {
   color: var(--muted-color);
   font-size: 0.95rem;
+  font-style: italic;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem 1rem;
+  gap: 0.55rem 1.25rem;
 }
 
 nav a {
   margin: 0;
   font-size: 1.12rem;
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+nav a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+  text-shadow: 0 0 10px var(--accent-glow);
 }
 
 .home-intro {
@@ -77,16 +107,20 @@ nav a {
 .list-header h1,
 .article-header h1 {
   letter-spacing: -0.035em;
+  color: var(--heading-color);
 }
 
 .home-intro h1 {
   margin-bottom: 0.4rem;
+  font-size: clamp(2rem, 4vw, 2.35rem);
+  line-height: 1.18;
 }
 
 .home-intro p,
 .list-header p {
   color: var(--muted-color);
   margin-top: 0;
+  font-size: 1.15rem;
 }
 
 .archive-layout {
@@ -102,6 +136,8 @@ nav a {
 
 ul.blog-posts {
   margin: 0;
+  list-style: none;
+  padding: 0;
 }
 
 ul.blog-posts li {
@@ -109,7 +145,7 @@ ul.blog-posts li {
   grid-template-columns: 8.75rem minmax(0, 1fr);
   gap: 1rem;
   align-items: baseline;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.65rem;
 }
 
 ul.blog-posts li time {
@@ -118,13 +154,25 @@ ul.blog-posts li time {
   font-size: 1rem;
   font-style: italic;
   white-space: nowrap;
+  opacity: 0.9;
 }
 
 ul.blog-posts li a {
   font-size: 1.12rem;
+  color: var(--link-color);
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.14em;
+  text-underline-offset: 0.16em;
+  transition: all 0.15s ease;
+}
+
+ul.blog-posts li a:hover {
+  color: var(--link-hover-color);
+  text-shadow: 0 0 10px var(--accent-glow);
+}
+
+ul.blog-posts li a:visited {
+  color: var(--visited-color);
 }
 
 .tag-sidebar {
@@ -134,7 +182,7 @@ ul.blog-posts li a {
 
 .tag-sidebar h2 {
   margin: 0 0 0.9rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted-color);
@@ -156,25 +204,34 @@ ul.blog-posts li a {
   align-items: center;
   gap: 0.35rem;
   border-radius: 999px;
-  padding: 0.35rem 0.72rem;
+  padding: 0.35rem 0.75rem;
   background: var(--tag-color);
-  color: #fff;
+  border: 1px solid var(--tag-border-color);
+  color: var(--tag-text-color);
   line-height: 1.1;
   text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tag:visited {
-  color: #fff;
+  color: var(--tag-text-color);
 }
 
 .tag:hover {
   background: var(--tag-hover-color);
+  border-color: var(--tag-hover-color);
+  color: var(--tag-hover-text-color);
   text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px var(--accent-glow);
 }
 
 .tag-count {
-  font-size: 0.72em;
-  opacity: 0.82;
+  font-size: 0.75em;
+  opacity: 0.8;
+  font-weight: 600;
 }
 
 .list-header {
@@ -183,6 +240,10 @@ ul.blog-posts li a {
 
 .filter-note {
   font-size: 0.9rem;
+}
+
+.filter-note a {
+  color: var(--link-color);
 }
 
 .article {
@@ -196,7 +257,7 @@ ul.blog-posts li a {
 .article-header h1 {
   margin-bottom: 0.55rem;
   font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.12;
+  line-height: 1.14;
 }
 
 .article-header time {
@@ -222,6 +283,18 @@ ul.blog-posts li a {
 .article-content h2,
 .article-content h3 {
   margin-top: 2em;
+  color: var(--heading-color);
+}
+
+.article-content a {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.article-content a:hover {
+  color: var(--link-hover-color);
+  text-shadow: 0 0 8px var(--accent-glow);
 }
 
 .article-content svg {
@@ -238,8 +311,50 @@ ul.blog-posts li a {
   max-width: 100%;
 }
 
-.highlight pre {
-  padding: 1rem;
+blockquote {
+  border-left: 3px solid var(--link-color);
+  background: var(--panel-color);
+  color: var(--text-color);
+  border-radius: 0 8px 8px 0;
+  margin: 1.5em 0;
+  padding: 0.9rem 1.4rem;
+  font-style: italic;
+  box-shadow: inset 4px 0 12px rgba(255, 114, 34, 0.12);
+}
+
+.highlight,
+.code {
+  background: #05100d;
+  border: 1px solid var(--surface-border);
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin: 1.5em 0;
+}
+
+.highlight pre,
+.code pre {
+  padding: 0.75rem;
+  margin: 0;
+}
+
+.post-navigator {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 3rem 0;
+  padding: 1.2rem 0;
+  border-top: 1px dashed var(--surface-border);
+  border-bottom: 1px dashed var(--surface-border);
+}
+
+.post-navigator a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.post-navigator a:hover {
+  text-decoration: underline;
 }
 
 .comments {
@@ -250,12 +365,23 @@ footer {
   margin-top: 4rem;
   color: var(--muted-color);
   text-align: left;
+  border-top: 1px solid var(--surface-border);
+  padding-top: 2rem;
 }
 
 .social-links {
   display: flex;
   gap: 1rem;
   margin-bottom: 0.35rem;
+}
+
+.social-links a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
 }
 
 .visually-hidden {
@@ -278,7 +404,7 @@ footer {
   .tag-sidebar {
     position: static;
     padding-top: 1.5rem;
-    border-top: 1px dashed var(--muted-color);
+    border-top: 1px dashed var(--surface-border);
   }
 }
 

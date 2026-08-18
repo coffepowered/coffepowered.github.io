@@ -2,9 +2,9 @@
 title = "The economics of the agri-food value chain"
 type = "blog"
 date = 2022-03-01T21:28:43-05:00
-description = "From coursera (TUM)"
+description = "Course review and extensive notes from TUM Coursera: Shapiro reputation model, pricing, GIs, and supply chain coordination."
 image = "/img/blogs/coursera-agrifood-valuechain.jpg"
-tags = ["coursera"]
+tags = ["economics", "course-notes", "agri-food", "game-theory", "supply-chain"]
 categories = ["courses", "notes", "reviews"]
 math = true
 +++

@@ -4,7 +4,7 @@ type = "blog"
 date = 2021-01-11T21:28:43-05:00
 description = "Datatypes for... data"
 image = "/img/blogs/namedtuples-pexels-pixabay.jpg"
-tags = ["bricks", "data", "type"]
+tags = ["python", "data-structures", "best-practices"]
 categories = ["python"]
 +++
 

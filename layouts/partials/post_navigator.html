@@ -1,0 +1,35 @@
+{{ $visiblePosts := (where (where .Site.RegularPages "Section" "blogs") "Params.unlisted" "ne" true).ByDate }}
+{{ $current := . }}
+{{ $prev := false }}
+{{ $next := false }}
+
+{{ range $index, $p := $visiblePosts }}
+  {{ if eq $p.RelPermalink $current.RelPermalink }}
+    {{ if gt $index 0 }}
+      {{ $prev = index $visiblePosts (sub $index 1) }}
+    {{ end }}
+    {{ if lt (add $index 1) (len $visiblePosts) }}
+      {{ $next = index $visiblePosts (add $index 1) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if or $prev $next }}
+<nav class="post-navigator" aria-label="Navigazione articoli" style="font-size:0.85em;display:flex;gap:16px;justify-content:center;margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--border-color, #333);">
+  <p>
+    {{ if $prev }}
+      <a href="{{ $prev.RelPermalink }}" title="{{ $prev.Title }}">← {{ $prev.Title | truncate 32 }}</a>
+    {{ else }}
+      <span style="color:var(--muted-color, #777);opacity:0.6;">← Inizio</span>
+    {{ end }}
+  </p>
+  <p style="color:var(--muted-color, #777);">|</p>
+  <p>
+    {{ if $next }}
+      <a href="{{ $next.RelPermalink }}" title="{{ $next.Title }}">{{ $next.Title | truncate 32 }} →</a>
+    {{ else }}
+      <span style="color:var(--muted-color, #777);opacity:0.6;">Fine →</span>
+    {{ end }}
+  </p>
+</nav>
+{{ end }}

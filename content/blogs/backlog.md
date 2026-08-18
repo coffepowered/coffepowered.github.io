@@ -3,8 +3,6 @@ title = "The backlog of blogging ideas"
 type = "blog"
 date = 2017-10-31T21:28:43Z
 image = "/img/blogs/coursera-agrifood-valuechain.jpg"
-tags = ["backlog"]
-categories = ["backlog"]
 math = true
 unlisted = true
 +++

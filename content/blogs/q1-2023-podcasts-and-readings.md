@@ -4,7 +4,7 @@ type = "blog"
 date = 2023-02-01T21:28:43-05:00
 description = "Letture, podcast e altro"
 image = "/img/blogs/feb23-write-something-glenncarstenspeters.jpg"
-tags = ["forecasting", "notes", "podcasts"]
+tags = ["forecasting", "econometrics", "reading-notes", "decision-making"]
 categories = ["courses", "notes", "opinions", "reviews"]
 math = true
 +++

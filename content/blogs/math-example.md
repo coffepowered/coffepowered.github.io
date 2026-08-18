@@ -3,7 +3,6 @@ title = "1 - Movie sentiment review"
 type = "blog"
 date = 2017-10-31T21:28:43Z
 image = "/img/blogs/pic10.jpg"
-categories = ["project"]
 math = true
 unlisted = true
 +++

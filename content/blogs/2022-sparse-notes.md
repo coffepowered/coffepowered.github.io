@@ -4,7 +4,7 @@ type = "blog"
 date = 2023-03-01T21:28:43-05:00
 description = "A Big Bookmarks Collection for 2022"
 image = "/img/blogs/coursera-agrifood-valuechain.jpg"
-tags = ["coursera"]
+tags = ["data-science", "machine-learning", "reading-notes", "data-viz"]
 categories = ["courses", "notes", "reviews"]
 math = true
 +++

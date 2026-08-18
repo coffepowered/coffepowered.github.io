@@ -2,8 +2,9 @@
 title = "A (reasonably) complex radar chart"
 type = "blog"
 date = 2022-03-11T21:28:43-05:00
+description = "Displaying multivariate data in Python: radar chart caveats, scaling, and a custom matplotlib recipe."
 image = "/img/blogs/radar-chart.png"
-tags = ["daily", "git", "ops", "viz"]
+tags = ["python", "data-viz", "matplotlib"]
 categories = ["gist", "python"]
 twitter = true
 +++

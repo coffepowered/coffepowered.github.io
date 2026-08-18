@@ -3,12 +3,11 @@ title = "Test & Feature Showcase: All Systems Operational"
 date = 2026-08-18T11:00:00+02:00
 description = "Comprehensive test blog post verifying all ported website features: X/Twitter embeds, D3 interactive plots, KaTeX math typesetting, syntax highlighting, footnotes, tables, and media."
 image = "/img/blogs/INTERNAL-code-samples.png"
-tags = ["test", "viz", "math", "python", "experiment"]
-categories = ["showcase", "meta"]
 math = true
 d3 = true
 twitter = true
 type = "blog"
+unlisted = true
 +++
 
 This is a comprehensive test post created to verify that all editorial features, data visualizations, mathematical typography, interactive widgets, and integrations work seamlessly after porting the site to Hugo.

@@ -3,7 +3,6 @@ title = "Financial engineering and Risk management (Coursera)"
 type = "blog"
 date = 2017-10-31T21:28:43Z
 image = "/img/blogs/pic07.jpg"
-tags = ["financial-engineering"]
 unlisted = true
 +++
 

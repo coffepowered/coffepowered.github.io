@@ -3,7 +3,6 @@ title = "This page is for pandas notes"
 type = "blog"
 date = 2017-10-31T21:28:43Z
 image = "/img/blogs/pic07.jpg"
-categories = ["draft"]
 unlisted = true
 +++
 

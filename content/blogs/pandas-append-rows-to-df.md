@@ -4,7 +4,7 @@ type = "blog"
 date = 2020-10-31T21:28:43-05:00
 description = "There are many ways of doing the same thing in pandas: let's take a look at their efficiency."
 image = "/img/blogs/append-row-pd.png"
-tags = ["benchmark", "daily"]
+tags = ["python", "pandas", "benchmark", "performance"]
 categories = ["pandas", "python"]
 +++
 
