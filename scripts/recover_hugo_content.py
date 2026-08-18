@@ -151,6 +151,8 @@ def write_article(
         frontmatter.append("math = true")
     if re.search(r"(?:d3\.v\d|d3@\d|\bd3\.)", source):
         frontmatter.append("d3 = true")
+    if "plotly" in source.lower():
+        frontmatter.append("plotly = true")
     if "twitter-tweet" in source:
         frontmatter.append("twitter = true")
     if not published:

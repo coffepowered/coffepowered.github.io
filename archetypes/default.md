@@ -6,5 +6,6 @@ tags = []
 categories = []
 math = false
 d3 = false
+plotly = false
 twitter = false
 +++

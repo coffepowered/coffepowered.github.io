@@ -25,7 +25,7 @@ Aprire l'indirizzo mostrato da Hugo, normalmente `http://localhost:1313/`.
 hugo new content blogs/nome-articolo.md
 ```
 
-Le opzioni di front matter `math`, `d3` e `twitter` caricano le relative
+Le opzioni di front matter `math`, `d3`, `plotly` e `twitter` caricano le relative
 integrazioni solo nelle pagine che le usano. Lo shortcode Twitter/X carica
 automaticamente lo script necessario:
 

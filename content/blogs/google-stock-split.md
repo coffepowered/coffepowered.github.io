@@ -8,6 +8,7 @@ tags = ["finance", "python", "causal-inference", "data-analysis", "machine-learn
 categories = ["notes", "python"]
 math = true
 d3 = true
+plotly = true
 +++
 
 <p>Google announced Tuesday its results for Q4 2021 <em>and</em> that they plan to split shares at 20 for 1 this Tuesday. Basically, if you are a shareholder, for each 1 share of Google at (about) 3000$ dollars you will have (at the ex-date) 20 shares at 150$.</p>
@@ -66,11 +67,16 @@ If you want to replicate the experiment, I suggest using the python library <cod
 
 
 
-<div id="/img/google-stock/stock-prices.json" class="plotly" style="height:540px"></div>
+<div id="chart-stock-prices" class="plotly" style="height:540px"></div>
 <script>
-Plotly.d3.json("/img/google-stock/stock-prices.json", function(err, fig) {
-    Plotly.plot('\/img\/google-stock\/stock-prices.json', fig.data, fig.layout, {responsive: true});
-});
+fetch("/img/google-stock/stock-prices.json")
+  .then(function(res) { return res.json(); })
+  .then(function(fig) {
+    if (fig.layout) { fig.layout.autosize = true; delete fig.layout.width; }
+    fig.data = (fig.data || []).filter(function(t) { return t && Array.isArray(t.x) && t.x.length > 0; });
+    Plotly.newPlot("chart-stock-prices", fig.data, fig.layout, {responsive: true});
+  })
+  .catch(function(err) { console.error("Error loading stock-prices:", err); });
 </script>
 <p>Looking at the plot, you may notice that Google is not the only company that has been recently interested by stock splits: <strong>so did NVDA, AAPL, TSLA</strong>.</p>
 <p>For this reason, we&rsquo;ll remove from the dataset those days where computing returns from the face value would be wrong<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>: 2021-07-20 (because of NVDA), 2020-08-31 (TSLA and AAPL).</p>
@@ -94,11 +100,16 @@ ETSY-&gt; -0.010
 
 
 
-<div id="/img/google-stock/model-result.json" class="plotly" style="height:540px"></div>
+<div id="chart-model-result" class="plotly" style="height:540px"></div>
 <script>
-Plotly.d3.json("/img/google-stock/model-result.json", function(err, fig) {
-    Plotly.plot('\/img\/google-stock\/model-result.json', fig.data, fig.layout, {responsive: true});
-});
+fetch("/img/google-stock/model-result.json")
+  .then(function(res) { return res.json(); })
+  .then(function(fig) {
+    if (fig.layout) { fig.layout.autosize = true; delete fig.layout.width; }
+    fig.data = (fig.data || []).filter(function(t) { return t && Array.isArray(t.x) && t.x.length > 0; });
+    Plotly.newPlot("chart-model-result", fig.data, fig.layout, {responsive: true});
+  })
+  .catch(function(err) { console.error("Error loading model-result:", err); });
 </script>
 <p> </p>
 <p>The <strong>size of the point is the model error</strong>: hover to see the date when a given return was achieved. The overall R squared for the red points is <strong>0.486</strong>. Points on the right-hand side of the xy bisector indicate a positive excess return for GOOG, when compared to the estimated one.</p>
@@ -130,22 +141,32 @@ ETSY-&gt; -0.009 (-0.010)
 <p>
 
 
-<div id="/img/google-stock/r2-alt-model.json" class="plotly" style="height:540px"></div>
+<div id="chart-r2-alt-model" class="plotly" style="height:540px"></div>
 <script>
-Plotly.d3.json("/img/google-stock/r2-alt-model.json", function(err, fig) {
-    Plotly.plot('\/img\/google-stock\/r2-alt-model.json', fig.data, fig.layout, {responsive: true});
-});
+fetch("/img/google-stock/r2-alt-model.json")
+  .then(function(res) { return res.json(); })
+  .then(function(fig) {
+    if (fig.layout) { fig.layout.autosize = true; delete fig.layout.width; }
+    fig.data = (fig.data || []).filter(function(t) { return t && Array.isArray(t.x) && t.x.length > 0; });
+    Plotly.newPlot("chart-r2-alt-model", fig.data, fig.layout, {responsive: true});
+  })
+  .catch(function(err) { console.error("Error loading r2-alt-model:", err); });
 </script>
  </p>
 <p>Also the predictions look similar, as expected:
 
 
 
-<div id="/img/google-stock/model-result-other.json" class="plotly" style="height:540px"></div>
+<div id="chart-model-result-other" class="plotly" style="height:540px"></div>
 <script>
-Plotly.d3.json("/img/google-stock/model-result-other.json", function(err, fig) {
-    Plotly.plot('\/img\/google-stock\/model-result-other.json', fig.data, fig.layout, {responsive: true});
-});
+fetch("/img/google-stock/model-result-other.json")
+  .then(function(res) { return res.json(); })
+  .then(function(fig) {
+    if (fig.layout) { fig.layout.autosize = true; delete fig.layout.width; }
+    fig.data = (fig.data || []).filter(function(t) { return t && Array.isArray(t.x) && t.x.length > 0; });
+    Plotly.newPlot("chart-model-result-other", fig.data, fig.layout, {responsive: true});
+  })
+  .catch(function(err) { console.error("Error loading model-result-other:", err); });
 </script></p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
