@@ -1,0 +1,114 @@
++++
+title = "Crescita Economica"
+type = "blog"
+date = 2021-01-31T21:28:43-05:00
+image = "/img/blogs/gdp-italy-uk.png"
+categories = ["economia", "opinions"]
++++
+
+<blockquote>
+<p>Questa pagina traduce liberamente e parzialmente, l&rsquo;articolo di Max Roser (<a href="https://creativecommons.org/licenses/by/4.0/">secondo licenza</a>) (2013) - &ldquo;Economic Growth&rdquo;. <a href="https://ourworldindata.org/economic-growth">Published online at OurWorldInData</a></p>
+</blockquote>
+<blockquote>
+<p>Riferitevi alla versione originale per le citazioni e per il testo completo, io mi sono permesso di aggiungere qualche nota interessante per noi italiani.</p>
+</blockquote>
+<p>Con <strong>crescita economica</strong> descriviamo un aumento nella qualità a quantità dei beni e servizi economici che una società produce o consuma.</p>
+<p>Mentre la definizione di crescita economica è chiara, misurare la crescita in sè risulta estremamente difficile. La crescita è spesso misurata tramite un aumento nel reddito delle famiglie o del PIL (aggiustato per l&rsquo;inflazione), ma è importante ricordare che queste misure non sono la definizione di crescita - proprio come l&rsquo;aspettativa di vita è una misura della &ldquo;salute di una popolazione&rdquo; ma certamente non coincide con la definizione stessa. Le misure legate al reddito sono solamente un modo di capire la diseguaglianza tra paesi e la variazione di ricchezza nel tempo.</p>
+<p>Il Prodotto Interno Lordo (PIL) di una economia è una misura della produzione totale. Più precisamente, è il valore monetario di tutti i beni e servizi prodotti in un paese o regioni in un periodo di tempo specifico. Le comparazioni nel tempo e tra i vari paesi sono rese più difficili dalle differenze di prezzi, qualità e valuta, come spiegato nel seguito.</p>
+<p>Dal punto di vista delle prospettive di lungo termine della storia sociale, sappiamo che la propserità economica e una crescita economica duratura sono traguardi molto recenti per l&rsquo;umanità. Di seguito vedremo anche cosa è successo in tempi più recenti e studieremo la disuguaglianza tra differenti paesi o (regioni) - sia rispetto ai livelli disuguali della richezza nel presente e rispetto ai differenti punti di partenza dai quali si può lasciare la povertà del passato &ldquo;pre-crescita&rdquo;.</p>
+<h1 id="dalla-povertà-al-prosperità-la-storia-del-regno-unito-nel-lungo-periodo">Dalla povertà al prosperità: la storia del Regno Unito nel lungo periodo</h1>
+<p>Il Regno Unito (di seguito abbreviato come UK) è un caso di studio particolarmente interessante in quanto è stata la prima economia a realizare una crescita economica sostenuta e un (con)seguente elevato livello di ricchezza per la maggior parte della popolazione, prima inimmaginabile.</p>
+<h2 id="produzione-pro-capite-delleconomia-uk">Produzione pro-capite dell&rsquo;economia UK</h2>
+<p>Il grafico mostra il PIL pro-capite (ricostruito) nell&rsquo;Inghilterra e nel Regno Unito negli ultimi 7 secoli.
+La storia economica è molto semplice. E&rsquo; una storia che si compone in due sole parti.</p>
+<p>La <em>prima parte</em> è il lungo (o lunghissimo) periodo nel quale le persone in media (o la persona media) erano molto povere e le società umane non crescevano dal punto di vista economico, rendendo la situazione statica. I redditi rimanevano quindi invariati per un periodo di secoli, soprattutto se li raffrontiamo alla crescita degli ultimi 2 secoli. La vita in generale cambiava sorprendetemente poco [attraverso le generazioni]. Ciò che le persone usavano come riparo, cibo, vestiario, fonti di energia rimanevano sempre le stesse. Ad esempio, le fonti di luce notturna rimasero le medesime for un periodo molto lungo. Quasi tutto ciò che le persone normali [ordinarie] usavano e consumavano nel XVII secolo sarebbe stato molto familiare per una persona che viveva un migliaio (o forse due migliaia) di anni prima. I redditi medi (sempre misurati tramite il PIL pro capite) in Inghilterra tra il 1270 e il 1650 erano di circa 1051£ (o 1200€) ai prezzi attuali.</p>
+<p>La <em>seconda parte</em> è molto più breve e comprende le ultime generazioni. Inoltre, è radicalmente differente dalla prima parte, essendo un periodo nel quale il reddito delle persone crebbe in maniera incommensurabile - da rica 1051£ per persona all&rsquo;anno fino a 30.000£ - un aumento di 29 volte. Questo significa una persona moderna produce più reddito oggi in 2 settimane di quanto facesse nel passato in un intero anno. C&rsquo;è quindi un solo evento veramente importante nella storia economica del mondo: l&rsquo;inizio della crescita economica. Questa è la singola trasformazione che cambiò tutto.</p>
+
+
+<iframe src="https://ourworldindata.org/grapher/total-GDP-in-the-uk-since-1270" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
+<p>Se confrontiamo la figura sopra con quella del <a href="https://ourworldindata.org/grapher/total-gdp-in-the-uk-since-1270">PIL totale</a> in Inghilterra lungo gli stessi 7 secoli a cui ci riferiamo, vediamo che il PIL totale dell&rsquo;economia UK è in realtà cresciuto ancora di più di quanto il PIL pro-capite non racconti, in quanto dalla rivoluzione industriale la popolazione del paese è cresciuta insieme al PIL.</p>
+<h1 id="leconomia-prima-della-crescita-economica-la-trappola-maltusiana">L&rsquo;economia prima della crescita economica: la trappola Maltusiana</h1>
+<p>L&rsquo;economia pre-crescita era un gioco a somma zero: gli standard di vita erano determinati dalla dimensione della popolazione <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>Nel grafico precedente abbiamo visto che è solo dal 1650 circa che gli standard di vista dell&rsquo;UK iniziarono ad aumentare per un periodo sostenuto. Prima dell&rsquo;era della crescita economica l&rsquo;economia funzionava in modo molto differente: non il progresso tecnologico ma la dimensione della popolazione determinavano gli standard di vita.</p>
+<p>Tornando al grafico precedente, si può vedere come all&rsquo;inizio del quattordicesimo secolo ci fu un considerevole picco nei livelli di reddito. I redditi aumentarono di circa un terzo [il 33%, non male] in un periodo di pochi anni.</p>
+
+
+<iframe src="https://ourworldindata.org/grapher/GDP-per-capita-in-the-uk-since-1270?time=1301..1400" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
+<p>Questo fu l&rsquo;effetto che la peste - la Peste Nera - ebbe sui redditi degli inglese. La <em>peste uccise circa metà della popolazione</em> inglese, facendola decrescere da 8 milioni a 4.3 in soli 3 anni, dopo il 1348. Il fenomeno di può osservare persino nella <a href="https://ourworldindata.org/world-population-growth#long-run-historical-perspective-the-big-picture">popolazione mondiale</a> [e di quella italiana] <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+
+
+<iframe src="https://ourworldindata.org/grapher/population?time=200..latest&country=GBR~ITA" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
+<p>I sopravvissuti all&rsquo;epidemia di peste disponevano quindi di un livello di ricchezza molto superiore. L&rsquo;economia era un brutale gioco a somma zero e la morte di qualcuno era un diretto beneficio per chi riusciva a sopravvivere. Il beneficio era appunto dovuto al fatto che gli agricoltori riuscivano a produrre più alimentari in proporzione alla popolazione: mentre prima della peste dovevano usare terra meno adatta alla coltivazione, successivamente poterono coltivare le aree più produttive dell&rsquo;isola.</p>
+<p>Nel lunghissimo periodo in cui l&rsquo;umanità è stata vittima della trappola Maltusiana <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> era il saldo demografico, cioè le morti e le nascite, a determinate il reddito. Più nascite, meno reddito. Più morti, più reddito.</p>
+<p>[&hellip;]</p>
+<p>E&rsquo; solo da dopo il 1650 che l&rsquo;economia Inglese è riuscita a liberarsi dalla trappola: i redditi non sono da allora più determinati dalla dimensione della popolazione. [&hellip;]
+Quando Malthus pubblicò le sue tesi sulla crescita della popolazione nel 1789 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>, si sbagliava a proposito del suo tempo e del futuro ma descriveva con accuratezza le dinamiche del passato. Il mondo prima di Malthus era effettivamente maltusiana e la crescita della popolazione era associata con nutrizione, salute e redditi peggiori. Il mondo dopo Matlhus divenne sempre meno Malthusiana. [&hellip;]</p>
+<h2 id="cambiamenti-tecnologici-nelleconomia-pre-crescita">Cambiamenti tecnologici nell&rsquo;economia pre-crescita</h2>
+<p>I cambiamenti tecnologici che incrementano la produttività sono la chiave per un maggiore benessere [anche oggi]. C&rsquo;erano perà stati cambiamenti tecnologici notevoli anche prima del XVII secolo. Mulini, irrigazione e novità non strettamente tecnologiche come le varietà del Nuovo Mondo. Perchè questi cambiamenti non portarono una crescita economica?</p>
+<p>Le conseguenze di queste innovazioni sono state appunto un incremento della produttività e della ricchezza, ma solo per un breve periodo di tempo. I miglioramenti nella tecnologia avevano un effetto differente nell&rsquo;economia maltusiana &ldquo;pre-crescita&rdquo;. Aumentarono gli standard di vita solo temporaneamente, mentre facevano crescere il livello della popolazione in modo permanente. Lo storico dell&rsquo;economia Gregory Clark riassume così la questione: &ldquo;nel mondo pre-industriale, gli sporadici avanzamenti tecnologici producevano persone, non ricchezza&rdquo;.</p>
+<p>Ai miglioramenti tecnologici conseguivano quindi popolazioni più grandi, non più benestanti. Se questa analisi della economia pre-crescita fosse vera, allora ci aspetteremmo di vedere una correlazione positiva tra la produttività e la densità della popolazione.</p>
+<p>Due studiosi, Ashraf e Galor (2011 <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>) si sono occupati della questione teoricamente ed empiricamente in una pubblicazione su &ldquo;American Economic Review&rdquo;. Il grafico di seguito è un estratto della loro pubblicazione e conferma le predizioni teoriche per l&rsquo;economia pre-crescita nell&rsquo;anno 1500.</p>
+<p>Tutti i dati sono riportati negli intervalli correnti del 1500. Sull&rsquo;asse x delle ascisse, si trova la stessa metrica su entrambi i grafici: la produttività agricola del terreno (misurata dalla qualità del suolo e del clima).</p>
+<p>Nel grafico di sinistra si vede che le regioni con una agricoltura poco produttiva avevano densità di popolazione molto ridotte (e viceversa). Al contempo, nel grafico di destra si può osservare come la più elevata produttività della terra non contribuisse ad innalzare gli standard di vita (o meglio, il PIL pro capite). L&rsquo;agricolura in Spagna, India e Marocco era infatti molto più produttiva che in Finlandia, Egitto e Norvegia, ma le persone non stavano meglio<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>.</p>
+<p>
+
+
+  <img src="/img/crescita-economica/malthusian-econ_people-not-income.png" alt="&amp;ldquo;l&amp;rsquo;economia maltusiana produce persone, non ricchezza per le persone&amp;rdquo;">
+</p>
+<p>Più la terra era produttiva, più popolosa la regione, sicchè gli abitanti dovevano dividere tra loro la loro una quota fissa di ricchezza, rimanendo sempre a livelli infimi di benessere.</p>
+<h2 id="i-redditi-cambiavano-poco-solo-nel-lungo-periodo-ma-nella-storia-vi-furuno-molti-episodi-di-crescita-che-non-potè-essere-sostenuta">I redditi cambiavano poco solo nel lungo periodo ma nella Storia vi furuno molti episodi di crescita che non potè essere sostenuta</h2>
+<p>Nella storia vi fuorono diversi episodi nei quali alcune economie raggiunsero la crescita economica. Tuttavia, rispetto alla crescita che ha seguito la Rivoluzione Industriale, detti episodi ebbero vita breve. Ciò che rende i tempi moderni differenti è che la crescita dei redditi continuò a lungo - fino ad oggi - a che questa crescita non si limitò ad una economia soltanto<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>:.</p>
+<p>L&rsquo;origine di questa trasformazione è l&rsquo;Europa nord-occidentale. Fu infatti nei Paesi bassi (e in Inghilterrra) che all&rsquo;inizio del diciassettesimo secolo fu possibile osservare per la prima volta una crescita dei redditi sostenuta per un lungo periodo di tempo<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>.</p>
+<p>Nel grafico si può vedere che nel lungo periodo pre-crescita prima del 1600 i redditi non superarono mai 3,50$ al giorno (1277 all&rsquo;anno, a prezzi del 1990). Per il Regno Unito il cambiamento avviene nella prima metà del diciassettesimo secolo, quando uno stabile incremento dei redditi si sostituì alle oscillazioni dei quattro secoli precedenti.</p>
+<p>
+
+
+  <img src="/img/crescita-economica/GDP-per-capita-in-European-economies.png" alt="&amp;ldquo;pil pro-capite nelle economie europee&amp;rdquo;">
+</p>
+<h1 id="la-crescita-economica-nel-lungo-termine">La crescita economica nel lungo termine</h1>
+<p>Oggi i dati sulla crescita economica sono sistematicamente pubblicati dagli uffici statistici<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> ma i ricercatori hanno dovuto ricostruire i dati relativi alla produttività economica del passato.</p>
+<p>Esistono varie ricostruzioni del PIL pro capite nell&rsquo;ultimo secolo, come quelle dell&rsquo;economista britannico Angus Maddison, utilizzate a lungo. Maddison lavorava a Groningen (Paesi Bassi) e, dopo la sua morte nel 2010, il suo lavoro viene oggi continuato dal Groningen Growth and Development Centre.</p>
+<p>Maddison ha tentato di ricostruire la crescita economica in tutti i paesi del mondo e alcune delle sue stime, specialmente nelle prime pubblicazioni, erano approssimative. Tuttavia in anni più recenti molti gruppi di ricerca hanno prodotto ricostruzioni più precise per stimare la crescita economica nel lungo periodo. Una notevole mole di lavoro è stata svolta in questo ambito a tipicamente ci si è concentrati su singoli regioni o paesi, come visto fino ad ora per la Gran Bretagna.</p>
+<p>I successori di Maddison a Groningen hanno esteso i lavori originali combinandoli con nuove ricostruzioni pubblicate in anni più recenti. Questo progetto si chiama oggi <strong>Maddison Project Database</strong> ed è la principale fonte oggi utilizzabile nelle ricostruzioni della crescita economica<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>.</p>
+
+
+<iframe src="https://ourworldindata.org/grapher/gdp-per-capita-maddison-2020?time=1350..2018&country=ITA~GBR~USA~DEU~GRC~CHN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>in soldoni: se in tutto l&rsquo;anno producto 100 kg di grano e ho 2 figli potremo disporre di 33kg pro-capite. Senza crescita economica e con 4 figli, disporremmo tutti di una quantità inferiore di grano per la nostra alimentazione, abbassando i nostri standard di vita potendo consumare solo 20kg pro-capite.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Netflix ancora non c&rsquo;era, <a href="https://it.wikipedia.org/wiki/Decameron">ma già si trovavano modi di intrattenersi durante il lockdown</a>. Mi stupisce che nessuno abbia ancora pensato a una serie tv a tema.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>trovo migliore la pagina di wikipedia <a href="https://en.wikipedia.org/wiki/Malthusianism">in inglese</a>. In breve: Robert Malthus sosteneva che la popolazione può teoricamente crescere esponenzialmente, mentre l&rsquo;economia (e la produzione agricola) linearmente. Facendo un parallelo tra i salari e il prezzo dei carburanti, sarebbe come se il prezzo della benzina crescesse esponenzialmente: si immagini 2.7 volte in un anno da oggi, di 6 volte in 2 anni da oggi e di 19 volte in 3 anni: un trend decisamente insostenibile rispetto a qualsiasi crescita linearre dei salari.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>&ldquo;Popolazione e povertà&rdquo; in italiano. Disponibile in inglese <a href="http://www.esp.org/books/malthus/population/malthus.pdf">in forma integrale.</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Online <a href="https://www.aeaweb.org/articles?id=10.1257/aer.101.5.2003">qui</a>. Nel testo originale viene spiegato che i due studiosi misurano l&rsquo;attitudine all&rsquo;agricoltura mediante un indice composito.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>senza pretesa di scientificità: è interessante notare come nel 1500 l&rsquo;Italia fosse al vertice del reddito pro-capite (grafico di destra). L&rsquo;italia del 1500 era leader nella manifattura, nel commercio e nella finanza. Peccato che poco dopo le cose presero una <a href="https://www.treccani.it/enciclopedia/la-cultura-economica_res-5b327081-bbab-11e2-a881-00271042e8d9_%28Il-Contributo-italiano-alla-storia-del-Pensiero:-Economia%29/">piega diversa</a>.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>mia considerazione personale. La modernità mi ha reso impaziente: la crescita economica deve arrivare anche dove non c&rsquo;è, al più presto.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p>curiosamente si osservò contemporaneamente una delle prime bolle speculative, la <a href="https://it.wikipedia.org/wiki/Bolla_dei_tulipani">tulipomania</a>. Ricorda alcuni fenomeni moderni, no?&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9">
+<p>come la nostra ISTAT. <strong>Tutti</strong> gli istitutti statistici dovrebbero essere indipendenti dal <a href="https://www.ilsole24ore.com/art/l-indipendenza-dell-istat-e-lessico-istituzionale-AE71tqCF">governo di turno</a>. Basta pensare a cosa è successo nella Russia del dopoguerra o nella Grecia prima della crisi per rendersi conto di quanto male possano fare dati economici manipolati ad uso politico.&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10">
+<p>di più su <a href="https://en.wikipedia.org/wiki/Maddison_Project">wikipedia</a>, e sulla <a href="https://www.rug.nl/ggdc/historicaldevelopment/maddison/?lang=en">pagina ufficiale</a>&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>

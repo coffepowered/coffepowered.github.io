@@ -1,0 +1,31 @@
+{{ define "main" }}
+  <article class="article">
+    <header class="article-header">
+      <h1>{{ .Title }}</h1>
+      {{ if and (eq .Type "blog") (not .Params.hideDate) }}
+        <time datetime="{{ .Date.Format `2006-01-02` }}">{{ .Date.Format (default "02 Jan 2006" .Site.Params.dateFormat) }}</time>
+      {{ end }}
+      {{ with .GetTerms "tags" }}
+        <div class="article-tags" aria-label="Tag">
+          {{ range . }}<a class="tag" href="{{ .RelPermalink }}">#{{ .Title | lower }}</a>{{ end }}
+        </div>
+      {{ end }}
+    </header>
+
+    {{ with .Params.image }}
+      <img class="article-cover" src="{{ . | relURL }}" alt="" loading="eager">
+    {{ end }}
+
+    <div class="article-content">
+      {{ .Content }}
+    </div>
+
+    {{ if and (eq .Type "blog") (.Param "enablePostNavigator") }}
+      {{ partial "post_navigator.html" . }}
+    {{ end }}
+
+    {{ if and (eq .Type "blog") .Site.Params.disqusShortname }}
+      {{ partial "comments.html" . }}
+    {{ end }}
+  </article>
+{{ end }}

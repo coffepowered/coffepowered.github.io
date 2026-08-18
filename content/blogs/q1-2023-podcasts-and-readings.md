@@ -1,0 +1,88 @@
++++
+title = "Q1 2023: Miscellanea (playlist)"
+type = "blog"
+date = 2023-02-01T21:28:43-05:00
+description = "Letture, podcast e altro"
+image = "/img/blogs/feb23-write-something-glenncarstenspeters.jpg"
+tags = ["forecasting", "notes", "podcasts"]
+categories = ["courses", "notes", "opinions", "reviews"]
+math = true
++++
+
+<h1 id="usare-i-numeri-ciecamente-la-fallacia-di-mcnamara">Usare i numeri ciecamente: la fallacia di McNamara</h1>
+<p>Due note brevi sulla <a href="https://en.wikipedia.org/wiki/McNamara_fallacy">fallacia di McNamara</a> (segretario della difesa USA durante la guerra in Vietnam), spesso riassunta come &ldquo;fallacia quantitativa&rdquo;</p>
+<blockquote>
+<p>“the facts which count best count most&quot;. [I fatti che si contano meglio sono quelli che contano di più]</p>
+</blockquote>
+<p>Spesso è figlia delle organizzazioni, ma colpisce (duro) individui e decisioni. Come fare a riprodurla? Ecco un tutorial (preso da <a href="https://www.researchgate.net/publication/346625931_The_McNamara_fallacy_and_the_fog_of_foresight_at_work_This_article_first_appeared_in_Health_and_Safety_Bulletin_published_by_LexisNexis_Further_details_from_the_editor_Howard_Fidderman_hfiddermanexcit">qui</a>):</p>
+<blockquote>
+<p>As reported by Smith, Yankelovich describes the fallacy as follows:</p>
+<ul>
+<li>“The first step is to measure whatever can be
+easily measured. This is okay as far as it goes.</li>
+<li>The second step is to disregard that which can’t
+be measured or give it an arbitrary quantitative
+value. This is artificial and misleading.</li>
+<li>The third step is to presume that what can’t
+be measured easily really isn’t very important.
+This is blindness.</li>
+<li>The fourth step is to say that what can’t be easily
+measured really doesn’t exist. This is suicide.”</li>
+</ul>
+</blockquote>
+<h1 id="fare-previsioni-per">Fare previsioni, per&hellip;</h1>
+<p>Ci sono due tipi di previsioni: quelle riguardanti fenomeni conoscibili e inconoscibili. Non c&rsquo;è accezione mistica in questa categorizzazione (al più gnoseologica) quanto osservazione che sempre il processo di generazione dei dati non può essere descritto nella sua interezza.</p>
+<p>Una checklist in 4 punti è fornita da <a href="https://otexts.com/fpp3/what-can-be-forecast.html">Hyndman</a>: può essere utile a orientarsi tra problemi che si prestano a stime accurate (conoscibili) e gli altri. La predicibilità di un evento o una quantità dipende da molti fattori, tra cui:</p>
+<ol>
+<li>quanto a fondo <strong>capiamo</strong> i fattori che contribuiscono ad esso;</li>
+<li>quanti dati sono <strong>disponibili</strong>;</li>
+<li>quanto il futuro è <strong>simile</strong> al passato;</li>
+<li>se la previsione stessa può <strong>influenzare</strong> ciò che stiamo tentanto di prevedere.</li>
+</ol>
+<p>Ciò che osserviamo nei sistemi economici è - con mio grande disappunto - parte dell&rsquo;inconoscibile: spesso a causa dei motivi pratici di cui sopra. Se volete sapere perchè, ne ha parlato questa settimana Fabio Scacciavillani (economista, appunto), in <a href="https://www.spreaker.com/user/ingloriousglobastards/previsioni-economiche">podcast</a>.</p>
+<p>Curiosamente, ho letto recentemente il libro &ldquo;Solar Power Finance Without the Jargon&rdquo;, di Jenny Chase. Il libro affronta, nel contesto specifico, il problema della stima di diverse quantità relative all&rsquo;energia rinnovabile e racconta come è cambiato il mondo dell&rsquo;energia solare in pochi anni. L&rsquo;autrice riporta storie di vita vissuta che ricordano quanto i quattro fattori di cui sopra siano sistematicamente violati (3: ops, un paese non ha prorogato gli incentivi sul fotovoltaico: quanto costeranno i pannelli l&rsquo;anno prossimo?).</p>
+<p>Un&rsquo;altra cosa che vale la pena ricordare è che le predizioni possono servire per pianificare a lungo termine o addirittura per aiutare la compresione dei fenomeni - piu che descriverli federlmente:</p>
+<blockquote>
+<p>You can also play with the inputs and look at what happens. Models are for avoiding blunders and understanding the world, not for predicting it.</p>
+</blockquote>
+<p>Mi chiedo se non dovremmo usare due vocaboli diversi per previsioni di diversa natura. Manterrei il termine <strong>previsioni</strong> (prae-vedere) per ciò che ci si aspetta di quantificare con accuratezza punterei su <strong>presagi</strong> per il resto. Attenzione a non svilire il ruolo dei &ldquo;presagi&rdquo;: farsi domande sul mondo di domani è importantissimo nella vita (e nel business) e ci insegna a confrontarci con la complessità della realtà.</p>
+<p>Chiudo con il grafico dei presagi delle installazioni di fotovoltaico, tratto dal libro di cui sopra e con il grafico delle previsioni di <a href="https://www.ft.com/content/58d45527-8d57-43c3-b2b0-d77a19d101b8">inflazione della ECB dell&rsquo;anno scorso</a>. Chi sa fare di meglio si accomodi, per me è la prova che fare previsioni è <a href="https://www.ecb.europa.eu/pub/economic-bulletin/focus/2022/html/ecb.ebbox202203_05~6d1fb8f5b0.en.html">difficile</a>.</p>
+<p>
+
+
+  <img src="/img/mix/feb23-pv.png" alt="pv">
+</p>
+<p>
+
+
+  <img src="/img/mix/feb23-inflation.png" alt="inflation">
+</p>
+<h1 id="covariates-exogenous-and-endogenous-variables">Covariates, exogenous and endogenous variables</h1>
+<p>Il vocabolario è importante, alcune definizioni che riporto dal <a href="https://www.stata.com/manuals/ermglossary.pdf">glossario</a> di stata:</p>
+<blockquote>
+<p><strong>Covariate</strong>. A covariate is a variable appearing on the right-hand side (RHS) of a model. Covariates
+can be exogenous or endogenous, but when the term is used without qualification, it usually means
+exogenous covariate. Covariates are also known as explanatory variables.</p>
+</blockquote>
+<blockquote>
+<p><strong>exogenous covariate</strong>. An exogenous covariate is a covariate that is uncorrelated with the error term in the model.</p>
+</blockquote>
+<blockquote>
+<p><strong>endogenous covariate</strong>. An endogenous covariate is a covariate appearing in a model 1) that is
+correlated with omitted variables that also affect the outcome; 2) that is measured with error;</p>
+</blockquote>
+<ol start="3">
+<li>that is affected by the dependent variable; or 4) that is correlated with the model’s error.</li>
+</ol>
+<p>Il <a href="https://www.stata.com/manuals/ermintro3.pdf#ermIntro3">manuale</a> si fa più interessante. Per il modello:
+$$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + e,$$</p>
+<p>le variabili ${x_1}$ e $x_2$ sono dette <strong>covariate esogene</strong> se:</p>
+<ol>
+<li>Non ci sono variabili omesse (<em>confounding</em>) correlate con $x_1$ o $x_2$,</li>
+<li>$x_1$, $x_2$ possono essere misurate senza errore,</li>
+<li>non c&rsquo;è causazione inversa (<em>feedback loop?</em>), i.e. $x_1$, $x_2$ influenzano $y$ ma viceversa</li>
+<li>$x_1$, $x_2$ non sono correlati con $e$.</li>
+</ol>
+<p>Strictu sensu, le covariate esogene dipendono dalle ipotesi che facciamo (e verifichiamo ex-post) più che dalla realtà che spesso violerà le 4 assunzioni di cui sopra. Un singolo evento può essere totalmente esogeno a un sistema ma una variabile più raramente lo sarà, su lunghi periodi di osservazione.</p>
+<h2 id="le-variabili-strumentali-sono-una-soluzione-ma-ce-ne-sono-altre">Le variabili strumentali sono una soluzione (ma ce ne sono altre)</h2>
+<p>Come provano a risolvere il problema gli economisti? Con variabili <strong>strumentali</strong> (esempio: $z_3$ correlata con la variabile <strong>endogena</strong> $w_i$ al RHS, ma non con l&rsquo;outcome $y$ - se non attraverso il suo effetto su $x_i$ medesimo). Approfondimenti sugli esempi di stata <a href="https://www.stata.com/manuals/ermintro3.pdf#ermIntro3">1</a><a href="https://www.stata.com/manuals/ermintro9.pdf#ermIntro9">2</a>. Ancora meglio, Sachin Date parla nel dettaglio della <a href="https://timeseriesreasoning.com/contents/exogenous-and-endogenous-variables/">natura delle variabili esogene/endogene</a> e delle <a href="https://timeseriesreasoning.com/contents/introduction-to-instrumental-variables/">variabili strumentali</a></p>
