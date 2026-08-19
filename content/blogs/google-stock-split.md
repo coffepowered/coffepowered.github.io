@@ -74,6 +74,7 @@ fetch("/img/google-stock/stock-prices.json")
   .then(function(fig) {
     if (fig.layout) { fig.layout.autosize = true; delete fig.layout.width; }
     fig.data = (fig.data || []).filter(function(t) { return t && Array.isArray(t.x) && t.x.length > 0; });
+    fig.data.forEach(function(t) { if (t.type === 'scattergl') t.type = 'scatter'; });
     Plotly.newPlot("chart-stock-prices", fig.data, fig.layout, {responsive: true});
   })
   .catch(function(err) { console.error("Error loading stock-prices:", err); });
@@ -107,6 +108,7 @@ fetch("/img/google-stock/model-result.json")
   .then(function(fig) {
     if (fig.layout) { fig.layout.autosize = true; delete fig.layout.width; }
     fig.data = (fig.data || []).filter(function(t) { return t && Array.isArray(t.x) && t.x.length > 0; });
+    fig.data.forEach(function(t) { if (t.type === 'scattergl') t.type = 'scatter'; });
     Plotly.newPlot("chart-model-result", fig.data, fig.layout, {responsive: true});
   })
   .catch(function(err) { console.error("Error loading model-result:", err); });
@@ -141,6 +143,7 @@ ETSY-&gt; -0.009 (-0.010)
 <p>
 
 
+
 <div id="chart-r2-alt-model" class="plotly" style="height:540px"></div>
 <script>
 fetch("/img/google-stock/r2-alt-model.json")
@@ -148,6 +151,7 @@ fetch("/img/google-stock/r2-alt-model.json")
   .then(function(fig) {
     if (fig.layout) { fig.layout.autosize = true; delete fig.layout.width; }
     fig.data = (fig.data || []).filter(function(t) { return t && Array.isArray(t.x) && t.x.length > 0; });
+    fig.data.forEach(function(t) { if (t.type === 'scattergl') t.type = 'scatter'; });
     Plotly.newPlot("chart-r2-alt-model", fig.data, fig.layout, {responsive: true});
   })
   .catch(function(err) { console.error("Error loading r2-alt-model:", err); });
@@ -164,6 +168,7 @@ fetch("/img/google-stock/model-result-other.json")
   .then(function(fig) {
     if (fig.layout) { fig.layout.autosize = true; delete fig.layout.width; }
     fig.data = (fig.data || []).filter(function(t) { return t && Array.isArray(t.x) && t.x.length > 0; });
+    fig.data.forEach(function(t) { if (t.type === 'scattergl') t.type = 'scatter'; });
     Plotly.newPlot("chart-model-result-other", fig.data, fig.layout, {responsive: true});
   })
   .catch(function(err) { console.error("Error loading model-result-other:", err); });
