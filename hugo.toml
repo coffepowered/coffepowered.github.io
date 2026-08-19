@@ -43,7 +43,7 @@ enableGitInfo = false
 
 [module]
   [module.hugoVersion]
-    min = "0.165.0"
+    min = "0.120.0"
     extended = false
 
   [[module.mounts]]
