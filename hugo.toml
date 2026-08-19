@@ -70,12 +70,6 @@ enableGitInfo = false
   [[module.mounts]]
     source = "favicon.ico"
     target = "static/favicon.ico"
-  [[module.mounts]]
-    source = "blogs/on-the-btc-energy-toll/data.csv"
-    target = "static/blogs/on-the-btc-energy-toll/data.csv"
-  [[module.mounts]]
-    source = "blogs/on-the-btc-energy-toll/data.xlsx"
-    target = "static/blogs/on-the-btc-energy-toll/data.xlsx"
 
 [caches]
   [caches.images]
