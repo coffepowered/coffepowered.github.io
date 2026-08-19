@@ -64,15 +64,6 @@ body > header {
   color: var(--heading-color);
 }
 
-.site-heading .title h1::before,
-.site-heading .title h1::after {
-  content: "☆";
-  font-weight: 400;
-  color: var(--link-color);
-  margin: 0 0.18rem;
-  text-shadow: 0 0 12px var(--accent-glow);
-}
-
 .site-heading span {
   color: var(--muted-color);
   font-size: 0.95rem;
